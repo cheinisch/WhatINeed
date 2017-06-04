@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 //import com.squareup.picasso.Picasso;
 
 
@@ -18,7 +20,7 @@ public class ItemDetailActivity extends AppCompatActivity {
 
     String titel;
     String langtext;
-    String url;
+    String bild;
     ImageView img;
 
 
@@ -37,24 +39,11 @@ public class ItemDetailActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        // savedInstanceState is non-null when there is fragment state
-        // saved from previous configurations of this activity
-        // (e.g. when rotating the screen from portrait to landscape).
-        // In this case, the fragment will automatically be re-added
-        // to its container so we don't need to manually add it.
-        // For more information, see the Fragments API guide at:
-        //
-        // http://developer.android.com/guide/components/fragments.html
-        //
-
-
-
-
         Intent i = getIntent();
 
         titel = i.getStringExtra("Titelleiste");
         langtext = i.getStringExtra("Beschreibung");
-        url = i.getStringExtra("URL");
+        bild = i.getStringExtra("Bild_gross");
 
         TextView content = (TextView) findViewById(R.id.textDetailContent);
         content.setText(langtext);
@@ -65,10 +54,9 @@ public class ItemDetailActivity extends AppCompatActivity {
         titelleiste("");
 
 
-        //img = (ImageView) findViewById(R.id.app_bar_image);
+        img = (ImageView) findViewById(R.id.app_bar_image);
 
-        System.out.println(url);
-        titelbild(url);
+        titelbild(bild);
 
     }
 
@@ -102,15 +90,18 @@ public class ItemDetailActivity extends AppCompatActivity {
     public void titelbild(String url_load) {
 
         // Titelbild in imageView speichern
-        //ImageView imageView = (ImageView) findViewById(R.id.app_bar_image);
+        ImageView imageView = (ImageView) findViewById(R.id.app_bar_image);
 
         // Titelbild der Detailseite setzten
-        /*Picasso.with(this)
-                .load(url_load)
-                .placeholder(R.drawable.ic_placeholder) // optional
-                .error(R.drawable.ic_error_fallback)         // optional
+        String mDrawableName = url_load;
+        int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
+
+        Picasso.with(this)
+                .load(resID)
+                //.placeholder(R.drawable.ic_placeholder) // optional
+                //.error(R.drawable.ic_error_fallback)         // optional
                 .fit()
-                .into(imageView);*/
+                .into(imageView);
 
 
     }

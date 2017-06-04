@@ -3,10 +3,11 @@
 
   "listdata": [
     {
-    "Titel":"Motorkontrolleuchte",
-    "Beschreibung":"Achtung",
-    "URL":"ic_rabbit.png",
-    "Langtext":"Auto abstellen und Werkstatt anrufen"
+      "Titel":"Motorkontrolleuchte",
+      "Beschreibung":"Achtung",
+      "Bild_klein":"ic_motorkontrollleuchte_klein",
+      "Bild_gross":"ic_motorkontrollleuchte_gross",
+      "Langtext":"Auto abstellen und Werkstatt anrufen"
     }
   ]
 }

@@ -6,12 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import de.christian_heinisch.whatineed.ItemDetailActivity;
 import de.christian_heinisch.whatineed.R;
+
 
 /**
  * Created by chris on 09.10.2016.
@@ -31,10 +35,24 @@ public class CustomFehlerCodeAdapter extends ArrayAdapter<ListItemOverview> {
         }
 
         final TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
-        TextView tvBeschreibung = (TextView) convertView.findViewById(R.id.textBeschreibung);
 
         tvName.setText(user.name);
-        tvBeschreibung.setText(user.beschreibung);
+
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewList);
+
+        // Titelbild der Detailseite setzten
+        System.out.println("Bild: " + user.bild_klein);
+
+        String mDrawableName = user.bild_klein;
+        int resID = getContext().getResources().getIdentifier(mDrawableName , "drawable", getContext().getPackageName());
+
+        Picasso.with(getContext())
+                .load(resID)
+                //.placeholder(R.drawable.ic_placeholder) // optional
+                //.error(R.drawable.ic_error_fallback)         // optional
+                .fit()
+                .into(imageView);
+
 
         return convertView;
 
@@ -51,13 +69,12 @@ public class CustomFehlerCodeAdapter extends ArrayAdapter<ListItemOverview> {
         //Werte an DetailActivity übergeben
         intent.putExtra("Titelleiste", user.name);
         intent.putExtra("Beschreibung", user.langtext);
-        intent.putExtra("URL", user.bild);
+        intent.putExtra("Bild_gross", user.bild_gross);
 
         // Starte Activity
         getContext().startActivity(intent);
 
     }
-
 
 
 }

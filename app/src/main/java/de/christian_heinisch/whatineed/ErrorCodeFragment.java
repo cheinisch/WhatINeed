@@ -31,10 +31,6 @@ import de.christian_heinisch.whatineed.data.ListItemOverview;
 public class ErrorCodeFragment extends Fragment {
 
     View rootview;
-    ErrorExpandableListAdapter listAdapter;
-    ExpandableListView expListView;
-    List<String> listDataHeader;
-    HashMap<String, List<String>> listDataChild;
 
 
     public ErrorCodeFragment() {
@@ -94,9 +90,10 @@ public class ErrorCodeFragment extends Fragment {
 
             String titel = obj.getString("Titel");
             String beschreibung = obj.getString("Beschreibung");
-            String URL = obj.getString("URL");
+            String Bild_gross = obj.getString("Bild_gross");
+            String Bild_klein = obj.getString("Bild_klein");
             String langtext = obj.getString("Langtext");
-            listitems.add(new ListItemOverview(titel, beschreibung, URL, langtext));
+            listitems.add(new ListItemOverview(titel, beschreibung, Bild_gross, Bild_klein, langtext));
         }
         return listitems;
     }
@@ -126,7 +123,8 @@ public class ErrorCodeFragment extends Fragment {
 
         String title = listitem.getName();
         String description = listitem.getBeschreibung();
-        String url = listitem.getBild();
+        String gross = listitem.getBild_gross();
+        String klein = listitem.getBild_klein();
         String fulltext = listitem.getLangtext();
 
         // Erstelle einen neuen Intent und weise ihm eine Actvity zu
@@ -134,7 +132,7 @@ public class ErrorCodeFragment extends Fragment {
 
         //Werte an DetailActivity übergeben
         intent.putExtra("Titelleiste", title);
-        intent.putExtra("URL", url);
+        intent.putExtra("Bild_gross", gross);
         intent.putExtra("Beschreibung", fulltext);
 
         // Starte Activity

@@ -8,13 +8,15 @@ public class ListItemOverview {
 
     public String name;
     public String beschreibung;
-    public String bild;
+    public String bild_gross;
+    public String bild_klein;
     public String langtext;
 
-    public ListItemOverview(String name, String beschreibung, String bild, String langtext){
+    public ListItemOverview(String name, String beschreibung, String bild_gross, String bild_klein, String langtext){
         this.name = name;
         this.beschreibung = beschreibung;
-        this.bild = bild;
+        this.bild_gross = bild_gross;
+        this.bild_klein = bild_klein;
         this.langtext = langtext;
     }
 
@@ -26,8 +28,12 @@ public class ListItemOverview {
         return beschreibung;
     }
 
-    public String getBild() {
-        return bild;
+    public String getBild_gross() {
+        return bild_gross;
+    }
+
+    public String getBild_klein() {
+        return bild_klein;
     }
 
     public String getLangtext() {
