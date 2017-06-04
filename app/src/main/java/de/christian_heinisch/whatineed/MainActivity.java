@@ -73,11 +73,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_information) {
             iNeed();
-            // Handle the camera action
+
         } else if (id == R.id.nav_errorcode) {
             errorcode();
         } else if (id == R.id.nav_about) {
-
+            about();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -116,6 +116,21 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 iNeedFragment,
                 iNeedFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void about() {
+
+        titelleiste("Über die APP");
+
+        AboutFragment aboutFragment = new AboutFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                aboutFragment,
+                aboutFragment.getTag()
         )
                 .addToBackStack(null)
                 .commit();
