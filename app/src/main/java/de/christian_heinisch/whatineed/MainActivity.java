@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        iNeed();
     }
 
     @Override
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_information) {
+            iNeed();
             // Handle the camera action
         } else if (id == R.id.nav_errorcode) {
             errorcode();
@@ -98,6 +101,21 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 overviewFragment,
                 overviewFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void iNeed() {
+
+        titelleiste("Was brauche ich");
+
+        WhatINeed_Fragment iNeedFragment = new WhatINeed_Fragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                iNeedFragment,
+                iNeedFragment.getTag()
         )
                 .addToBackStack(null)
                 .commit();
