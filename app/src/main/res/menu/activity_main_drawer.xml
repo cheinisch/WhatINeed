@@ -4,21 +4,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_information"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_i_need"
             android:title="Was brauche ich" />
         <item
             android:id="@+id/nav_errorcode"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_error"
             android:title="Fehlercodes" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_help"
+            android:title="Über diese APP" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_about"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Über diese APP" />
-        </menu>
-    </item>
 
 </menu>
