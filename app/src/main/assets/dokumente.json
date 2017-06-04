@@ -1,0 +1,63 @@
+{
+  "DATA":[
+    {
+      "Typ": "Zulassung Neufahrzeug",
+      "Dokumente": [
+        {
+          "Titel": "EG-Übereinstimmungsbescheinigung"
+        },
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Elektronische Versicherungsbestätigung (eVB)"
+        },
+        {
+          "Titel": "Fahrzeugbrief/Zulassungsbescheinigung Teil II"
+        },
+        {
+          "Titel": "Einzugsermächtigung für Kfz-Steuer"
+        },
+        {
+          "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
+        },
+        {
+          "Titel": "Geld"
+        }
+      ]
+    },
+    {
+      "Typ": "Zulassung Gebrauchtfahrzeug",
+      "Dokumente": [
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Elektronische Versicherungsbestätigung (eVB)"
+        },
+        {
+          "Titel": "Fahrzeugbrief/Zulassungsbescheinigung Teil II"
+        },
+        {
+          "Titel": "Fahrzeugschein/Zulassungsbescheinigung Teil I"
+        },
+        {
+          "Titel": "HU-Bericht"
+        },
+        {
+          "Titel": "KFZ-Kennzeichen (bei Kreiswechsel)"
+        },
+        {
+          "Titel": "Einzugsermächtigung für Kfz-Steuer"
+        },
+        {
+          "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
+        },
+        {
+          "Titel": "Geld"
+        }
+      ]
+    }
+    ]
+
+}

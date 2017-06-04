@@ -19,6 +19,6 @@
         android:paddingRight="10dp"
         android:paddingTop="10dp"
         android:text="TextView"
-        android:textAppearance="@android:style/TextAppearance.Holo.Large" />
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
 </LinearLayout>

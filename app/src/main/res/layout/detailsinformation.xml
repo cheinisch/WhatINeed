@@ -8,19 +8,19 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
-        android:text="TextView"
+        android:id="@+id/textDetailHead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textDetailHead"
-        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
     <TextView
-        android:text="TextView"
+        android:id="@+id/textDetailContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textDetailContent"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
 </LinearLayout>

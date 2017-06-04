@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,51 +60,47 @@ public class WhatINeed_Fragment extends Fragment {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
 
-        // Adding child data
-        listDataHeader.add("Zulassung Neufahrzeug");
-        listDataHeader.add("Zulassung Gebrauchtfahrzeug");
-        /*listDataHeader.add("TÜV");
-        listDataHeader.add("Coming Soon..");*/
+        try {
+            JSONObject json = new JSONObject(loadJSONFromAsset());
+            JSONArray jArray = json.getJSONArray("DATA");
+            for (int i = 0; i < jArray.length(); i++) {
+                List<String> listenelement = new ArrayList<String>();
+                JSONObject json_data = jArray.getJSONObject(i);
+                listDataHeader.add(json_data.getString("Typ"));
+                JSONArray arr = json_data.getJSONArray("Dokumente");
+                for(int j = 0; j < arr.length(); j++) {
+                    JSONObject innerData = arr.getJSONObject(j);
+                    String Text = innerData.getString("Titel");
+                    listenelement.add(Text);
+                }
 
-        // Adding child data
-        List<String> zulassung = new ArrayList<String>();
-        zulassung.add("EG-Übereinstimmungsbescheinigung");
-        zulassung.add("Personalausweis");
-        zulassung.add("Elektronische Versicherungsbestätigung (eVB)");
-        zulassung.add("Fahrzeugbrief/Zulassungsbescheinigung Teil II");
-        zulassung.add("Einzugsermächtigung für Kfz-Steuer");
-        zulassung.add("Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug");
-        zulassung.add("Geld");
+                listDataChild.put(listDataHeader.get(i), listenelement);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-        List<String> zulassung_gebraucht = new ArrayList<String>();
-        zulassung_gebraucht.add("Personalausweis");
-        zulassung_gebraucht.add("Elektronische Versicherungsbestätigung (eVB)");
-        zulassung_gebraucht.add("Fahrzeugbrief/Zulassungsbescheinigung Teil II");
-        zulassung_gebraucht.add("Fahrzeugschein/Zulassungsbescheinigung Teil I");
-        zulassung_gebraucht.add("HU-Bericht");
-        zulassung_gebraucht.add("KFZ-Kennzeichen (Bei Kreiswechsel)");
-        zulassung_gebraucht.add("Einzugsermächtigung für Kfz-Steuer");
-        zulassung_gebraucht.add("Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug");
-        zulassung_gebraucht.add("Geld");
+    }
 
-        List<String> tuv = new ArrayList<String>();
-        tuv.add("The Conjuring");
-        tuv.add("Despicable Me 2");
-        tuv.add("Turbo");
-        tuv.add("Grown Ups 2");
-        tuv.add("Red 2");
-        tuv.add("The Wolverine");
+    public String loadJSONFromAsset() {
+        String json = null;
 
-        List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("2 Guns");
-        comingSoon.add("The Smurfs 2");
-        comingSoon.add("The Spectacular Now");
-        comingSoon.add("The Canyons");
-        comingSoon.add("Europa Report");
+        String json_file = "dokumente.json";
+        try {
 
-        listDataChild.put(listDataHeader.get(0), zulassung); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), zulassung_gebraucht);
-        //listDataChild.put(listDataHeader.get(2), comingSoon);
+            InputStream is = getContext().getAssets().open(json_file);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+
     }
 
 }
