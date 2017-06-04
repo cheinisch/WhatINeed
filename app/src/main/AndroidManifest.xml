@@ -19,6 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ItemDetailActivity"
+            android:label="Übersicht"
+            android:parentActivityName=".ItemDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.christian_heinisch.whatineed.ItemDetailActivity" />
+        </activity>
     </application>
 
 </manifest>

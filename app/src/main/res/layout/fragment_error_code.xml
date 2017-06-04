@@ -5,23 +5,9 @@
     tools:context="de.christian_heinisch.whatineed.ErrorCodeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:id="@+id/listOverview" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:text="Fehlercodes"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline" />
-
-        <ExpandableListView
-            android:id="@+id/lvExpError"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
 </FrameLayout>
