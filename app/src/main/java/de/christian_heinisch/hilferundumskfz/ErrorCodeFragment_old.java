@@ -4,7 +4,6 @@ package de.christian_heinisch.hilferundumskfz;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,13 +24,12 @@ import de.christian_heinisch.hilferundumskfz.data.ListItemOverview;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class ErrorCodeFragment extends Fragment {
+public class ErrorCodeFragment_old extends Fragment {
 
     View rootview;
-    boolean mTwoPane;
 
 
-    public ErrorCodeFragment() {
+    public ErrorCodeFragment_old() {
         // Required empty public constructor
     }
 
@@ -41,14 +39,6 @@ public class ErrorCodeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_error_code, container, false);
-
-        if (rootview.findViewById(R.id.item_detail_container) != null) {
-            // The detail container view will be present only in the
-            // large-screen layouts (res/values-w900dp).
-            // If this view is present, then the
-            // activity should be in two-pane mode.
-            mTwoPane = true;
-        }
 
 
         try {
@@ -127,46 +117,22 @@ public class ErrorCodeFragment extends Fragment {
 
     public void openItem(View view, ListItemOverview listitem){
 
-
         String title = listitem.getName();
         String description = listitem.getBeschreibung();
         String gross = listitem.getBild_gross();
+        String klein = listitem.getBild_klein();
         String fulltext = listitem.getLangtext();
 
-        Bundle bundle = new Bundle();
-        bundle.putString("Titelleiste", title);
-        bundle.putString("Bild_gross", gross);
-        bundle.putString("Beschreibung", fulltext);
+        // Erstelle einen neuen Intent und weise ihm eine Actvity zu
+        Intent intent = new Intent(getContext(), ItemDetailActivity.class);
 
-        if(mTwoPane){
-            ItemDetailFragment overviewFragment = new ItemDetailFragment();
-            overviewFragment.setArguments(bundle);
-            FragmentManager manager = getActivity().getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.item_detail_container,
-                    overviewFragment,
-                    overviewFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
-        }else{
-            ItemDetailFragment overviewFragment = new ItemDetailFragment();
-            overviewFragment.setArguments(bundle);
-            FragmentManager manager = getActivity().getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.content_main,
-                    overviewFragment,
-                    overviewFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
-        }
+        //Werte an DetailActivity übergeben
+        intent.putExtra("Titelleiste", title);
+        intent.putExtra("Bild_gross", gross);
+        intent.putExtra("Beschreibung", fulltext);
 
-
-
-
-
-
+        // Starte Activity
+        getContext().startActivity(intent);
 
     }
 }

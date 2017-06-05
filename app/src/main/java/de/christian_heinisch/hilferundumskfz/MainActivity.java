@@ -13,6 +13,8 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    boolean mTwoPane;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +31,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        iNeed();
+        if (findViewById(R.id.item_detail_container) != null) {
+            // The detail container view will be present only in the
+            // large-screen layouts (res/values-w900dp).
+            // If this view is present, then the
+            // activity should be in two-pane mode.
+            mTwoPane = true;
+        }
 
-        System.out.println("ProductFlavor: " + BuildConfig.FLAVOR);
+        iNeed();
     }
 
     @Override
@@ -91,6 +99,23 @@ public class MainActivity extends AppCompatActivity
         titelleiste("Was brauche ich");
 
         WhatINeed_Fragment iNeedFragment = new WhatINeed_Fragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                iNeedFragment,
+                iNeedFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void iNeed_demo() {
+
+
+
+        titelleiste("Was brauche ich");
+
+        ItemDetailFragment iNeedFragment = new ItemDetailFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(
                 R.id.content_main,

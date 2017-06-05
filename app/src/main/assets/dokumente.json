@@ -22,7 +22,7 @@
           "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
         },
         {
-          "Titel": "Geld"
+          "Titel": "Vollmacht (Bei Fremdantrag)"
         }
       ]
     },
@@ -54,10 +54,73 @@
           "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
         },
         {
-          "Titel": "Geld"
+          "Titel": "Vollmacht (Bei Fremdantrag)"
+        }
+      ]
+    },
+    {
+      "Typ": "Wiederzulassung eines außer Betrieb gesetzten Fahrzeugs",
+      "Dokumente": [
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Elektronische Versicherungsbestätigung (eVB)"
+        },
+        {
+          "Titel": "Fahrzeugbrief/Zulassungsbescheinigung Teil II"
+        },
+        {
+          "Titel": "Fahrzeugschein/Zulassungsbescheinigung Teil I"
+        },
+        {
+          "Titel": "HU-Bericht"
+        },
+        {
+          "Titel": "Einzugsermächtigung für Kfz-Steuer"
+        },
+        {
+          "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
+        },
+        {
+          "Titel": "Vollmacht (Bei Fremdantrag)"
+        }
+      ]
+    },
+    {
+      "Typ": "Abmelden eines Fahrzeugs (Stilllegung)",
+      "Dokumente": [
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Fahrzeugbrief/Zulassungsbescheinigung Teil II"
+        },
+        {
+          "Titel": "Fahrzeugschein/Zulassungsbescheinigung Teil I"
+        },
+        {
+          "Titel": "KFZ-Kennzeichen"
+        }
+      ]
+    },
+    {
+      "Typ": "Kurzzeitkennzeichen",
+      "Dokumente": [
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Elektronische Versicherungsbestätigung (eVB)"
+        },
+        {
+          "Titel": "Vollmacht (Bei Fremdantrag)"
+        },
+        {
+          "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
         }
       ]
     }
-    ]
+  ]
 
 }
