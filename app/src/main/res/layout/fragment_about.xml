@@ -15,26 +15,33 @@
         android:paddingTop="10dp">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textViewAboutMitwirkende"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mitwirkende"
+            android:text="@string/about_mitwirkende"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textViewAboutName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Christian Heinisch"
+            android:text="@string/about_name"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
         <TextView
             android:id="@+id/textVersion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nummer (Buildcode)"
+            android:text="@string/about_version"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
             android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textViewAboutDisclaimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="@string/about_disclaimer" />
     </LinearLayout>
 </FrameLayout>
