@@ -12,7 +12,29 @@
       "Beschreibung":"Achtung",
       "Bild_klein":"ic_tank_klein",
       "Bild_gross":"ic_tank_gross",
-      "Langtext":"Das Fahrzeug fährt nur noch mit der Tankreserve. Diese beträgt, je nach Hersteller und Modell und der Fahrweise, etwas zwischen 40 und 100km. Mehr Informationen zur Restreichweite gibt es in dem KFZ-Handbuch."
+      "Langtext":"Nächste Tankstelle aufsuchen. Das Fahrzeug fährt nur noch mit der Tankreserve. Diese beträgt, je nach Hersteller und Modell und der Fahrweise, etwas zwischen 40 und 100km.\nMehr Informationen zur Restreichweite gibt es in dem KFZ-Handbuch."
+    },
+    {
+      "Titel":"Lichtleuchte",
+      "Beschreibung":"Achtung",
+      "Bild_klein":"ic_licht_klein",
+      "Bild_gross":"ic_licht_gross",
+      "Langtext":"An dem Fahrzeug ist eine Birne defekt. Entweder man tauscht die Birne selbst aus, oder man lässt es in der Werkstatt machen.\nFahren mit defekter Lichteinrichtung kann ggf. in einer Kontrolle eine Ordnungswidrigkeit sein. Daher schnellstmöglicht den Fehler beheben."
+    },
+    {
+      "Titel":"Airbagsymbol",
+      "Beschreibung":"Achtung",
+      "Bild_klein":"ic_airbag_klein",
+      "Bild_gross":"ic_airbag_gross",
+      "Langtext":"Das Airbagsteuergerät meldet seinen Fehler.\nAuch hier gilt, Werkstatt aufsuchen und Fehler beheben lassen.\nIm Unfallfalle könnte ggf. der Airbag nicht aufgehen. Beim TÜV wird der Fehler beanstandet."
+    },
+    {
+      "Titel":"Batterie / Generator",
+      "Beschreibung":"Achtung",
+      "Bild_klein":"ic_batterie_klein",
+      "Bild_gross":"ic_batterie_gross",
+      "Langtext":"Die Stromversorgung ist gestört. Entweder ist die Lichtmaschine defekt oder eine Leitung ist beschädigt. Das Fahrzeug fährt jetzt nur noch mit Batteriestrom.\nUmgehend Werkstatt aufsuchen."
+
     }
   ]
 }

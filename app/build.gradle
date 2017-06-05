@@ -4,10 +4,10 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 25
-        versionCode 18
-        versionName '0.8.0'
+        versionCode 21
+        versionName '0.9.2'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

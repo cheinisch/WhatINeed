@@ -120,6 +120,23 @@
           "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
         }
       ]
+    },
+    {
+      "Typ": "TÜV",
+      "Dokumente": [
+        {
+          "Titel": "Fahrzeugschein/Zulassungsbescheinigung Teil I"
+        },
+        {
+          "Titel": "Bauartgenehmigungen (Bei Umbauten)"
+        },
+        {
+          "Titel": "Allgemeine Betriebserlaubnisse oder Abnahmebescheinigungen (Bei Umbauten)"
+        },
+        {
+          "Titel": "Nachweise über vorangegangene Abgasuntersuchungen und/oder Gasanlagenprüfungen"
+        }
+      ]
     }
   ]
 

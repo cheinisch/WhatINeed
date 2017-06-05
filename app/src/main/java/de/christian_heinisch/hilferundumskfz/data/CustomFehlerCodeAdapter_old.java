@@ -13,16 +13,15 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import de.christian_heinisch.hilferundumskfz.ItemDetailActivity;
 import de.christian_heinisch.hilferundumskfz.R;
 
 
 /**
  * Created by chris on 09.10.2016.
  */
-public class CustomFehlerCodeAdapter extends ArrayAdapter<ListItemOverview> {
+public class CustomFehlerCodeAdapter_old extends ArrayAdapter<ListItemOverview> {
 
-    public CustomFehlerCodeAdapter(Context context, ArrayList<ListItemOverview> users) {
+    public CustomFehlerCodeAdapter_old(Context context, ArrayList<ListItemOverview> users) {
         super(context, 0, users);
     }
 
@@ -61,18 +60,6 @@ public class CustomFehlerCodeAdapter extends ArrayAdapter<ListItemOverview> {
     public void openitem(View view){
 
 
-        ListItemOverview user = (ListItemOverview) view.getTag();
-
-        // Erstelle einen neuen Intent und weise ihm eine Actvity zu
-        Intent intent = new Intent(getContext(), ItemDetailActivity.class);
-
-        //Werte an DetailActivity übergeben
-        intent.putExtra("Titelleiste", user.name);
-        intent.putExtra("Beschreibung", user.langtext);
-        intent.putExtra("Bild_gross", user.bild_gross);
-
-        // Starte Activity
-        getContext().startActivity(intent);
 
     }
 

@@ -1,7 +1,6 @@
 package de.christian_heinisch.hilferundumskfz;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import de.christian_heinisch.hilferundumskfz.data.CustomFehlerCodeAdapter;
+import de.christian_heinisch.hilferundumskfz.data.CustomFehlerCodeAdapter_old;
 import de.christian_heinisch.hilferundumskfz.data.ListItemOverview;
 
 /**
@@ -66,7 +65,7 @@ public class ErrorCodeFragment extends Fragment {
 
         ArrayList<ListItemOverview> arrayOfUsers = null;
         arrayOfUsers = getContent();
-        CustomFehlerCodeAdapter adapter = new CustomFehlerCodeAdapter(getActivity(), arrayOfUsers);
+        CustomFehlerCodeAdapter_old adapter = new CustomFehlerCodeAdapter_old(getActivity(), arrayOfUsers);
         ListView listView = (ListView) rootview.findViewById(R.id.listOverview);
         listView.setAdapter(adapter);
 

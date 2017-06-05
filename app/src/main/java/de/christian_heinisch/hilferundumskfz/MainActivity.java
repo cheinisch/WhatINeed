@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
 
     public void errorcode() {
 
-        titelleiste("Fehlercodes");
+        titelleiste(getString(R.string.error_titel));
 
         ErrorCodeFragment overviewFragment = new ErrorCodeFragment();
         FragmentManager manager = getSupportFragmentManager();
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
 
     public void iNeed() {
 
-        titelleiste("Was brauche ich");
+        titelleiste(getString(R.string.what_i_need_titel));
 
         WhatINeed_Fragment iNeedFragment = new WhatINeed_Fragment();
         FragmentManager manager = getSupportFragmentManager();
@@ -109,26 +109,10 @@ public class MainActivity extends AppCompatActivity
                 .commit();
     }
 
-    public void iNeed_demo() {
-
-
-
-        titelleiste("Was brauche ich");
-
-        ItemDetailFragment iNeedFragment = new ItemDetailFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                iNeedFragment,
-                iNeedFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
-    }
 
     public void about() {
 
-        titelleiste("Über die APP");
+        titelleiste(getString(R.string.about_titel));
 
         AboutFragment aboutFragment = new AboutFragment();
         FragmentManager manager = getSupportFragmentManager();

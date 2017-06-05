@@ -5,9 +5,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Was brauche ich Fragment -->
+    <string name="what_i_need_titel">Was brauche ich</string>
     <string name="what_i_need_content">Was für Dokumente muss ich dabei haben, wenn ich folgendes machen möchte</string>
 
+    <!-- Fehlercodes -->
+    <string name="error_titel">Warnsymbole</string>
+
     <!-- Über Fragment -->
+    <string name="about_titel">Über die App</string>
     <string name="about_mitwirkende">Mitwirkende</string>
     <string name="about_name">Christian Heinisch</string>
     <string name="about_version">Version</string>
