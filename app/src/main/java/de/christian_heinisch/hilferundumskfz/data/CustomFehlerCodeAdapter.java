@@ -1,4 +1,4 @@
-package de.christian_heinisch.whatineed.data;
+package de.christian_heinisch.hilferundumskfz.data;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +13,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import de.christian_heinisch.whatineed.ItemDetailActivity;
-import de.christian_heinisch.whatineed.R;
+import de.christian_heinisch.hilferundumskfz.ItemDetailActivity;
+import de.christian_heinisch.hilferundumskfz.R;
 
 
 /**

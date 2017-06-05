@@ -1,4 +1,4 @@
-package de.christian_heinisch.whatineed;
+package de.christian_heinisch.hilferundumskfz;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         iNeed();
+
+        System.out.println("ProductFlavor: " + BuildConfig.FLAVOR);
     }
 
     @Override

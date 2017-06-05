@@ -1,4 +1,4 @@
-package de.christian_heinisch.whatineed;
+package de.christian_heinisch.hilferundumskfz;
 
 
 import android.os.Bundle;
@@ -34,11 +34,8 @@ public class AboutFragment extends Fragment {
     }
 
     public void setVersion() {
-
-        String versionString = BuildConfig.VERSION_NAME;
-        int versioncode = BuildConfig.VERSION_CODE;
         TextView version = (TextView) rootview.findViewById(R.id.textVersion);
-        version.setText("Version " + versionString + " (" + versioncode + ")");
+        version.setText("Version " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ") "+BuildConfig.FLAVOR);
     }
 
 }

@@ -10,7 +10,7 @@
     android:paddingTop="10dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
-    tools:context="de.christian_heinisch.whatineed.MainActivity"
+    tools:context="de.christian_heinisch.hilferundumskfz.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
 </RelativeLayout>

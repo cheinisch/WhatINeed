@@ -1,11 +1,18 @@
 {
   "listdata": [
     {
-      "Titel":"Motorkontrolleuchte",
+      "Titel":"Motorkontrollleuchte",
       "Beschreibung":"Achtung",
       "Bild_klein":"ic_motorkontrollleuchte_klein",
       "Bild_gross":"ic_motorkontrollleuchte_gross",
-      "Langtext":"Auto abstellen und Werkstatt anrufen"
+      "Langtext":"Die Motorkontrollleuchte signalisiert Probleme mit dem Motor. Die Leuchte kann auf verschiedene Art den Fehlertyp anzeigen.\n\nKurzzeitiges Aufblinken\nEin temporärer Fehler wurde erkannt. Der Fehler bedarf aber keiner weiteren Aufmerksamkeit, da er nicht dauerhaft vorliegt.\n\nDauerhaftes Leuchten\nEin Fehler ist aufgetreten und sollte demnächst (in einer Werkstatt) behoben werden. Es besteht keine unmittelbare Gefahr für Fahrzeug und Umwelt.\n\nSchnell blinkend\nEin schwerwiegender Fehler ist aufgetreten. Das Fahrzeug sollte umgehend repariert werden, um Folgefehler zu vermeiden. Geschwindigkeit und Belastung (Beschleunigung) stark reduzieren – am besten Motor abstellen."
+    },
+    {
+      "Titel":"Tanksymbol",
+      "Beschreibung":"Achtung",
+      "Bild_klein":"ic_tank_klein",
+      "Bild_gross":"ic_tank_gross",
+      "Langtext":"Das Fahrzeug fährt nur noch mit der Tankreserve. Diese beträgt, je nach Hersteller und Modell und der Fahrweise, etwas zwischen 40 und 100km. Mehr Informationen zur Restreichweite gibt es in dem KFZ-Handbuch."
     }
   ]
 }
