@@ -1,12 +1,8 @@
 package de.christian_heinisch.hilferundumskfz;
 
 
-import android.app.Activity;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +36,7 @@ public class ItemDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // Hole Strings aus dem Argumenten, die übergeben wurden
         ARG_TITEL = this.getArguments().getString("Titelleiste");
         ARG_TEXT = this.getArguments().getString("Beschreibung");
         ARG_BILD = this.getArguments().getString("Bild_gross");
@@ -48,13 +45,15 @@ public class ItemDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         rootview =  inflater.inflate(R.layout.fragment_item_detail, container, false);
 
-
+        // Erstelle Textviews und setzte die Texte aus den Argumenten die Übergeben wurden
         TextView content = (TextView) rootview.findViewById(R.id.textDetailContent);
         content.setText(ARG_TEXT);
 
         TextView headline = (TextView) rootview.findViewById(R.id.textDetailHead);
         headline.setText(ARG_TITEL);
 
+
+        // Setzte das Titelbild
         titelbild(ARG_BILD);
 
         return rootview;

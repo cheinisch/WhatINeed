@@ -128,15 +128,19 @@ public class ErrorCodeFragment extends Fragment {
 
 
         String title = listitem.getName();
-        String description = listitem.getBeschreibung();
         String gross = listitem.getBild_gross();
         String fulltext = listitem.getLangtext();
 
+
+        // Nehm Werte aus der Liste und übergebe diese an das Fragment Details
         Bundle bundle = new Bundle();
         bundle.putString("Titelleiste", title);
         bundle.putString("Bild_gross", gross);
         bundle.putString("Beschreibung", fulltext);
 
+
+        /* Prüfe, ob es sich um ein Tabletlayout handelt, wenn ja benutzte das Tabletgeeignete fragment_error_code.xml mit einem
+        Speziellen Container für die Darstellung der Liste */
         if(mTwoPane){
             ItemDetailFragment overviewFragment = new ItemDetailFragment();
             overviewFragment.setArguments(bundle);

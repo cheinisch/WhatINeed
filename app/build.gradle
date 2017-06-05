@@ -21,6 +21,9 @@ android {
         lite {
             applicationId "de.christian_heinisch.hilferundumskfz"
         }
+        adfree {
+            applicationId "de.christian_heinisch.hilferundumskfz.adfree"
+        }
         pro {
             applicationId "de.christian_heinisch.hilferundumskfz.pro"
         }

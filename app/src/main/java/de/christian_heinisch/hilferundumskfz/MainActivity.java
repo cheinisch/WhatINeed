@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        // Prüfung auf Tabletlayout
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity
             mTwoPane = true;
         }
 
+        // Was brauche ich Fragment wird aufgerufen
         iNeed();
     }
 
@@ -75,12 +78,14 @@ public class MainActivity extends AppCompatActivity
 
     public void titelleiste(String title){
 
+        // Titelleisten Text wird gesetzt
         setTitle(title);
 
     }
 
     public void errorcode() {
 
+        // Lese Text für die Titelleiste aus der String.xml aus und übergebe diesen an Titelleiste setzten
         titelleiste(getString(R.string.error_titel));
 
         ErrorCodeFragment overviewFragment = new ErrorCodeFragment();

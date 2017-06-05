@@ -3,6 +3,7 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,10 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_about, container, false);
+
+        // Macht den Link im TextView der Aboutseite anklickbar
+        TextView t2 = (TextView) rootview.findViewById(R.id.textViewURL);
+        t2.setMovementMethod(LinkMovementMethod.getInstance());
 
         setVersion();
 

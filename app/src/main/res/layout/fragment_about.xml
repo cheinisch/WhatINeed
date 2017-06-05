@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/about_mitwirkende"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textStyle="bold" />
 
         <TextView
@@ -30,12 +30,27 @@
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
         <TextView
+            android:id="@+id/textViewWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_website"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_url"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+
+        <TextView
             android:id="@+id/textVersion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/about_version"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-            android:textStyle="italic" />
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/textViewAboutDisclaimer"
