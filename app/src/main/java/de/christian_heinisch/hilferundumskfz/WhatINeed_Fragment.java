@@ -3,6 +3,7 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -29,6 +31,8 @@ public class WhatINeed_Fragment extends Fragment {
     ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
+
+
 
 
     public WhatINeed_Fragment() {
@@ -102,5 +106,10 @@ public class WhatINeed_Fragment extends Fragment {
         return json;
 
     }
+
+
+
+
+
 
 }

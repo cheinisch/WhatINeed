@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import de.christian_heinisch.hilferundumskfz.data.CustomFehlerCodeAdapter_old;
+import de.christian_heinisch.hilferundumskfz.data.CustomFehlerCodeAdapter;
 import de.christian_heinisch.hilferundumskfz.data.ListItemOverview;
 
 /**
@@ -65,7 +65,7 @@ public class ErrorCodeFragment extends Fragment {
 
         ArrayList<ListItemOverview> arrayOfUsers = null;
         arrayOfUsers = getContent();
-        CustomFehlerCodeAdapter_old adapter = new CustomFehlerCodeAdapter_old(getActivity(), arrayOfUsers);
+        CustomFehlerCodeAdapter adapter = new CustomFehlerCodeAdapter(getActivity(), arrayOfUsers);
         ListView listView = (ListView) rootview.findViewById(R.id.listOverview);
         listView.setAdapter(adapter);
 
@@ -164,12 +164,5 @@ public class ErrorCodeFragment extends Fragment {
                     .addToBackStack(null)
                     .commit();
         }
-
-
-
-
-
-
-
     }
 }

@@ -19,15 +19,15 @@ import de.christian_heinisch.hilferundumskfz.R;
 /**
  * Created by chris on 09.10.2016.
  */
-public class CustomFehlerCodeAdapter_old extends ArrayAdapter<ListItemOverview> {
+public class CustomFehlerCodeAdapter extends ArrayAdapter<ListItemOverview> {
 
-    public CustomFehlerCodeAdapter_old(Context context, ArrayList<ListItemOverview> users) {
+    public CustomFehlerCodeAdapter(Context context, ArrayList<ListItemOverview> users) {
         super(context, 0, users);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        ListItemOverview user = getItem(position);
+        ListItemOverview item = getItem(position);
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
 
@@ -35,14 +35,11 @@ public class CustomFehlerCodeAdapter_old extends ArrayAdapter<ListItemOverview> 
 
         final TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
 
-        tvName.setText(user.name);
+        tvName.setText(item.name);
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewList);
 
-        // Titelbild der Detailseite setzten
-        System.out.println("Bild: " + user.bild_klein);
-
-        String mDrawableName = user.bild_klein;
+        String mDrawableName = item.bild_klein;
         int resID = getContext().getResources().getIdentifier(mDrawableName , "drawable", getContext().getPackageName());
 
         Picasso.with(getContext())

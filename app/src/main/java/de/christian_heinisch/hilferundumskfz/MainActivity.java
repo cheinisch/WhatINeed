@@ -8,12 +8,22 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
+import static de.christian_heinisch.hilferundumskfz.R.id.adView;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     boolean mTwoPane;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +49,14 @@ public class MainActivity extends AppCompatActivity
             // If this view is present, then the
             // activity should be in two-pane mode.
             mTwoPane = true;
+        }
+
+        // AdView einfügen
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")){
+            mAdView = (AdView) findViewById(adView);
+            /*mAdView.setAdSize(AdSize.BANNER);
+            mAdView.setAdUnitId("ca-app-pub-1904028679449407/7256890770");*/
+            adAd();
         }
 
         // Was brauche ich Fragment wird aufgerufen
@@ -128,5 +146,46 @@ public class MainActivity extends AppCompatActivity
         )
                 .addToBackStack(null)
                 .commit();
+    }
+
+    // Funktionen für AdView
+    private void adAd(){
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("CAE3699E16A6B13A6D6A9CBF37A6F1EA").build();
+        mAdView.loadAd(adRequest);
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                Log.i("Ads", "onAdLoaded");
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                Log.i("Ads", "onAdFailedToLoad");
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                Log.i("Ads", "onAdOpened");
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+                Log.i("Ads", "onAdLeftApplication");
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the user is about to return
+                // to the app after tapping on an ad.
+                Log.i("Ads", "onAdClosed");
+            }
+        });
+
     }
 }

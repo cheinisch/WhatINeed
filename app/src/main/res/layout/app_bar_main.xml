@@ -22,4 +22,13 @@
 
     <include layout="@layout/content_main" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|center"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-1904028679449407/7256890770" />
+
 </android.support.design.widget.CoordinatorLayout>
