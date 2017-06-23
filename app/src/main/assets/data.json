@@ -35,6 +35,21 @@
       "Bild_gross":"ic_batterie_gross",
       "Langtext":"Die Stromversorgung ist gestört. Entweder ist die Lichtmaschine defekt oder eine Leitung ist beschädigt. Das Fahrzeug fährt jetzt nur noch mit Batteriestrom.\nUmgehend Werkstatt aufsuchen."
 
+    },
+    {
+      "Titel":"Tür / Kofferraum",
+      "Beschreibung":"Achtung",
+      "Bild_klein":"ic_tuer_klein",
+      "Bild_gross":"ic_tuer_gross",
+      "Langtext":"Eine der Türen wurde nicht richtig geschlossen. Am besten anhalten und alle Türen einmal öffnen und schließen. Jetzt sollte das Symbol nicht mehr leuchten.\nWenn der Hinweis nach dem kontrollieren der Türen nicht aus geht, muss eine Werkstatt aufgesucht werden."
+
+    },
+    {
+      "Titel":"Reifendruck",
+      "Beschreibung":"Achtung",
+      "Bild_klein":"ic_reifen_klein",
+      "Bild_gross":"ic_reifen_gross",
+      "Langtext":"Einer der Reifen meldet ein Druckproblem. Reifen schnellst möglich kontrollieren. Wenn kein Plattfuß vorliegt die Tankstelle aufsuchen und Reifendruck überprüfen. Gegebenenfalls Reifendruck korrigieren.\nSollte ein Plattfuss vorliegen, Reifen wechseln oder Reifenfüllmaterial des Herrstellers benutzen. Wenn nichts vorhanden ist, den Pannendienst verständigen.\nWenn  kein Plattfuss vorliegt, die Warnleuchte gemäß Handbuch zurücksetzten. Wenn die Warnleuchte jedoch wieder aufleuchtet, Werkstatt aufsuchen."
     }
   ]
 }
