@@ -73,6 +73,12 @@ public class MainActivity extends AppCompatActivity
             newFragment.show(ft, "dialog");
         }
 
+        // Entferne Menüpunkte, die in div. Versionen nicht zur Verfügung stehen
+
+        //if
+
+        navigationView.getMenu().getItem(R.id.nav_about).setVisible(false);
+
         // Was brauche ich Fragment wird aufgerufen
         iNeed();
     }
