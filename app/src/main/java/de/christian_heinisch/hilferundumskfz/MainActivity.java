@@ -1,5 +1,7 @@
 package de.christian_heinisch.hilferundumskfz;
 
+import android.app.FragmentTransaction;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
@@ -57,6 +59,18 @@ public class MainActivity extends AppCompatActivity
             /*mAdView.setAdSize(AdSize.BANNER);
             mAdView.setAdUnitId("ca-app-pub-1904028679449407/7256890770");*/
             adAd();
+        }
+
+        //Prüfen, ob noch die alte APP installiert ist
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("alt")){
+            //Öffne DialogFragment
+            Bundle args = new Bundle();
+            android.app.FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            // Create and show the dialog.
+            DialogAlteVersionFragment newFragment = new DialogAlteVersionFragment();
+            newFragment.setArguments(args);
+            newFragment.show(ft, "dialog");
         }
 
         // Was brauche ich Fragment wird aufgerufen
