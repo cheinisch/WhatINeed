@@ -45,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/margin_bottom"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="@dimen/padding_left">
 
             <TextView
                 android:id="@+id/textDetailHead"
@@ -60,6 +61,7 @@
                 android:id="@+id/textDetailContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_bottom"
                 android:paddingBottom="10dp"
                 android:paddingLeft="@dimen/padding_left"
                 android:paddingRight="@dimen/padding_right"

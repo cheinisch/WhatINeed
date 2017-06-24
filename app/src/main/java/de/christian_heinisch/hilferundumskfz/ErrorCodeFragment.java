@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -51,20 +54,70 @@ public class ErrorCodeFragment extends Fragment {
 
 
         try {
-            populateUserslist();
+            populateUserslist("alle");
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
+        // Aktiviert das Optionsmenü
+        setHasOptionsMenu(true);
+
         return rootview;
     }
 
-    public void populateUserslist() throws JSONException {
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // Do something that differs the Activity's menu here
+        inflater.inflate(R.menu.menu_error, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_gelb:
+
+                try {
+                    populateUserslist("gelb");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Not implemented here
+                return false;
+            case R.id.action_rot:
+
+                try {
+                    populateUserslist("rot");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Do Fragment menu item stuff here
+                return true;
+
+            case R.id.action_alle:
+
+                try {
+                    populateUserslist("alle");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            default:
+                break;
+        }
+
+        return false;
+    }
+
+    public void populateUserslist(String farbe) throws JSONException {
 
         MainActivity activity = new MainActivity();
 
         ArrayList<ListItemOverview> arrayOfUsers = null;
-        arrayOfUsers = getContent();
+        arrayOfUsers = getContent(farbe);
         CustomFehlerCodeAdapter adapter = new CustomFehlerCodeAdapter(getActivity(), arrayOfUsers);
         ListView listView = (ListView) rootview.findViewById(R.id.listOverview);
         listView.setAdapter(adapter);
@@ -80,7 +133,7 @@ public class ErrorCodeFragment extends Fragment {
 
 
     }
-    public ArrayList<ListItemOverview> getContent() throws JSONException {
+    public ArrayList<ListItemOverview> getContent(String farbe) throws JSONException {
         ArrayList<ListItemOverview> listitems = new ArrayList<ListItemOverview>();
 
         // Läd JSON Daten aus der Datei in ein Objekt
@@ -98,7 +151,13 @@ public class ErrorCodeFragment extends Fragment {
             String Bild_gross = obj.getString("Bild_gross");
             String Bild_klein = obj.getString("Bild_klein");
             String langtext = obj.getString("Langtext");
-            listitems.add(new ListItemOverview(titel, beschreibung, Bild_gross, Bild_klein, langtext));
+            if(farbe.equalsIgnoreCase(beschreibung)){
+                listitems.add(new ListItemOverview(titel, beschreibung, Bild_gross, Bild_klein, langtext));
+            }else if(farbe.equalsIgnoreCase("alle"))
+            {
+                listitems.add(new ListItemOverview(titel, beschreibung, Bild_gross, Bild_klein, langtext));
+            }
+
         }
         return listitems;
     }

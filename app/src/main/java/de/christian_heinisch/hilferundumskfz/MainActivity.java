@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity
             mTwoPane = true;
         }
 
-        // AdView einfügen
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")){
+        // AdView einfügen (auch in der Entwicklungsversion)
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite") || BuildConfig.FLAVOR.equalsIgnoreCase("development")){
             mAdView = (AdView) findViewById(adView);
             /*mAdView.setAdSize(AdSize.BANNER);
             mAdView.setAdUnitId("ca-app-pub-1904028679449407/7256890770");*/

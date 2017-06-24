@@ -29,8 +29,8 @@ android {
             resValue "dimen", "margin_bottom", "0dp"
         }
         development {
-            versionCode 27
-            versionName '1.0.1'
+            versionCode 28
+            versionName '1.1'
             applicationId "de.christian_heinisch.hilferundumskfz"
             resValue "string", "app_name", "Hilfe rund ums Auto (beta)"
             resValue "dimen", "margin_bottom", "60dp"
