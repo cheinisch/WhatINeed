@@ -4,7 +4,19 @@
       "Punkt": "Absichern",
       "Vorgehen": [
         {
-          "Titel": "Warndreieck aufstellen"
+          "Titel": "Anhalten"
+        },
+        {
+          "Titel": "Warnblinkanlage einschalten"
+        },
+        {
+          "Titel": "Warnweste anziehen"
+        },
+        {
+          "Titel": "Warndreieck aufstellen 50m - 150m entfernt"
+        },
+        {
+          "Titel": "Eigensicherung beachten"
         }
       ]
     },
@@ -12,7 +24,10 @@
       "Punkt": "Erste Hilfe",
       "Vorgehen": [
         {
-          "Titel": "Personalausweis"
+          "Titel": "Notruf wählen (Europaweit gilt die 112)"
+        },
+        {
+          "Titel": "Verletzten Personen erste Hilfe leisten"
         }
       ]
     },
@@ -20,15 +35,22 @@
       "Punkt": "Polizei rufen",
       "Vorgehen": [
         {
-          "Titel": "Personalausweis"
-        }
-      ]
-    },
-    {
-      "Punkt": "Verhalten gegenüber der Polizei",
-      "Vorgehen": [
+          "Titel": "Bei höhen Sachschäden"
+        },
         {
-          "Titel": "Personalausweis"
+          "Titel": "Bei Personenschäden"
+        },
+        {
+          "Titel": "Bei Unfallflucht"
+        },
+        {
+          "Titel": "Wenn die beteiligten sich nicht einigen können"
+        },
+        {
+          "Titel": "Wenn einer der Fahrzeuge ohne Versicherungsnachweis beteiligt ist"
+        },
+        {
+          "Titel": "Bei einer gefährlichen Unfallstelle (Autobahn usw.)"
         }
       ]
     },
@@ -36,7 +58,10 @@
       "Punkt": "Beweissicherung",
       "Vorgehen": [
         {
-          "Titel": "Personalausweis"
+          "Titel": "Unfallstelle fotografieren"
+        },
+        {
+          "Titel": "Zeugen notieren"
         }
       ]
     },
@@ -44,7 +69,7 @@
       "Punkt": "Bericht erstellen",
       "Vorgehen": [
         {
-          "Titel": "Fahrzeugschein/Zulassungsbescheinigung Teil I"
+          "Titel": "Sofern es möglich ist: Zusammen mit den Unfallbeteiligten einen Bericht erstellen (Musterbericht gibt es beim ADAC als Download)"
         }
       ]
     }
