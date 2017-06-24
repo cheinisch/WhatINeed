@@ -1,0 +1,53 @@
+{
+  "DATA":[
+    {
+      "Punkt": "Absichern",
+      "Vorgehen": [
+        {
+          "Titel": "Warndreieck aufstellen"
+        }
+      ]
+    },
+    {
+      "Punkt": "Erste Hilfe",
+      "Vorgehen": [
+        {
+          "Titel": "Personalausweis"
+        }
+      ]
+    },
+    {
+      "Punkt": "Polizei rufen",
+      "Vorgehen": [
+        {
+          "Titel": "Personalausweis"
+        }
+      ]
+    },
+    {
+      "Punkt": "Verhalten gegenüber der Polizei",
+      "Vorgehen": [
+        {
+          "Titel": "Personalausweis"
+        }
+      ]
+    },
+    {
+      "Punkt": "Beweissicherung",
+      "Vorgehen": [
+        {
+          "Titel": "Personalausweis"
+        }
+      ]
+    },
+    {
+      "Punkt": "Bericht erstellen",
+      "Vorgehen": [
+        {
+          "Titel": "Fahrzeugschein/Zulassungsbescheinigung Teil I"
+        }
+      ]
+    }
+  ]
+
+}

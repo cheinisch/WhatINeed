@@ -7,6 +7,10 @@
             android:icon="@drawable/ic_i_need"
             android:title="@string/what_i_need_titel" />
         <item
+            android:id="@+id/nav_crash"
+            android:icon="@drawable/ic_i_need"
+            android:title="@string/crash_titel" />
+        <item
             android:id="@+id/nav_errorcode"
             android:icon="@drawable/ic_error"
             android:title="@string/error_titel" />

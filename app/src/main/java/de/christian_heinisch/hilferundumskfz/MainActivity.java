@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity
         // ist die Flavor Version "lite" oder "development"
         if(BuildConfig.FLAVOR.equalsIgnoreCase("lite") || BuildConfig.FLAVOR.equalsIgnoreCase("development")) {
             // Setzte das Navigationsitem mit der ID 3 auf unsichtbar
-            navigationView.getMenu().getItem(3).setVisible(false);
+           // long navid = navigationView.getMenu().getItem(R.id.nav_punkte_summe).getItemId();
+            navigationView.getMenu().getItem(4).setVisible(false);
         }
         // Was brauche ich Fragment wird aufgerufen
         iNeed();
@@ -103,6 +104,10 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_information) {
             iNeed();
+
+        }else if(id == R.id.nav_crash) {
+
+            unfall();
 
         }else if(id == R.id.nav_punkte){
 
@@ -152,6 +157,21 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 iNeedFragment,
                 iNeedFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void unfall() {
+
+        titelleiste(getString(R.string.crash_titel));
+
+        CrashFragment crashFragment = new CrashFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                crashFragment,
+                crashFragment.getTag()
         )
                 .addToBackStack(null)
                 .commit();
