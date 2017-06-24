@@ -1,6 +1,13 @@
 {
   "listdata": [
     {
+      "Titel":"Öldruck",
+      "Beschreibung":"rot",
+      "Bild_klein":"ic_oel_klein",
+      "Bild_gross":"ic_oel_gross",
+      "Langtext":"Im Motor ist nicht mehr genug Öl vorhanden. Je nach Fahrzeug kann die Leuchte folgende Signalmöglichkeiten haben:\n\ngelbe Farbe:\nÖl ist gering, Ölstand prüfen und nachfüllen.\n\nrote Farbe:\nÖlstand ist zu gering, Fahrzeug abstellen und erst nach befüllen des Öltankes weiterfahren."
+    },
+    {
       "Titel":"Batterie / Generator",
       "Beschreibung":"rot",
       "Bild_klein":"ic_batterie_klein",
