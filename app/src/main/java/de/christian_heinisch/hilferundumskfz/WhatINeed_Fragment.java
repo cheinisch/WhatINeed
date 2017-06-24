@@ -3,7 +3,6 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import de.christian_heinisch.hilferundumskfz.adapter.ExpandableListAdapter_Need;
 
 
 /**
@@ -27,7 +27,7 @@ import java.util.List;
 public class WhatINeed_Fragment extends Fragment {
 
     View rootview;
-    ExpandableListAdapter listAdapter;
+    ExpandableListAdapter_Need listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
@@ -52,7 +52,7 @@ public class WhatINeed_Fragment extends Fragment {
         // preparing list data
         prepareListData();
 
-        listAdapter = new ExpandableListAdapter(getContext(), listDataHeader, listDataChild);
+        listAdapter = new ExpandableListAdapter_Need(getContext(), listDataHeader, listDataChild);
 
         // setting list adapter
         expListView.setAdapter(listAdapter);

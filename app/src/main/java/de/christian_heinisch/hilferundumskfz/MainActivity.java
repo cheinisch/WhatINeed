@@ -161,12 +161,23 @@ public class MainActivity extends AppCompatActivity
 
         titelleiste(getString(R.string.punkte_titel));
 
+        /*
         Fragment f = new PunkteFragment();
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_main, f);
         ft.addToBackStack(null);
-        ft.commit();
+        ft.commit();*/
+
+        PunkteFragment aboutFragment = new PunkteFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                aboutFragment,
+                aboutFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
 
     }
 
