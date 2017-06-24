@@ -20,7 +20,7 @@
             android:title="@string/punkte_titel" />
         <item
             android:id="@+id/nav_punkte_summe"
-            android:icon="@drawable/ic_error"
+            android:icon="@drawable/ic_strafe"
             android:title="@string/bussgeld_titel" />
         <item
             android:id="@+id/nav_about"

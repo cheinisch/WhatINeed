@@ -6,7 +6,7 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 26
+        versionCode 30
         versionName '1.0.0'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -27,13 +27,6 @@ android {
             applicationId "de.christian_heinisch.hilferundumskfz.pro"
             resValue "string", "app_name", "Hilfe rund ums Auto"
             resValue "dimen", "margin_bottom", "0dp"
-        }
-        development {
-            versionCode 28
-            versionName '1.1.1'
-            applicationId "de.christian_heinisch.hilferundumskfz"
-            resValue "string", "app_name", "Hilfe rund ums Auto (beta)"
-            resValue "dimen", "margin_bottom", "60dp"
         }
         alt {
             applicationId "de.christian_heinisch.whatineed"
