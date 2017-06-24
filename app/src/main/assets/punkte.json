@@ -2,18 +2,23 @@
   "DATA": [
     {
       "Vergehen": "Innerhalb geschlossener Ortschaft",
+      "Typ":"innerhalb",
       "Stufe": [
         {
           "Ordnungswidrigkeit": "Geschwindigkeit",
           "Punkte":"Punkte",
           "Geldstrafe":"Geld-\nstrafe",
-          "Fahrverbot":"Fahrverbot"
+          "Fahrverbot":"Fahrverbot",
+          "min":0,
+          "max":10
         },
         {
           "Ordnungswidrigkeit": "bis 10 km/h",
           "Punkte":"",
           "Geldstrafe":"15 €",
-          "Fahrverbot":" "
+          "Fahrverbot":" ",
+          "min":0,
+          "max":10
         },
         {
           "Ordnungswidrigkeit": "11 bis 15 km/h",
