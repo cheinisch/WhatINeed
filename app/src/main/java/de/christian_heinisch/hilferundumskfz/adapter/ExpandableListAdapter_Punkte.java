@@ -63,18 +63,22 @@ public class ExpandableListAdapter_Punkte extends BaseExpandableListAdapter {
         TextView txtListChildGeld = (TextView) convertView
                 .findViewById(R.id.lblListItem_Punkte_Geld);
 
+        TextView txtListChildFahrverbot = (TextView) convertView
+                .findViewById(R.id.lblListItem_Punkte_Fahrverbot);
+
 
         String string = childText;
         String[] parts = string.split("#");
         String Text = parts[0]; // 004
         String Punkte = parts[1];
         String Geldstrafe = parts[2];
-        Geldstrafe = Geldstrafe + "€";
+        String Fahrverbot = parts[3];
 
 
         txtListChild.setText(Text);
         txtListChildGeld.setText(Geldstrafe);
         txtListChildPunkte.setText(Punkte);
+        txtListChildFahrverbot.setText(Fahrverbot);
         return convertView;
     }
 

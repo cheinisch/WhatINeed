@@ -12,7 +12,8 @@
     <string name="error_titel">Warnsymbole</string>
 
     <!-- Punkteliste -->
-    <string name="punkte_titel">Punkteübersicht</string>
+    <string name="punkte_titel">Bußgeld</string>
+    <string name="punkte_content">Eine Übersicht der aktuellen Bußgelder und Punkte für zu schnelles fahren in Deutschland.</string>
 
     <!-- Punktzahl -->
     <string name="punkte_summe_titel">Punktzahl</string>
@@ -25,10 +26,5 @@
     <string name="about_url"><a href="http://christian-heinisch.de">http://christian-heinisch.de</a></string>
     <string name="about_version">Version</string>
     <string name="about_disclaimer">Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</string>
-    <string name="title_activity_main2">Main2Activity</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
 </resources>

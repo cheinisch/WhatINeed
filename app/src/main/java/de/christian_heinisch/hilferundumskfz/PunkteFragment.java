@@ -75,8 +75,9 @@ public class PunkteFragment extends Fragment {
                     String Text_1 = innerData.getString("Ordnungswidrigkeit");
                     String Text_2 = innerData.getString("Punkte");
                     String Text_3 = innerData.getString("Geldstrafe");
+                    String Text_4 = innerData.getString("Fahrverbot");
 
-                    String Text = Text_1 + "#" + Text_2 + "#" + Text_3;
+                    String Text = Text_1 + "#" + Text_2 + "#" + Text_3 + "#" + Text_4;
 
                     listenelement.add(Text);
                 }

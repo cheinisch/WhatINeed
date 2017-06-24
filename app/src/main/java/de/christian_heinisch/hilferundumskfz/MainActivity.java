@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity
 
         // Entferne Menüpunkte, die in div. Versionen nicht zur Verfügung stehen
 
-        // ist die Flavor Version "lite"
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")) {
+        // ist die Flavor Version "lite" oder "development"
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite") || BuildConfig.FLAVOR.equalsIgnoreCase("development")) {
             // Setzte das Navigationsitem mit der ID 3 auf unsichtbar
             navigationView.getMenu().getItem(3).setVisible(false);
         }

@@ -11,14 +11,14 @@
         android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textViewWhatINeedText"
+        android:id="@+id/textViewPunkteText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        android:text="@string/what_i_need_content"
+        android:text="@string/punkte_content"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
     <ExpandableListView

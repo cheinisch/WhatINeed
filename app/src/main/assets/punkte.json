@@ -4,63 +4,140 @@
       "Vergehen": "Innerhalb geschlossener Ortschaft",
       "Stufe": [
         {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot"
+        },
+        {
           "Ordnungswidrigkeit": "bis 10 km/h",
           "Punkte":"",
-          "Geldstrafe":"15",
-          "Fahrverbot":"0"
+          "Geldstrafe":"15 €",
+          "Fahrverbot":" "
         },
         {
           "Ordnungswidrigkeit": "11 bis 15 km/h",
           "Punkte":"",
-          "Geldstrafe":"25",
-          "Fahrverbot":"0"
+          "Geldstrafe":"25 €",
+          "Fahrverbot":" "
         },
         {
           "Ordnungswidrigkeit": "16 bis 20 km/h",
           "Punkte":"",
-          "Geldstrafe":"35",
-          "Fahrverbot":"0"
+          "Geldstrafe":"35 €",
+          "Fahrverbot":" "
         },
         {
           "Ordnungswidrigkeit": "21 bis 25 km/h",
           "Punkte":"1",
-          "Geldstrafe":"80",
-          "Fahrverbot":"0"
+          "Geldstrafe":"80 €",
+          "Fahrverbot":" "
         },
         {
           "Ordnungswidrigkeit": "26 bis 30 km/h",
           "Punkte":"1",
-          "Geldstrafe":"100",
-          "Fahrverbot":"0"
+          "Geldstrafe":"100 €",
+          "Fahrverbot":" "
         },
         {
           "Ordnungswidrigkeit": "31 bis 40 km/h",
           "Punkte":"2",
-          "Geldstrafe":"160",
+          "Geldstrafe":"160 €",
           "Fahrverbot":"1 Monat"
         },
         {
           "Ordnungswidrigkeit": "41 bis 50 km/h",
           "Punkte":"2",
-          "Geldstrafe":"200",
+          "Geldstrafe":"200 €",
           "Fahrverbot":"1 Monat"
         },
         {
           "Ordnungswidrigkeit": "51 bis 60 km/h",
           "Punkte":"2",
-          "Geldstrafe":"280",
+          "Geldstrafe":"280 €",
           "Fahrverbot":"2 Monate"
         },
         {
           "Ordnungswidrigkeit": "61 bis 70 km/h",
           "Punkte":"2",
-          "Geldstrafe":"480",
+          "Geldstrafe":"480 €",
           "Fahrverbot":"3 Monate"
         },
         {
           "Ordnungswidrigkeit": "über 75 km/h",
           "Punkte":"2",
-          "Geldstrafe":"680",
+          "Geldstrafe":"680 €",
+          "Fahrverbot":"3 Monate"
+        }
+      ]
+    },
+    {
+      "Vergehen": "Außerhalb geschlossener Ortschaft",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot"
+        },
+        {
+          "Ordnungswidrigkeit": "bis 10 km/h",
+          "Punkte":"",
+          "Geldstrafe":"10 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "11 bis 15 km/h",
+          "Punkte":"",
+          "Geldstrafe":"20 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "16 bis 20 km/h",
+          "Punkte":"",
+          "Geldstrafe":"30 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "21 bis 25 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"70 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "26 bis 30 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"80 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "31 bis 40 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"120 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "41 bis 50 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"160 €",
+          "Fahrverbot":"1 Monat"
+        },
+        {
+          "Ordnungswidrigkeit": "51 bis 60 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"240 €",
+          "Fahrverbot":"1 Monat"
+        },
+        {
+          "Ordnungswidrigkeit": "61 bis 70 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"440 €",
+          "Fahrverbot":"2 Monate"
+        },
+        {
+          "Ordnungswidrigkeit": "über 75 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"600 €",
           "Fahrverbot":"3 Monate"
         }
       ]
