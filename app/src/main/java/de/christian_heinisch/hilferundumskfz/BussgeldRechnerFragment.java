@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,6 +40,10 @@ public class BussgeldRechnerFragment extends Fragment {
     EditText eigeneGeschwindigkeit;
     int intEigeneGeschwindigkeit;
     int intErlaubteGeschwindigkeit;
+    TextView Punkte;
+    TextView Fahrverbot;
+    TextView Geldstrafe;
+    CheckBox toleranz;
 
 
     public BussgeldRechnerFragment() {
@@ -55,6 +61,10 @@ public class BussgeldRechnerFragment extends Fragment {
         button = (Button) rootview.findViewById(R.id.bussgeld_rechner_button);
         maxGeschwindigkeit = (EditText) rootview.findViewById(R.id.editText_Bussgeldrechner_erlaubte_Geschwindigkeit);
         eigeneGeschwindigkeit = (EditText) rootview.findViewById(R.id.editText_Bussgeldrechner_eigene_Geschwindigkeit);
+        Punkte = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Punkte);
+        Geldstrafe = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Bussgeld);
+        Fahrverbot = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Fahrverbot);
+        toleranz = (CheckBox) rootview.findViewById(R.id.checkBox_Bussgeldrechner);
 
 
 
@@ -96,18 +106,40 @@ public class BussgeldRechnerFragment extends Fragment {
 
                         JSONObject innerData = arr.getJSONObject(j);
 
+
+                        if(toleranz.isChecked()){
+
+                            if (intEigeneGeschwindigkeit > 100) {
+
+                                long speed = Math.round(intEigeneGeschwindigkeit / 1.03);
+                                intEigeneGeschwindigkeit = (int) speed;
+
+                            } else {
+                                intEigeneGeschwindigkeit = intEigeneGeschwindigkeit - 3;
+                            }
+                        }
+
+
                         int differenz = intEigeneGeschwindigkeit - intErlaubteGeschwindigkeit;
 
                         int min = Integer.parseInt(innerData.getString("min"));
                         int max = Integer.parseInt(innerData.getString("max"));
 
                         if ( differenz >= min && differenz <= max ) {
-                            System.out.println("es kostet: " + innerData.getString("Geldstrafe"));
+                            Fahrverbot.setText(innerData.getString("Fahrverbot"));
+                            Punkte.setText(innerData.getString("Punkte"));
+                            Geldstrafe.setText(innerData.getString("Geldstrafe"));
+                            break;
+                        }else if(differenz < min){
+                            Fahrverbot.setText("");
+                            Punkte.setText("");
+                            Geldstrafe.setText("");
                         }
                     }
-                }
 
-                listDataChild.put(listDataHeader.get(i), listenelement);
+                }
+                break;
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
