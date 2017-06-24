@@ -28,6 +28,13 @@
     <string name="bussgeld_radio_innerhalb">Innerhalb geschlossener Ortschaft</string>
     <string name="bussgeld_radio_ausserhalb">Außerhalb geschlossener Ortschaft</string>
     <string name="bussgeld_check_toleranz">Abzug der Toleranz</string>
+    <string name="bussgeld_button_berechnen">alle Daten eingegeben</string>
+    <string name="bussgeld_text_geschwindigkeit">eigene Geschwindigkeit</string>
+    <string name="bussgeld_text_erlaubte_geschwindigkeit">erlaubte Geschwindigkeit</string>
+    <string name="bussgeld_text_berechnet">Folgendes wird dich erwarten</string>
+    <string name="bussgeld_text_bussgeld">Bußgeld</string>
+    <string name="bussgeld_text_punkte">Punkte</string>
+    <string name="bussgeld_text_fahrverbot">Fahrverbot</string>
 
     <!-- Über Fragment -->
     <string name="about_titel">Über die App</string>

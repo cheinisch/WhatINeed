@@ -112,6 +112,10 @@ public class MainActivity extends AppCompatActivity
 
             punkte();
 
+        }else if(id == R.id.nav_punkte_summe){
+
+            bussgeldrechner();
+
         }else if (id == R.id.nav_errorcode) {
             errorcode();
         } else if (id == R.id.nav_about) {
@@ -122,6 +126,8 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
     public void titelleiste(String title){
 
@@ -194,6 +200,22 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 aboutFragment,
                 aboutFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+
+    }
+    private void bussgeldrechner() {
+
+        titelleiste(getString(R.string.bussgeld_titel));
+
+
+        BussgeldRechnerFragment bussgeldRechnerFragment = new BussgeldRechnerFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                bussgeldRechnerFragment,
+                bussgeldRechnerFragment.getTag()
         )
                 .addToBackStack(null)
                 .commit();
