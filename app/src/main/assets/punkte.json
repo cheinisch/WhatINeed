@@ -1,0 +1,14 @@
+{
+  "DATA": [
+    {
+      "Typ": "Innerhalb geschlossener Ortschaft",
+      "Dokumente": [
+        {
+          "Ordnungswidrigkeit": "10 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"10"
+        }
+      ]
+    }
+  ]
+}

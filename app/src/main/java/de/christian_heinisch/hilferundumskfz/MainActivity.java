@@ -1,7 +1,7 @@
 package de.christian_heinisch.hilferundumskfz;
 
+import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
@@ -75,10 +75,11 @@ public class MainActivity extends AppCompatActivity
 
         // Entferne Menüpunkte, die in div. Versionen nicht zur Verfügung stehen
 
-        //if
-
-        navigationView.getMenu().getItem(R.id.nav_about).setVisible(false);
-
+        // ist die Flavor Version "lite"
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")) {
+            // Setzte das Navigationsitem mit der ID 3 auf unsichtbar
+            navigationView.getMenu().getItem(3).setVisible(false);
+        }
         // Was brauche ich Fragment wird aufgerufen
         iNeed();
     }
@@ -103,7 +104,11 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_information) {
             iNeed();
 
-        } else if (id == R.id.nav_errorcode) {
+        }else if(id == R.id.nav_punkte){
+
+            punkte();
+
+        }else if (id == R.id.nav_errorcode) {
             errorcode();
         } else if (id == R.id.nav_about) {
             about();
@@ -150,6 +155,19 @@ public class MainActivity extends AppCompatActivity
         )
                 .addToBackStack(null)
                 .commit();
+    }
+
+    public void punkte() {
+
+        titelleiste(getString(R.string.punkte_titel));
+
+        Fragment f = new PunkteFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
+
     }
 
 

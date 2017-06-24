@@ -1,7 +1,6 @@
 package de.christian_heinisch.hilferundumskfz.data;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +28,7 @@ public class CustomFehlerCodeAdapter extends ArrayAdapter<ListItemOverview> {
     public View getView(int position, View convertView, ViewGroup parent){
         ListItemOverview item = getItem(position);
         if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_error_code, parent, false);
 
         }
 

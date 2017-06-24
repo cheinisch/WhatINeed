@@ -22,7 +22,7 @@
         android:id="@+id/listOverview"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_user" />
+        tools:listitem="@layout/item_error_code" />
 
     <FrameLayout
         android:id="@+id/item_detail_container"
