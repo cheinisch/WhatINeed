@@ -1,6 +1,5 @@
 package de.christian_heinisch.hilferundumskfz;
 
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -151,7 +150,7 @@ public class MainActivity extends AppCompatActivity
 
         titelleiste(getString(R.string.what_i_need_titel));
 
-        WhatINeed_Fragment iNeedFragment = new WhatINeed_Fragment();
+        WasBraucheIch_Fragment iNeedFragment = new WasBraucheIch_Fragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(
                 R.id.content_main,

@@ -24,7 +24,7 @@ import de.christian_heinisch.hilferundumskfz.adapter.ExpandableListAdapter_Need;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class WhatINeed_Fragment extends Fragment {
+public class WasBraucheIch_Fragment extends Fragment {
 
     View rootview;
     ExpandableListAdapter_Need listAdapter;
@@ -35,7 +35,7 @@ public class WhatINeed_Fragment extends Fragment {
 
 
 
-    public WhatINeed_Fragment() {
+    public WasBraucheIch_Fragment() {
         // Required empty public constructor
     }
 
@@ -44,7 +44,7 @@ public class WhatINeed_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootview = inflater.inflate(R.layout.fragment_what_i_need, container, false);
+        rootview = inflater.inflate(R.layout.fragment_was_brauche_ich, container, false);
 
         // get the listview
         expListView = (ExpandableListView) rootview.findViewById(R.id.lvExp);
