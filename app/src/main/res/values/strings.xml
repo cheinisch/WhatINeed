@@ -23,7 +23,7 @@
     <string name="punkte_content">Eine Übersicht der aktuellen Bußgelder und Punkte für zu schnelles fahren in Deutschland.</string>
 
     <!-- Punktzahl -->
-    <string name="bussgeld_titel">Punktzahl</string>
+    <string name="bussgeld_titel">Bußgeldrechner</string>
     <string name="bussgeld_ueberschrift">Wie hoch wird die zu erwartende Strafe sein</string>
     <string name="bussgeld_radio_innerhalb">Innerhalb geschlossener Ortschaft</string>
     <string name="bussgeld_radio_ausserhalb">Außerhalb geschlossener Ortschaft</string>
