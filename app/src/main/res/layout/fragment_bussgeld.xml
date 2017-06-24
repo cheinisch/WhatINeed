@@ -14,7 +14,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/bussgeld_ueberschrift" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -31,17 +31,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="RadioButton" />
+                    android:text="@string/bussgeld_radio_innerhalb" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="RadioButton" />
+                    android:text="@string/bussgeld_radio_ausserhalb" />
             </LinearLayout>
 
         </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bussgeld_check_toleranz" />
 
         <LinearLayout
             android:layout_width="match_parent"
