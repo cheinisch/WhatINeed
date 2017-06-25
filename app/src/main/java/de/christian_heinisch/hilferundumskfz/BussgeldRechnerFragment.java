@@ -1,16 +1,21 @@
 package de.christian_heinisch.hilferundumskfz;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,8 +36,6 @@ import de.christian_heinisch.hilferundumskfz.adapter.ExpandableListAdapter_Punkt
 public class BussgeldRechnerFragment extends Fragment {
 
     View rootview;
-    ExpandableListAdapter_Punkte listAdapter;
-    ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     Button button;
@@ -44,6 +47,9 @@ public class BussgeldRechnerFragment extends Fragment {
     TextView Fahrverbot;
     TextView Geldstrafe;
     CheckBox toleranz;
+    int differenz;
+    RadioGroup auswahl;
+    RadioButton radioButton;
 
 
     public BussgeldRechnerFragment() {
@@ -65,6 +71,7 @@ public class BussgeldRechnerFragment extends Fragment {
         Geldstrafe = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Bussgeld);
         Fahrverbot = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Fahrverbot);
         toleranz = (CheckBox) rootview.findViewById(R.id.checkBox_Bussgeldrechner);
+        auswahl = (RadioGroup) rootview.findViewById(R.id.radioGroup_Bussgeldrechner);
 
 
 
@@ -73,9 +80,21 @@ public class BussgeldRechnerFragment extends Fragment {
             public void onClick(View v) {
                 // Perform action on click
 
-                // Berechne die Strafe
-                berechnen();
+                // Verstecke die tastatur
 
+                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(rootview.getWindowToken(), 0);
+
+
+                //Prüfe ob alle Felder ausgefüllt wurden
+                if(eigeneGeschwindigkeit.getText().toString().equalsIgnoreCase("") || maxGeschwindigkeit.getText().toString().equalsIgnoreCase("")){
+
+                    Toast.makeText(getActivity(), "Alle Felder ausfüllen!",
+                            Toast.LENGTH_LONG).show();
+
+                }else {
+                    berechnen();
+                }
             }
         });
 
@@ -84,11 +103,32 @@ public class BussgeldRechnerFragment extends Fragment {
 
     private void berechnen() {
 
+        // Erstelle String für die Auswahl
+        String wo = "";
+
 
         // hole die Textfelder zum Rechnen
         intEigeneGeschwindigkeit = Integer.parseInt(eigeneGeschwindigkeit.getText().toString());
         intErlaubteGeschwindigkeit = Integer.parseInt(maxGeschwindigkeit.getText().toString());
 
+        int selectedId = auswahl.getCheckedRadioButtonId();
+
+        switch(selectedId){
+            case R.id.radioButton_Bussgeld_innerhalb:
+                // do operations specific to this selection
+                wo = "innerhalb";
+                break;
+            case R.id.radioButton_Bussgeld_ausserhalb:
+                // do operations specific to this selection
+                wo = "ausserhalb";
+
+                break;
+
+            default:
+                // Wenn keine auswahl getroffen wurde, nehme an, es sein innerhalb geschlossener ortschaft passiert
+                wo = "innerhalb";
+                break;
+        }
 
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
@@ -100,7 +140,7 @@ public class BussgeldRechnerFragment extends Fragment {
                 List<String> listenelement = new ArrayList<String>();
                 JSONObject json_data = jArray.getJSONObject(i);
                 listDataHeader.add(json_data.getString("Vergehen"));
-                if(json_data.getString("Typ").equalsIgnoreCase("innerhalb")) {
+                if(json_data.getString("Typ").equalsIgnoreCase(wo)) {
                     JSONArray arr = json_data.getJSONArray("Stufe");
                     for (int j = 0; j < arr.length(); j++) {
 
@@ -119,8 +159,12 @@ public class BussgeldRechnerFragment extends Fragment {
                             }
                         }
 
-
-                        int differenz = intEigeneGeschwindigkeit - intErlaubteGeschwindigkeit;
+                        if(intEigeneGeschwindigkeit < intErlaubteGeschwindigkeit)
+                        {
+                            differenz = 0;
+                        }else{
+                            differenz = intEigeneGeschwindigkeit - intErlaubteGeschwindigkeit;
+                        }
 
                         int min = Integer.parseInt(innerData.getString("min"));
                         int max = Integer.parseInt(innerData.getString("max"));
@@ -130,7 +174,7 @@ public class BussgeldRechnerFragment extends Fragment {
                             Punkte.setText(innerData.getString("Punkte"));
                             Geldstrafe.setText(innerData.getString("Geldstrafe"));
                             break;
-                        }else if(differenz < min){
+                        }else if(differenz == 0){
                             Fahrverbot.setText("");
                             Punkte.setText("");
                             Geldstrafe.setText("");
@@ -138,8 +182,6 @@ public class BussgeldRechnerFragment extends Fragment {
                     }
 
                 }
-                break;
-
             }
         } catch (JSONException e) {
             e.printStackTrace();

@@ -17,32 +17,28 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/bussgeld_ueberschrift" />
+            android:paddingBottom="@dimen/padding_top"
+            android:text="@string/bussgeld_ueberschrift"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textStyle="bold" />
 
         <RadioGroup
+            android:id="@+id/radioGroup_Bussgeldrechner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RadioButton
+                android:id="@+id/radioButton_Bussgeld_innerhalb"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:text="@string/bussgeld_radio_innerhalb" />
 
-                <RadioButton
-                    android:id="@+id/radioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/bussgeld_radio_innerhalb" />
-
-                <RadioButton
-                    android:id="@+id/radioButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/bussgeld_radio_ausserhalb" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/radioButton_Bussgeld_ausserhalb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bussgeld_radio_ausserhalb" />
 
         </RadioGroup>
 
@@ -59,10 +55,11 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/bussgeld_text_geschwindigkeit" />
+                android:text="@string/bussgeld_text_geschwindigkeit"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
             <EditText
                 android:id="@+id/editText_Bussgeldrechner_eigene_Geschwindigkeit"
@@ -81,7 +78,7 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/bussgeld_text_erlaubte_geschwindigkeit" />
@@ -98,6 +95,7 @@
 
         <Button
             android:id="@+id/bussgeld_rechner_button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bussgeld_button_berechnen" />
@@ -106,7 +104,11 @@
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/bussgeld_text_berechnet" />
+            android:paddingBottom="@dimen/padding_top"
+            android:paddingTop="@dimen/padding_top"
+            android:text="@string/bussgeld_text_berechnet"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,17 +118,19 @@
 
             <TextView
                 android:id="@+id/textView9"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/bussgeld_text_bussgeld" />
+                android:text="@string/bussgeld_text_bussgeld"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
             <TextView
                 android:id="@+id/textView_Bussgeldrechner_Bussgeld"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,17 +141,19 @@
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/bussgeld_text_punkte" />
+                android:text="@string/bussgeld_text_punkte"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
             <TextView
                 android:id="@+id/textView_Bussgeldrechner_Punkte"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
         </LinearLayout>
 
         <LinearLayout
@@ -158,17 +164,19 @@
 
             <TextView
                 android:id="@+id/textView12"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/bussgeld_text_fahrverbot" />
+                android:text="@string/bussgeld_text_fahrverbot"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
             <TextView
                 android:id="@+id/textView_Bussgeldrechner_Fahrverbot"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
         </LinearLayout>
 
     </LinearLayout>
