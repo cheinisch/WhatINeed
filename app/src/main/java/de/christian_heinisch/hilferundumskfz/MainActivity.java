@@ -1,7 +1,9 @@
 package de.christian_heinisch.hilferundumskfz;
 
 import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -60,26 +62,19 @@ public class MainActivity extends AppCompatActivity
             adAd();
         }
 
-        //Prüfen, ob noch die alte APP installiert ist
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("alt")){
-            //Öffne DialogFragment
-            Bundle args = new Bundle();
-            android.app.FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction ft = fragmentManager.beginTransaction();
-            // Create and show the dialog.
-            DialogAlteVersionFragment newFragment = new DialogAlteVersionFragment();
-            newFragment.setArguments(args);
-            newFragment.show(ft, "dialog");
-        }
-
         // Entferne Menüpunkte, die in div. Versionen nicht zur Verfügung stehen
 
-        // ist die Flavor Version "lite" oder "development"
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite") || BuildConfig.FLAVOR.equalsIgnoreCase("development")) {
+        // ist die Flavor Version "lite"
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")) {
             // Setzte das Navigationsitem mit der ID 3 auf unsichtbar
            // long navid = navigationView.getMenu().getItem(R.id.nav_punkte_summe).getItemId();
             navigationView.getMenu().getItem(4).setVisible(false);
         }
+
+        // Prüfen auf Version und ggf. Releaenotes Anzeigen
+
+        firstStart();
+
         // Was brauche ich Fragment wird aufgerufen
         iNeed();
     }
@@ -236,6 +231,42 @@ public class MainActivity extends AppCompatActivity
         )
                 .addToBackStack(null)
                 .commit();
+    }
+
+    private void firstStart(){
+
+        int oldVersion;
+        int newVersion;
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        oldVersion = prefs.getInt("Version", 0);
+        newVersion = BuildConfig.VERSION_CODE;
+
+
+        if (oldVersion != newVersion) {
+            releaseNotes(newVersion);
+        }
+
+
+    }
+
+    private void releaseNotes(int newVersion) {
+
+        Bundle args = new Bundle();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        // Create and show the dialog.
+        DialogReleaseNotesFragment newFragment = new DialogReleaseNotesFragment();
+        newFragment.setArguments(args);
+        newFragment.show(ft, "dialog");
+
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("Version", newVersion);
+        editor.commit();
+
     }
 
     // Funktionen für AdView

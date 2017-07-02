@@ -9,10 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp">
 
         <TextView
-            android:id="@+id/textViewAddBeschreibung"
+            android:id="@+id/textViewReleaseNotes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Du hast eine alte Version installiert. möchtest du die neue aus dem PlayStore laden?\nDieser Hinweis erscheint beim nächsten Start der App erneut!"
