@@ -28,7 +28,7 @@
       "Beschreibung":"gelb",
       "Bild_klein":"ic_motorkontrollleuchte_klein",
       "Bild_gross":"ic_motorkontrollleuchte_gross",
-      "Langtext":"Die Motorkontrollleuchte signalisiert Probleme mit dem Motor. Die Leuchte kann auf verschiedene Art den Fehlertyp anzeigen.\n\nKurzzeitiges Aufblinken\nEin temporärer Fehler wurde erkannt. Der Fehler bedarf aber keiner weiteren Aufmerksamkeit, da er nicht dauerhaft vorliegt.\n\nDauerhaftes Leuchten\nEin Fehler ist aufgetreten und sollte demnächst (in einer Werkstatt) behoben werden. Es besteht keine unmittelbare Gefahr für Fahrzeug und Umwelt.\n\nSchnell blinkend\nEin schwerwiegender Fehler ist aufgetreten. Das Fahrzeug sollte umgehend repariert werden, um Folgefehler zu vermeiden. Geschwindigkeit und Belastung (Beschleunigung) stark reduzieren – am besten Motor abstellen."
+      "Langtext":"Die Motorkontrollleuchte signalisiert Probleme mit dem Motor. Die Leuchte kann auf verschiedene Art den Fehlertyp anzeigen.\n\nKurzzeitiges Aufblinken:\nEin temporärer Fehler wurde erkannt. Der Fehler bedarf aber keiner weiteren Aufmerksamkeit, da er nicht dauerhaft vorliegt.\n\nDauerhaftes Leuchten:\nEin Fehler ist aufgetreten und sollte demnächst (in einer Werkstatt) behoben werden. Es besteht keine unmittelbare Gefahr für Fahrzeug und Umwelt.\n\nSchnell blinkend:\nEin schwerwiegender Fehler ist aufgetreten. Das Fahrzeug sollte umgehend repariert werden, um Folgefehler zu vermeiden. Geschwindigkeit und Belastung (Beschleunigung) stark reduzieren – am besten Motor abstellen."
     },
     {
       "Titel":"Tanksymbol",
@@ -49,14 +49,14 @@
       "Beschreibung":"gelb",
       "Bild_klein":"ic_airbag_klein",
       "Bild_gross":"ic_airbag_gross",
-      "Langtext":"Das Airbagsteuergerät meldet seinen Fehler.\nAuch hier gilt, Werkstatt aufsuchen und Fehler beheben lassen.\nIm Unfallfalle könnte ggf. der Airbag nicht aufgehen. Beim TÜV wird der Fehler beanstandet."
+      "Langtext":"Das Airbagsteuergerät meldet einen Fehler.\nWerkstatt aufsuchen und Fehler beheben lassen.\nIm Falle eines Unfalls könnte der Airbag ggf. nicht aufgehen. Beim TÜV wird der Fehler beanstandet."
     },
     {
       "Titel":"Reifendruck",
       "Beschreibung":"gelb",
       "Bild_klein":"ic_reifen_klein",
       "Bild_gross":"ic_reifen_gross",
-      "Langtext":"Einer der Reifen meldet ein Druckproblem. Reifen schnellst möglich kontrollieren. Wenn kein Plattfuß vorliegt die Tankstelle aufsuchen und Reifendruck überprüfen. Gegebenenfalls Reifendruck korrigieren.\nSollte ein Plattfuss vorliegen, Reifen wechseln oder Reifenfüllmaterial des Herrstellers benutzen. Wenn nichts vorhanden ist, den Pannendienst verständigen.\nWenn kein Plattfuss vorliegt, die Warnleuchte gemäß Handbuch zurücksetzten. Sollte die Warnleuchte jedoch wieder aufleuchtet, Werkstatt aufsuchen."
+      "Langtext":"Sofort die Geschwindigkeit reduzieren und heftige Lenk- und Bremsmanöver vermeiden.\n\nDas Fahrzeug anhalten, die Zündung ausschalten und die Reifen und deren Fülldruck prüfen.\n\nDen Reifenfülldruck korrigieren oder den Reifen austauschen/mit dem Pannenset reparieren.\n\nDen neuen Reifendruck im System gemäß Handbuch abspeichern."
     }
   ]
 }
