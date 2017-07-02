@@ -43,6 +43,8 @@
     <string name="about_website">Website</string>
     <string name="about_url"><a href="hilfe-rund-ums-auto.de">http://hilfe-rund-ums-auto.de</a></string>
     <string name="about_version">Version</string>
+    <string name="about_quellen_titel">Quellen</string>
+    <string name="about_quellen">Handbuch Skoda Rapid Spaceback\nwww.bussgeld-info.de\nwww.autobild.de</string>
     <string name="about_disclaimer">Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</string>
 
     <!-- Releasenotes -->
