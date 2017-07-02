@@ -1,8 +1,8 @@
 <resources>
-    <!--<string name="app_name">Hilfe rund ums Auto</string>-->
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+	<!-- Navigationsleiste -->
+    <string name="navigation_drawer_open">Öffne Navigationsleiste</string>
+    <string name="navigation_drawer_close">Schließe Navigationsleiste</string>
 
     <!-- Was brauche ich Fragment -->
     <string name="what_i_need_titel">Was brauche ich</string>
