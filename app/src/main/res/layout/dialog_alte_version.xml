@@ -18,8 +18,8 @@
             android:id="@+id/textViewReleaseNotes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Du hast eine alte Version installiert. möchtest du die neue aus dem PlayStore laden?\nDieser Hinweis erscheint beim nächsten Start der App erneut!"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+            android:text="HINWEISTEXT"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
     </LinearLayout>
 
