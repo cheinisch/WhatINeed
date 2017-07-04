@@ -6,7 +6,7 @@
 
     <!-- Was brauche ich Fragment -->
     <string name="what_i_need_titel">Was brauche ich</string>
-    <string name="what_i_need_content">Was für Dokumente muss ich dabei haben, wenn ich folgendes machen möchte</string>
+    <string name="what_i_need_content">Was für Dokumente benötige ich:</string>
 
     <!-- Fehlercodes -->
     <string name="error_titel">Warnsymbole</string>
@@ -16,7 +16,7 @@
 
     <!-- Unfall -->
     <string name="crash_titel">Im Unfallfall</string>
-    <string name="crash_content">Was muss ich im Unfallfall tun</string>
+    <string name="crash_content">Was muss ich im Falle eines Unfalls tun:</string>
 
     <!-- Punkteliste -->
     <string name="punkte_titel">Bußgeld</string>
