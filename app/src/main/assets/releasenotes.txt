@@ -1,5 +1,7 @@
 Version 1.0.5
 1. Texte überarbeitet
+2. Layout Fehlercodes geändert
+3. Farben der APP angepasst
 
 Version: 1.0.4
 1. Releasenotes wurden eingeführt
