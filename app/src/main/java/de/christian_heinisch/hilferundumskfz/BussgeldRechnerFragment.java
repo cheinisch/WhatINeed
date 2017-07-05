@@ -111,6 +111,27 @@ public class BussgeldRechnerFragment extends Fragment {
         intEigeneGeschwindigkeit = Integer.parseInt(eigeneGeschwindigkeit.getText().toString());
         intErlaubteGeschwindigkeit = Integer.parseInt(maxGeschwindigkeit.getText().toString());
 
+        if(toleranz.isChecked()){
+
+                            if (intEigeneGeschwindigkeit > 100) {
+
+                                long speed = Math.round(intEigeneGeschwindigkeit / 1.03);
+                                intEigeneGeschwindigkeit = (int) speed;
+
+                            } else {
+                                intEigeneGeschwindigkeit = intEigeneGeschwindigkeit - 3;
+                            }
+
+            //intEigeneGeschwindigkeit = intEigeneGeschwindigkeit - 3;
+        }
+
+        if(intEigeneGeschwindigkeit < intErlaubteGeschwindigkeit)
+        {
+            differenz = 0;
+        }else{
+            differenz = intEigeneGeschwindigkeit - intErlaubteGeschwindigkeit;
+        }
+
         int selectedId = auswahl.getCheckedRadioButtonId();
 
         switch(selectedId){
@@ -147,24 +168,7 @@ public class BussgeldRechnerFragment extends Fragment {
                         JSONObject innerData = arr.getJSONObject(j);
 
 
-                        if(toleranz.isChecked()){
 
-                            if (intEigeneGeschwindigkeit > 100) {
-
-                                long speed = Math.round(intEigeneGeschwindigkeit / 1.03);
-                                intEigeneGeschwindigkeit = (int) speed;
-
-                            } else {
-                                intEigeneGeschwindigkeit = intEigeneGeschwindigkeit - 3;
-                            }
-                        }
-
-                        if(intEigeneGeschwindigkeit < intErlaubteGeschwindigkeit)
-                        {
-                            differenz = 0;
-                        }else{
-                            differenz = intEigeneGeschwindigkeit - intErlaubteGeschwindigkeit;
-                        }
 
                         int min = Integer.parseInt(innerData.getString("min"));
                         int max = Integer.parseInt(innerData.getString("max"));

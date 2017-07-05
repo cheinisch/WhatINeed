@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.GridView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,19 +21,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import de.christian_heinisch.hilferundumskfz.data.CustomFehlerCodeAdapter;
+import de.christian_heinisch.hilferundumskfz.data.CustomFehlerCodeGridAdapter;
 import de.christian_heinisch.hilferundumskfz.data.ListItemOverview;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class ErrorCodeFragment extends Fragment {
+public class ErrorGridFragment extends Fragment {
 
     View rootview;
     boolean mTwoPane;
 
 
-    public ErrorCodeFragment() {
+    public ErrorGridFragment() {
         // Required empty public constructor
     }
 
@@ -42,7 +42,7 @@ public class ErrorCodeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootview = inflater.inflate(R.layout.fragment_error_code, container, false);
+        rootview = inflater.inflate(R.layout.fragment_error_code_grid, container, false);
 
         if (rootview.findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
@@ -109,7 +109,7 @@ public class ErrorCodeFragment extends Fragment {
 
             case R.id.new_view:
 
-                ((MainActivity)getActivity()).errorcodeGrid();
+                ((MainActivity)getActivity()).errorcode();
 
             default:
                 break;
@@ -124,12 +124,13 @@ public class ErrorCodeFragment extends Fragment {
 
         ArrayList<ListItemOverview> arrayOfUsers = null;
         arrayOfUsers = getContent(farbe);
-        CustomFehlerCodeAdapter adapter = new CustomFehlerCodeAdapter(getActivity(), arrayOfUsers);
-        ListView listView = (ListView) rootview.findViewById(R.id.listOverview);
-        listView.setAdapter(adapter);
+        CustomFehlerCodeGridAdapter adapter = new CustomFehlerCodeGridAdapter(getActivity(), arrayOfUsers);
+        GridView gridview;
+        gridview=(GridView) rootview.findViewById(R.id.gridView);
+        gridview.setAdapter(adapter);
 
         //TODO: handle title, description, url, fulltext of listitem to openIten(...)
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ListItemOverview listitem = (ListItemOverview) parent.getAdapter().getItem(position);

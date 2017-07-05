@@ -13,6 +13,7 @@
     <string name="error_menu_rot">rote Symbole</string>
     <string name="error_menu_gelb">gelbe Symbole</string>
     <string name="error_menu_alle">alle Symbole</string>
+    <string name="error_menu_change_view">ändere Ansicht</string>
 
     <!-- Unfall -->
     <string name="crash_titel">Im Unfallfall</string>

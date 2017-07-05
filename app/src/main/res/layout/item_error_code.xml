@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageViewList"
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/ic_motorkontrollleuchte_klein" />
 

@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity
             bussgeldrechner();
 
         }else if (id == R.id.nav_errorcode) {
-            errorcode();
+            errorcodeGrid();
         } else if (id == R.id.nav_about) {
             about();
         }
@@ -137,6 +137,23 @@ public class MainActivity extends AppCompatActivity
         titelleiste(getString(R.string.error_titel));
 
         ErrorCodeFragment overviewFragment = new ErrorCodeFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                overviewFragment,
+                overviewFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+
+    public void errorcodeGrid() {
+
+        // Lese Text für die Titelleiste aus der String.xml aus und übergebe diesen an Titelleiste setzten
+        titelleiste(getString(R.string.error_titel));
+
+        ErrorGridFragment overviewFragment = new ErrorGridFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(
                 R.id.content_main,
