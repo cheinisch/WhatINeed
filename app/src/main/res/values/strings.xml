@@ -1,6 +1,6 @@
 <resources>
 
-	<!-- Navigationsleiste -->
+    <!-- Navigationsleiste -->
     <string name="navigation_drawer_open">Öffne Navigationsleiste</string>
     <string name="navigation_drawer_close">Schließe Navigationsleiste</string>
 
@@ -53,11 +53,14 @@
 
     <!-- Einstellungen -->
     <string name="einstellungen_titel">Einstellungen</string>
+    <string name="einstellungen_delete_titel">Sollen alle Daten der APP gelöscht werden?</string>
+    <string name="einstellungen_delete">Daten löschen</string>
+    <string name="einstellungen_backup_titel">Datensicherung</string>
+    <string name="einstellungen_backup">Backup erstellen</string>
+    <string name="einstellungen_restore">Backup wiederherstellen</string>
 
     <!-- Tanken-->
     <string name="tanken_titel">Spritkosten</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

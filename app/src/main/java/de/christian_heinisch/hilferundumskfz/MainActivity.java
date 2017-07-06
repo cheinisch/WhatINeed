@@ -1,5 +1,6 @@
 package de.christian_heinisch.hilferundumskfz;
 
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -124,6 +125,13 @@ public class MainActivity extends AppCompatActivity
 
         }else if (id == R.id.nav_errorcode) {
             errorcodeGrid();
+
+        }else if(id == R.id.nav_tanken){
+            tanken();
+
+        }else if(id == R.id.nav_einstellungen){
+            einstellungen();
+
         } else if (id == R.id.nav_about) {
             about();
         }
@@ -209,14 +217,6 @@ public class MainActivity extends AppCompatActivity
 
         titelleiste(getString(R.string.punkte_titel));
 
-        /*
-        Fragment f = new PunkteFragment();
-        android.app.FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.content_main, f);
-        ft.addToBackStack(null);
-        ft.commit();*/
-
         PunkteFragment aboutFragment = new PunkteFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(
@@ -243,6 +243,50 @@ public class MainActivity extends AppCompatActivity
                 .addToBackStack(null)
                 .commit();
 
+    }
+
+
+    public void tanken(){
+        titelleiste(getString(R.string.tanken_titel));
+/*
+        Fragment f = new TankFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit(); */
+
+        TankFragment newFragment = new TankFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                newFragment,
+                newFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void einstellungen() {
+
+        titelleiste(getString(R.string.einstellungen_titel));
+/*
+        Fragment f = new EinstellungenFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();*/
+
+        EinstellungenFragment newFragment = new EinstellungenFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                newFragment,
+                newFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
     }
 
 
