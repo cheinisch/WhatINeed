@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         // AdView einfügen (auch in der Entwicklungsversion)
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite") || BuildConfig.FLAVOR.equalsIgnoreCase("development")){
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")){
             mAdView = (AdView) findViewById(adView);
             /*mAdView.setAdSize(AdSize.BANNER);
             mAdView.setAdUnitId("ca-app-pub-1904028679449407/7256890770");*/
@@ -67,8 +67,19 @@ public class MainActivity extends AppCompatActivity
         // ist die Flavor Version "lite"
         if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")) {
             // Setzte das Navigationsitem mit der ID 3 auf unsichtbar
-           // long navid = navigationView.getMenu().getItem(R.id.nav_punkte_summe).getItemId();
+
             navigationView.getMenu().getItem(4).setVisible(false);
+        }
+
+        // Prüfe ob Entwicklungsvrsion Vorliegt, wenn nicht, blende Tankmenü und Einstellungen aus
+
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("dev"))
+        {
+            navigationView.getMenu().getItem(5).setVisible(true);
+            navigationView.getMenu().getItem(6).setVisible(true);
+        }else{
+            navigationView.getMenu().getItem(5).setVisible(false);
+            navigationView.getMenu().getItem(6).setVisible(false);
         }
 
         // Prüfen auf Version und ggf. Releaenotes Anzeigen

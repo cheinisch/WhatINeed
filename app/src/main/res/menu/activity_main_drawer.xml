@@ -23,6 +23,14 @@
             android:icon="@drawable/ic_euro"
             android:title="@string/bussgeld_titel" />
         <item
+            android:id="@+id/nav_tanken"
+            android:icon="@drawable/ic_tank"
+            android:title="@string/tanken_titel" />
+        <item
+            android:id="@+id/nav_einstellungen"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/einstellungen_titel" />
+        <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_help"
             android:title="@string/about_titel" />
