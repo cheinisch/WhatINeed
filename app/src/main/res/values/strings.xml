@@ -53,7 +53,7 @@
 
     <!-- Einstellungen -->
     <string name="einstellungen_titel">Einstellungen</string>
-    <string name="einstellungen_delete_titel">Sollen alle Daten der APP gelöscht werden?</string>
+    <string name="einstellungen_delete_titel">Sollen alle Daten der APP gelöscht werden</string>
     <string name="einstellungen_delete">Daten löschen</string>
     <string name="einstellungen_backup_titel">Datensicherung</string>
     <string name="einstellungen_backup">Backup erstellen</string>
@@ -61,6 +61,7 @@
 
     <!-- Tanken-->
     <string name="tanken_titel">Spritkosten</string>
+
 
 
 </resources>
