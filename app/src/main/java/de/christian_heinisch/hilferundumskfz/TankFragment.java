@@ -12,6 +12,8 @@ import android.view.ViewGroup;
  */
 public class TankFragment extends Fragment {
 
+    View rootview;
+
 
     public TankFragment() {
         // Required empty public constructor
@@ -22,7 +24,11 @@ public class TankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tank, container, false);
+        rootview = inflater.inflate(R.layout.fragment_tank, container, false);
+
+
+        return rootview;
     }
+
 
 }
