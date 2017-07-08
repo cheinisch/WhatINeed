@@ -45,15 +45,16 @@ public class AboutFragment extends Fragment {
         host.addTab(spec);
 
         //Tab 2
+
         spec = host.newTabSpec(getString(R.string.about_tabs_tab_datenschutz));
         spec.setContent(R.id.tab2);
         spec.setIndicator(getString(R.string.about_tabs_tab_datenschutz));
         host.addTab(spec);
 
         //Tab 3
-        spec = host.newTabSpec("Tab Three");
+        spec = host.newTabSpec(getString(R.string.about_quellen_titel));
         spec.setContent(R.id.tab3);
-        spec.setIndicator("Tab Three");
+        spec.setIndicator(getString(R.string.about_quellen_titel));
         host.addTab(spec);
 
         // Setzte Werte für About TAB
