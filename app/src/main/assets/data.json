@@ -16,6 +16,21 @@
 
     },
     {
+      "Titel":"Kühlwasser",
+      "Beschreibung":"rot",
+      "Bild_klein":"ic_tuer_klein",
+      "Bild_gross":"ic_tuer_gross",
+      "Langtext":"Das Kühlwasser ist zu warm."
+    },
+    {
+      "Titel":"Handbremse",
+      "Beschreibung":"rot",
+      "Bild_klein":"ic_tuer_klein",
+      "Bild_gross":"ic_tuer_gross",
+      "Langtext":"Die Handbremse ist betätigt. Vor dem losfahren muss die Bremse gelöst werden."
+
+    },
+    {
       "Titel":"Tür / Kofferraum",
       "Beschreibung":"rot",
       "Bild_klein":"ic_tuer_klein",
@@ -57,6 +72,14 @@
       "Bild_klein":"ic_reifen_klein",
       "Bild_gross":"ic_reifen_gross",
       "Langtext":"Sofort die Geschwindigkeit reduzieren und heftige Lenk- und Bremsmanöver vermeiden.\n\nDas Fahrzeug anhalten, die Zündung ausschalten und die Reifen und deren Fülldruck prüfen.\n\nDen Reifenfülldruck korrigieren oder den Reifen austauschen/mit dem Pannenset reparieren.\n\nDen neuen Reifendruck im System gemäß Handbuch abspeichern."
+    },
+    {
+      "Titel":"Tempomat",
+      "Beschreibung":"gruen",
+      "Bild_klein":"ic_tuer_klein",
+      "Bild_gross":"ic_tuer_gross",
+      "Langtext":"Der Tempomat ist betätigt."
+
     }
   ]
 }

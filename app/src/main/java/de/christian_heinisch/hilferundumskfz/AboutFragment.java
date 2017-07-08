@@ -2,11 +2,17 @@ package de.christian_heinisch.hilferundumskfz;
 
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 
@@ -29,16 +35,43 @@ public class AboutFragment extends Fragment {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_about, container, false);
 
-        // Macht den Link im TextView der Aboutseite anklickbar
-        TextView t2 = (TextView) rootview.findViewById(R.id.textViewURL);
-        t2.setMovementMethod(LinkMovementMethod.getInstance());
+        TabHost host = (TabHost)rootview.findViewById(R.id.tabhost);
+        host.setup();
 
-        setVersion();
+        //Tab 1
+        TabHost.TabSpec spec = host.newTabSpec(getString(R.string.about_tabs_tab_about));
+        spec.setContent(R.id.tab1);
+        spec.setIndicator(getString(R.string.about_tabs_tab_about));
+        host.addTab(spec);
+
+        //Tab 2
+        spec = host.newTabSpec(getString(R.string.about_tabs_tab_datenschutz));
+        spec.setContent(R.id.tab2);
+        spec.setIndicator(getString(R.string.about_tabs_tab_datenschutz));
+        host.addTab(spec);
+
+        //Tab 3
+        spec = host.newTabSpec("Tab Three");
+        spec.setContent(R.id.tab3);
+        spec.setIndicator("Tab Three");
+        host.addTab(spec);
+
+        // Setzte Werte für About TAB
+        getData();
 
         return rootview;
     }
 
-    public void setVersion() {
+
+    public void getData()
+    {
+
+        //View aboutview = inflater.inflate(R.layout.fragment_about, container, false);
+
+        // Macht den Link im TextView der Aboutseite anklickbar
+        TextView t2 = (TextView) rootview.findViewById(R.id.textViewURL);
+        t2.setMovementMethod(LinkMovementMethod.getInstance());
+
         TextView version = (TextView) rootview.findViewById(R.id.textVersion);
         version.setText("Version " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ") "+BuildConfig.FLAVOR);
     }

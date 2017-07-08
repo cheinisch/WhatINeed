@@ -6,78 +6,67 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ScrollView
+
+    <TabHost
+        android:id="@+id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_bottom"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewAboutMitwirkende"
+            <TabWidget
+                android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/about_mitwirkende"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/textViewAboutName"
+            <FrameLayout
+                android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/about_name"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textViewWebsite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/about_website"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewURL"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/about_url"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+                    <include
+                        layout="@layout/fragment_about_tab_about"
+                        layout_width="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/textVersion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/about_version"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textStyle="bold|italic" />
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewQuelle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/about_quellen_titel"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textStyle="bold" />
+                    <include
+                        layout="@layout/fragment_about_tab_datenschutz"
+                        layout_width="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/textViewQuellenliste"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/about_quellen" />
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewAboutDisclaimer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="20dp"
-                android:text="@string/about_disclaimer" />
+                    <include
+                        layout="@layout/fragment_about_tab_quellen"
+                        layout_width="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </FrameLayout>
         </LinearLayout>
-    </ScrollView>
+    </TabHost>
 
 </FrameLayout>

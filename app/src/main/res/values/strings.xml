@@ -38,6 +38,12 @@
     <string name="bussgeld_text_fahrverbot">Fahrverbot</string>
 
     <!-- Über Fragment -->
+
+    <!-- TAB HOST -->
+    <string name="about_tabs_tab_about">Über die App</string>
+    <string name="about_tabs_tab_datenschutz">Datenschutz</string>
+
+    <!-- TAB About -->
     <string name="about_titel">Über die App</string>
     <string name="about_mitwirkende">Mitwirkende</string>
     <string name="about_name">Christian Heinisch</string>
@@ -62,6 +68,8 @@
     <!-- Tanken-->
     <string name="tanken_titel">Spritkosten</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
