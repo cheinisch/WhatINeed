@@ -18,15 +18,15 @@
     {
       "Titel":"Kühlwasser",
       "Beschreibung":"rot",
-      "Bild_klein":"ic_tuer_klein",
-      "Bild_gross":"ic_tuer_gross",
-      "Langtext":"Das Kühlwasser ist zu warm."
+      "Bild_klein":"ic_temp_klein",
+      "Bild_gross":"ic_temp_gross",
+      "Langtext":"Die Kühlflüssigkeit ist zu warm. Ursache kann fehlende Kühlflüssigkeit sein. Wenn das Symbol auch nach dem prüfen/nachfüllen weiterleuchtet muss eine Werkstatt aufgesucht werden.\n\nWenn das Symbol blau leuchtet, ist die Kühlflüssigkeit zu kalt und kommt noch auf Temparatur."
     },
     {
       "Titel":"Handbremse",
       "Beschreibung":"rot",
-      "Bild_klein":"ic_tuer_klein",
-      "Bild_gross":"ic_tuer_gross",
+      "Bild_klein":"ic_handbremse_klein",
+      "Bild_gross":"ic_handbremse_gross",
       "Langtext":"Die Handbremse ist betätigt. Vor dem losfahren muss die Bremse gelöst werden."
 
     },
@@ -76,9 +76,9 @@
     {
       "Titel":"Tempomat",
       "Beschreibung":"gruen",
-      "Bild_klein":"ic_tuer_klein",
-      "Bild_gross":"ic_tuer_gross",
-      "Langtext":"Der Tempomat ist betätigt."
+      "Bild_klein":"ic_tempomat_klein",
+      "Bild_gross":"ic_tempomat_gross",
+      "Langtext":"Der Tempomat ist betätigt. Das Fahrzeug hält jetzt selbstständig die Geschwindigkeit. Je nach Fahrzeug bremst dieses auch selbstständig.\n\nWeitere Details stehen im Handbuch zu Ihrem Fahrzeug."
 
     }
   ]

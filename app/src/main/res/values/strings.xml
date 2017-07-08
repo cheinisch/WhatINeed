@@ -54,9 +54,12 @@
 
     <!-- TAB QUELLEN -->
     <string name="about_quellen_titel">Quellen</string>
+    <string name="about_quellen_text">Texte</string>
     <string name="about_quellen">Handbuch Skoda Rapid Spaceback\nwww.bussgeld-info.de\nwww.autobild.de</string>
+    <string name="about_quellen_bilder">Bilder</string>
+    <string name="about_quellen_bilder_text">Wikipedia</string>
     <string name="about_bib_titel">Bibliotheken</string>
-    <string name="about_bib">Picasso</string>
+    <string name="about_bib">Picasso 2.4.0</string>
 
     <!-- TAB DATENSCHUTZ -->
     <string name="about_datenschutz_titel">Datenschutz</string>
