@@ -1,8 +1,8 @@
 package de.christian_heinisch.hilferundumskfz;
 
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +52,7 @@ public class WasBraucheIch_Fragment extends Fragment {
         // preparing list data
         prepareListData();
 
-        listAdapter = new ExpandableListAdapter_Need(getContext(), listDataHeader, listDataChild);
+        listAdapter = new ExpandableListAdapter_Need(getActivity(), listDataHeader, listDataChild);
 
         // setting list adapter
         expListView.setAdapter(listAdapter);
@@ -92,7 +92,7 @@ public class WasBraucheIch_Fragment extends Fragment {
         String json_file = "dokumente.json";
         try {
 
-            InputStream is = getContext().getAssets().open(json_file);
+            InputStream is = getActivity().getAssets().open(json_file);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

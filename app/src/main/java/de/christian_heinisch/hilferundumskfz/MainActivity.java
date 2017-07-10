@@ -187,30 +187,24 @@ public class MainActivity extends AppCompatActivity
 
         titelleiste(getString(R.string.what_i_need_titel));
 
-        WasBraucheIch_Fragment iNeedFragment = new WasBraucheIch_Fragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                iNeedFragment,
-                iNeedFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
+        Fragment f = new WasBraucheIch_Fragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     public void unfall() {
 
         titelleiste(getString(R.string.crash_titel));
 
-        CrashFragment crashFragment = new CrashFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                crashFragment,
-                crashFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
+        Fragment f = new CrashFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     public void punkte() {
@@ -248,14 +242,14 @@ public class MainActivity extends AppCompatActivity
 
     public void tanken(){
         titelleiste(getString(R.string.tanken_titel));
-/*
+
         Fragment f = new TankFragment();
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_main, f);
         ft.addToBackStack(null);
-        ft.commit(); */
-
+        ft.commit();
+/*
         TankFragment newFragment = new TankFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(
@@ -264,7 +258,7 @@ public class MainActivity extends AppCompatActivity
                 newFragment.getTag()
         )
                 .addToBackStack(null)
-                .commit();
+                .commit();*/
     }
 
     public void einstellungen() {

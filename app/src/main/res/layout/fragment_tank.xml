@@ -10,8 +10,9 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/list_tank_group" />
+            tools:listitem="@layout/list_tank_item" />
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
