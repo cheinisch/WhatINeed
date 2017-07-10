@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textViewMoneyOverviewMonat"
+            android:id="@+id/textViewTankDetailTag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -22,7 +22,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewMoneyOverviewJahr"
+            android:id="@+id/textViewTankDetailMonat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="April"
