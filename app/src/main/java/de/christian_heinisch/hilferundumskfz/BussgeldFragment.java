@@ -1,8 +1,8 @@
 package de.christian_heinisch.hilferundumskfz;
 
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +24,7 @@ import de.christian_heinisch.hilferundumskfz.adapter.ExpandableListAdapter_Punkt
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PunkteFragment extends Fragment {
+public class BussgeldFragment extends Fragment {
 
     View rootview;
     ExpandableListAdapter_Punkte listAdapter;
@@ -33,7 +33,7 @@ public class PunkteFragment extends Fragment {
     HashMap<String, List<String>> listDataChild;
 
 
-    public PunkteFragment() {
+    public BussgeldFragment() {
         // Required empty public constructor
     }
 

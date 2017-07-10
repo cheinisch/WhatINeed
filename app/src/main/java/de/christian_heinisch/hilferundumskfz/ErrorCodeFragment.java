@@ -1,8 +1,9 @@
 package de.christian_heinisch.hilferundumskfz;
 
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -206,28 +207,23 @@ public class ErrorCodeFragment extends Fragment {
 
         /* Prüfe, ob es sich um ein Tabletlayout handelt, wenn ja benutzte das Tabletgeeignete fragment_error_code.xml mit einem
         Speziellen Container für die Darstellung der Liste */
+
         if(mTwoPane){
-            ItemDetailFragment overviewFragment = new ItemDetailFragment();
-            overviewFragment.setArguments(bundle);
-            FragmentManager manager = getActivity().getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.item_detail_container,
-                    overviewFragment,
-                    overviewFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
+            Fragment f = new ItemDetailFragment();
+            f.setArguments(bundle);
+            android.app.FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.replace(R.id.item_detail_container, f);
+            ft.addToBackStack(null);
+            ft.commit();
         }else{
-            ItemDetailFragment overviewFragment = new ItemDetailFragment();
-            overviewFragment.setArguments(bundle);
-            FragmentManager manager = getActivity().getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.content_main,
-                    overviewFragment,
-                    overviewFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
+            Fragment f = new ItemDetailFragment();
+            f.setArguments(bundle);
+            android.app.FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.replace(R.id.content_main, f);
+            ft.addToBackStack(null);
+            ft.commit();
         }
     }
 }

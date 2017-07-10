@@ -40,15 +40,7 @@ public class TankFragment extends Fragment {
 
         mRecyclerView = (RecyclerView) rootview.findViewById(R.id.my_recycler_view);
 
-
-
         datasource = new TankDataSource(getActivity());
-
-        /*datasource.open();
-        datasource.createTank(45,72.2,100.0,"2017-07-18");
-        datasource.createTank(45,62.2,100.0,"2017-06-18");
-        datasource.close();*/
-
 
         return rootview;
     }

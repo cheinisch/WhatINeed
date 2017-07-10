@@ -5,7 +5,6 @@ import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -155,15 +154,12 @@ public class MainActivity extends AppCompatActivity
         // Lese Text für die Titelleiste aus der String.xml aus und übergebe diesen an Titelleiste setzten
         titelleiste(getString(R.string.error_titel));
 
-        ErrorCodeFragment overviewFragment = new ErrorCodeFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                overviewFragment,
-                overviewFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
+        Fragment f = new ErrorCodeFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
 
@@ -172,15 +168,12 @@ public class MainActivity extends AppCompatActivity
         // Lese Text für die Titelleiste aus der String.xml aus und übergebe diesen an Titelleiste setzten
         titelleiste(getString(R.string.error_titel));
 
-        ErrorGridFragment overviewFragment = new ErrorGridFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                overviewFragment,
-                overviewFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
+        Fragment f = new ErrorGridFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     public void iNeed() {
@@ -211,15 +204,12 @@ public class MainActivity extends AppCompatActivity
 
         titelleiste(getString(R.string.punkte_titel));
 
-        PunkteFragment aboutFragment = new PunkteFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                aboutFragment,
-                aboutFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
+        Fragment f = new BussgeldFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
 
     }
     private void bussgeldrechner() {
@@ -227,15 +217,12 @@ public class MainActivity extends AppCompatActivity
         titelleiste(getString(R.string.bussgeld_titel));
 
 
-        BussgeldRechnerFragment bussgeldRechnerFragment = new BussgeldRechnerFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                bussgeldRechnerFragment,
-                bussgeldRechnerFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
+        Fragment f = new BussgeldRechnerFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
 
     }
 
@@ -249,38 +236,20 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.content_main, f);
         ft.addToBackStack(null);
         ft.commit();
-/*
-        TankFragment newFragment = new TankFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                newFragment,
-                newFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();*/
+
     }
 
     public void einstellungen() {
 
         titelleiste(getString(R.string.einstellungen_titel));
-/*
+
         Fragment f = new EinstellungenFragment();
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_main, f);
         ft.addToBackStack(null);
-        ft.commit();*/
+        ft.commit();
 
-        EinstellungenFragment newFragment = new EinstellungenFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                newFragment,
-                newFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
     }
 
 
@@ -288,15 +257,12 @@ public class MainActivity extends AppCompatActivity
 
         titelleiste(getString(R.string.about_titel));
 
-        AboutFragment aboutFragment = new AboutFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                aboutFragment,
-                aboutFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
+        Fragment f = new AboutFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     private void firstStart(){
