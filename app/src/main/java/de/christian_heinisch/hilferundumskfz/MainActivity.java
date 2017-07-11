@@ -300,6 +300,18 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public void DialogChangeTanken(){
+
+        Bundle args = new Bundle();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        // Create and show the dialog.
+        DialogChangeTankFragment newFragment = new DialogChangeTankFragment();
+        newFragment.setArguments(args);
+        newFragment.show(ft, "dialog");
+
+    }
+
     private void releaseNotes(int newVersion) {
 
         Bundle args = new Bundle();

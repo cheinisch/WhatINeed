@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
+import de.christian_heinisch.hilferundumskfz.MainActivity;
 import de.christian_heinisch.hilferundumskfz.R;
 import de.christian_heinisch.hilferundumskfz.TankDetail;
 import de.christian_heinisch.hilferundumskfz.database.Tank;
@@ -66,6 +67,12 @@ public class RVTankDetailAdapter extends RecyclerView.Adapter<TankDetailObjectHo
         holder.Getankt.setText(liter);
         holder.Kilometer.setText(kilometer);
 
+        holder.Layout.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View view) {
+                ((MainActivity) mContext).DialogChangeTanken();
+                return false;
+            }
+        });
     }
 
     @Override
