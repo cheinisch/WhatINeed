@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
 
         // Prüfe ob Entwicklungsvrsion Vorliegt, wenn nicht, blende Tankmenü und Einstellungen aus
 
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("dev"))
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("dev") || BuildConfig.FLAVOR.equalsIgnoreCase("pro")  )
         {
             navigationView.getMenu().getItem(5).setVisible(true);
             navigationView.getMenu().getItem(6).setVisible(true);

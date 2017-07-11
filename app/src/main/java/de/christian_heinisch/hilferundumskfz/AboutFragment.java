@@ -3,12 +3,16 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import java.util.regex.Pattern;
 
 
 /**
@@ -66,10 +70,16 @@ public class AboutFragment extends Fragment {
 
         // Macht den Link im TextView der Aboutseite anklickbar
         TextView t2 = (TextView) rootview.findViewById(R.id.textViewURL);
-        t2.setMovementMethod(LinkMovementMethod.getInstance());
+        setAsLink(t2, "hilfe-rund-ums-auto.de");
 
         TextView version = (TextView) rootview.findViewById(R.id.textVersion);
         version.setText("Version " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ") "+BuildConfig.FLAVOR);
+    }
+
+    private void setAsLink(TextView view, String url){
+        Pattern pattern = Pattern.compile(url);
+        Linkify.addLinks(view, pattern, "http://");
+        view.setText(Html.fromHtml("<a href='http://"+url+"'>http://"+url+"</a>"));
     }
 
 }
