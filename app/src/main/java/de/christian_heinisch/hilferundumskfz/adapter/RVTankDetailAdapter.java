@@ -54,11 +54,17 @@ public class RVTankDetailAdapter extends RecyclerView.Adapter<TankDetailObjectHo
     @Override
     public void onBindViewHolder(final TankDetailObjectHolder holder, final int position) {
 
-
         final String tag = mDataset.get(position).getTag()+"";
-        final String monat = getMonthForInt(mDataset.get(position).getTag());
+        final String monat = getMonthForInt(mDataset.get(position).getMonat());
+        final String bezahlt = mDataset.get(position).getEuro() + " €";
+        final String liter = mDataset.get(position).getLiter() + " l";
+        final String kilometer = mDataset.get(position).getKilometer() + " km";
+
         holder.Tag.setText(tag);
         holder.Monat.setText(monat);
+        holder.Bezahlt.setText(bezahlt);
+        holder.Getankt.setText(liter);
+        holder.Kilometer.setText(kilometer);
 
     }
 
@@ -86,6 +92,8 @@ public class RVTankDetailAdapter extends RecyclerView.Adapter<TankDetailObjectHo
     }
 
     String getMonthForInt(int num) {
+
+        num = num - 1;
         String month = "wrong";
         DateFormatSymbols dfs = new DateFormatSymbols(Locale.GERMAN);
         String[] months = dfs.getShortMonths();

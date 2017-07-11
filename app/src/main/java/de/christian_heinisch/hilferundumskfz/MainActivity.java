@@ -1,6 +1,7 @@
 package de.christian_heinisch.hilferundumskfz;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -280,6 +281,22 @@ public class MainActivity extends AppCompatActivity
             releaseNotes(newVersion);
         }
 
+
+    }
+
+    /*
+    Dialoge
+     */
+
+    public void DialogAddTanken(){
+
+        Bundle args = new Bundle();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        // Create and show the dialog.
+        DialogAddTankFragment newFragment = new DialogAddTankFragment();
+        newFragment.setArguments(args);
+        newFragment.show(ft, "dialog");
 
     }
 

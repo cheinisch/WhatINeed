@@ -3,6 +3,7 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,9 +27,8 @@ public class TankDetail extends Fragment {
     private View rootview;
     int jahr;
     int monat;
-    TextView gesamtText;
-    TextView ausgabe;
-    TextView einnahme;
+    TextView Bezahlt;
+    TextView Liter;
     private RecyclerView mRecyclerView;
     private TankDataSource datasource;
 
@@ -47,13 +47,20 @@ public class TankDetail extends Fragment {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_tank_detail, container, false);
 
+        FloatingActionButton fab = (FloatingActionButton) rootview.findViewById(R.id.floatingActionButtonTankenDetail);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).DialogAddTanken();
+            }
+        });
+
         mRecyclerView = (RecyclerView) rootview.findViewById(R.id.rvMoneyDetail);
 
         datasource = new TankDataSource(getActivity());
 
-        gesamtText = (TextView) rootview.findViewById(R.id.textView_Gesamt);
-        einnahme = (TextView) rootview.findViewById(R.id.textView_Einnahme);
-        ausgabe = (TextView) rootview.findViewById(R.id.textView_Ausgabe);
+        Liter = (TextView) rootview.findViewById(R.id.textViewGesamtGetankt);
+        Bezahlt = (TextView) rootview.findViewById(R.id.textViewGesamtBezahlt);
 
         return rootview;
     }
@@ -77,9 +84,8 @@ public class TankDetail extends Fragment {
         ArrayList results = new ArrayList<Tank>();
         datasource.open();
         ArrayList<Tank> arrayOfTank = null;
-        double einnahmen = 0;
-        double ausgaben = 0;
-        double newgesamt;
+        double bezahlt = 0;
+        double getankt = 0;
 
         String newmonat;
         int tempmonat = monat + 1;
@@ -92,24 +98,33 @@ public class TankDetail extends Fragment {
         String startMonat =jahr+"-"+newmonat+"-01";
         String endMonat =jahr+"-"+newmonat+"-"+31;
 
-        System.out.println("Monat" + startMonat);
-
-
         arrayOfTank = datasource.getTankforMonth(startMonat, endMonat);
         Tank obj = null;
 
         for(int j = 0; j < arrayOfTank.size(); j++)
         {
+            obj = new Tank(j, arrayOfTank.get(j).getEuro(), arrayOfTank.get(j).getLiter(), arrayOfTank.get(j).getKilometer(), jahr, arrayOfTank.get(j).getMonat(), arrayOfTank.get(j).getTag());
 
-
-            obj = new Tank(count, arrayOfTank.get(j).getEuro(), arrayOfTank.get(j).getLiter(), arrayOfTank.get(j).getKilometer(), jahr, arrayOfTank.get(j).getMonat(), arrayOfTank.get(j).getTag());
-
-            results.add(count, obj);
+            results.add(j, obj);
             count = count + 1;
+            bezahlt = bezahlt + arrayOfTank.get(j).getEuro();
+            getankt = getankt + arrayOfTank.get(j).getLiter();
         }
         datasource.close();
 
+        Bezahlt.setText("Bezahlt: " + round(bezahlt,2) + " €");
+        Liter.setText("Getankt: " + round(getankt,2) + " l");
+
         return results;
+    }
+
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
     }
 
 }

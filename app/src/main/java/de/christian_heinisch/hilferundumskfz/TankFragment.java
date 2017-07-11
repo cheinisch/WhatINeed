@@ -3,6 +3,7 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,10 +38,19 @@ public class TankFragment extends Fragment {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_tank, container, false);
 
+        FloatingActionButton fab = (FloatingActionButton) rootview.findViewById(R.id.floatingActionButtonTanken);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).DialogAddTanken();
+            }
+        });
+
 
         mRecyclerView = (RecyclerView) rootview.findViewById(R.id.my_recycler_view);
 
         datasource = new TankDataSource(getActivity());
+
 
         return rootview;
     }

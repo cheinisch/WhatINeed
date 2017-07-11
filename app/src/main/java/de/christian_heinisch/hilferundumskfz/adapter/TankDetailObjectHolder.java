@@ -15,6 +15,9 @@ public class TankDetailObjectHolder extends RecyclerView.ViewHolder {
 
     public TextView Tag;
     public TextView Monat;
+    public TextView Bezahlt;
+    public TextView Getankt;
+    public TextView Kilometer;
 
 
     public TankDetailObjectHolder(View view) {
@@ -22,6 +25,9 @@ public class TankDetailObjectHolder extends RecyclerView.ViewHolder {
 
         Tag = (TextView) view.findViewById(R.id.textViewTankDetailTag);
         Monat = (TextView) view.findViewById(R.id.textViewTankDetailMonat);
+        Bezahlt = (TextView) view.findViewById(R.id.textViewTankDetailBezahlt);
+        Getankt = (TextView) view.findViewById(R.id.textViewTankDetailGetankt);
+        Kilometer = (TextView) view.findViewById(R.id.textViewTankDetailKilometer);
 
     }
 }

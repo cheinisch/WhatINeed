@@ -79,6 +79,13 @@
     <!-- Tanken-->
     <string name="tanken_titel">Spritkosten</string>
 
+    <!-- Tanken Dilaogfeld-->
+    <string name="tanken_dialog_titel">Betankung hinzufügen</string>
+    <string name="tanken_dialog_liter">Liter</string>
+    <string name="tanken_dialog_euro">Gesamtpreis</string>
+    <string name="tanken_dialog_datum">Datum</string>
+    <string name="tanken_dialog_kilometer">Kilometerstand</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
