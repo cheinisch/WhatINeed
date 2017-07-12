@@ -33,7 +33,7 @@ public class WhatINeedDbHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + TABLE_TANK_LIST +
                     "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_TANK_LITER + " REAL NOT NULL, " +
-                    COLUMN_TANK_DATE + " TEXT NOT NULL, " +
+                    COLUMN_TANK_DATE + " INTEGER NOT NULL, " +
                     COLUMN_TANK_MONEY + " REAL NOT NULL, " +
                     COLUMN_TANK_KILOMETER + " REAL NOT NULL);";
 

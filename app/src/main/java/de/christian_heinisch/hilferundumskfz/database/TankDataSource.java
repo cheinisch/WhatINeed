@@ -4,11 +4,15 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.format.DateFormat;
 import android.util.Log;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import static de.christian_heinisch.hilferundumskfz.database.WhatINeedDbHelper.TABLE_TANK_LIST;
 
@@ -50,9 +54,13 @@ public class TankDataSource {
 
     public Tank createTank(double liter, double euro, double kilometer, String date) {
 
+        long newdate = getDateLong(date);
+
         String sql =
-                "INSERT INTO tank_list (liter, date, money, kilometer) VALUES('"+liter+"','"+date+"','"+euro+"','"+kilometer+"')" ;
+                "INSERT INTO tank_list (liter, date, money, kilometer) VALUES('"+liter+"','"+newdate+"','"+euro+"','"+kilometer+"')" ;
         database.execSQL(sql);
+        System.out.println(sql);
+
         Tank tank = null;
         return tank;
     }
@@ -66,8 +74,11 @@ public class TankDataSource {
     }
 
     public void updateTank(long id, double liter, double euro, double kilometer, String datum) {
+
+        long newdatum = getDateLong(datum);
+
         ContentValues values = new ContentValues();
-        values.put(WhatINeedDbHelper.COLUMN_TANK_DATE, datum);
+        values.put(WhatINeedDbHelper.COLUMN_TANK_DATE, newdatum);
         values.put(WhatINeedDbHelper.COLUMN_TANK_KILOMETER, kilometer);
         values.put(WhatINeedDbHelper.COLUMN_TANK_MONEY, euro);
         values.put(WhatINeedDbHelper.COLUMN_TANK_LITER, liter);
@@ -88,9 +99,11 @@ public class TankDataSource {
 
 
         double euro = cursor.getDouble(idMoney);
-        String date = cursor.getString(idDate);
+        String date = getDateString(cursor.getLong(idDate));
         double liter = cursor.getDouble(idLiter);
         double kilometer = cursor.getDouble(idKilometer);
+
+
 
 
         String[] parts = date.split("-");
@@ -109,10 +122,13 @@ public class TankDataSource {
     public ArrayList<Tank> getTankforMonth(String startdate, String enddate) {
         ArrayList<Tank> listitems = new ArrayList<Tank>();
 
+        long newenddate = getDateLong(enddate);
+        long newstart = getDateLong(startdate);
+
 
         Cursor cursor;
         String sqlQry;
-            cursor = database.rawQuery("SELECT * FROM tank_list WHERE date BETWEEN date('"+startdate+"') AND date('"+enddate+"') ORDER BY date ASC", null);
+            cursor = database.rawQuery("SELECT * FROM tank_list WHERE date BETWEEN "+newstart+" AND "+newenddate+" ORDER BY date ASC", null);
 
 
         cursor.moveToFirst();
@@ -120,7 +136,6 @@ public class TankDataSource {
 
         while (!cursor.isAfterLast()) {
             tank = cursorToTank(cursor);
-            System.out.println("TAGE: " + tank.getTag());
             listitems.add(new Tank(tank.getId(), tank.getEuro(), tank.getLiter(), tank.getKilometer(), tank.getJahr(), tank.getMonat(), tank.getTag()));
 
             cursor.moveToNext();
@@ -144,6 +159,28 @@ public class TankDataSource {
         } while (cursor.moveToNext());
 
         return tank;
+    }
+
+    private String getDateString(long time) {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(time);
+        String date = DateFormat.format("yyyy-m-d", cal).toString();
+        return date;
+    }
+
+    private long getDateLong(String textdate)  {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-m-d");
+        Date date = null;
+        try {
+            date = (Date)formatter.parse(textdate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Timestamp: " + date.getTime() + " Echtzeit: " + getDateString(date.getTime()));
+
+        return date.getTime();
     }
 
 

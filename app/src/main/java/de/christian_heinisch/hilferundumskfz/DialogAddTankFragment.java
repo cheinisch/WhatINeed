@@ -78,6 +78,10 @@ public class DialogAddTankFragment extends DialogFragment {
                 int mYear = c.get(Calendar.YEAR); // current year
                 int mMonth = c.get(Calendar.MONTH); // current month
                 int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
+
+
+
+
                 // date picker dialog
                 datePickerDialog = new DatePickerDialog(getActivity(),
                         new DatePickerDialog.OnDateSetListener() {
@@ -85,6 +89,7 @@ public class DialogAddTankFragment extends DialogFragment {
                             @Override
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
+
                                 // set day of month , month and year value in the edit text
                                 textViewDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
 
@@ -108,7 +113,7 @@ public class DialogAddTankFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         // do something
 
-                        datum = getDateforDB(textViewDate.getText().toString());
+                        datum =textViewDate.getText().toString();
                         kilometer = Double.parseDouble(tvKilometer.getText().toString());
                         euro = Double.parseDouble(tvEuro.getText().toString());
                         liter = Double.parseDouble(tvLiter.getText().toString());
@@ -120,47 +125,6 @@ public class DialogAddTankFragment extends DialogFragment {
                     }
                 })
                 .create();
-    }
-
-    public long convertTime(String newdate) throws ParseException {
-
-
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-        Date date = (Date)formatter.parse(newdate);
-
-        long returnDate = date.getTime();
-
-        System.out.println("NEUES DATUM: " + returnDate);
-
-        return returnDate;
-    }
-
-    private String getDateforDB(String oldDate){
-
-        String newDate;
-
-        String[] tempString = oldDate.split("-");
-
-        int tempTag;
-        int tempMonat;
-
-        tempMonat = Integer.parseInt(tempString[1]);
-
-        if(tempMonat < 10){
-            tempString[1] = "0" + tempString[1];
-        }
-
-        tempTag = Integer.parseInt(tempString[2]);
-
-
-        if(tempTag < 10){
-            tempString[2] = "0" + tempString[2];
-        }
-
-        newDate = tempString[0] + "-" + tempString[1] + "-" + tempString[2];
-
-        return newDate;
     }
 
 }
