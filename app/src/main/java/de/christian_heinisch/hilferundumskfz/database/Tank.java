@@ -1,5 +1,7 @@
 package de.christian_heinisch.hilferundumskfz.database;
 
+import android.support.annotation.NonNull;
+
 /**
  * Created by chris on 29.06.2017.
  */

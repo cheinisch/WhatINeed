@@ -1,11 +1,14 @@
 package de.christian_heinisch.hilferundumskfz.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static de.christian_heinisch.hilferundumskfz.database.WhatINeedDbHelper.TABLE_TANK_LIST;
 
@@ -62,6 +65,19 @@ public class TankDataSource {
         Log.d(LOG_TAG, "Eintrag gelöscht! ID: " + id);
     }
 
+    public void updateTank(long id, double liter, double euro, double kilometer, String datum) {
+        ContentValues values = new ContentValues();
+        values.put(WhatINeedDbHelper.COLUMN_TANK_DATE, datum);
+        values.put(WhatINeedDbHelper.COLUMN_TANK_KILOMETER, kilometer);
+        values.put(WhatINeedDbHelper.COLUMN_TANK_MONEY, euro);
+        values.put(WhatINeedDbHelper.COLUMN_TANK_LITER, liter);
+
+        database.update(WhatINeedDbHelper.TABLE_TANK_LIST,
+                values,
+                WhatINeedDbHelper.COLUMN_ID + "=" + id,
+                null);
+    }
+
 
     private Tank cursorToTank(Cursor cursor) {
         int idIndex = cursor.getColumnIndex(WhatINeedDbHelper.COLUMN_ID);
@@ -96,7 +112,7 @@ public class TankDataSource {
 
         Cursor cursor;
         String sqlQry;
-            cursor = database.rawQuery("SELECT * FROM tank_list WHERE date BETWEEN date('"+startdate+"') AND date('"+enddate+"')", null);
+            cursor = database.rawQuery("SELECT * FROM tank_list WHERE date BETWEEN date('"+startdate+"') AND date('"+enddate+"') ORDER BY date ASC", null);
 
 
         cursor.moveToFirst();
@@ -104,6 +120,7 @@ public class TankDataSource {
 
         while (!cursor.isAfterLast()) {
             tank = cursorToTank(cursor);
+            System.out.println("TAGE: " + tank.getTag());
             listitems.add(new Tank(tank.getId(), tank.getEuro(), tank.getLiter(), tank.getKilometer(), tank.getJahr(), tank.getMonat(), tank.getTag()));
 
             cursor.moveToNext();
@@ -113,6 +130,22 @@ public class TankDataSource {
 
         return listitems;
     }
+
+    public Tank getTank(long id){
+
+        Cursor cursor = database.query(WhatINeedDbHelper.TABLE_TANK_LIST,
+                columns, WhatINeedDbHelper.COLUMN_ID + "=" + id ,null, null, null, null);
+
+        Tank tank;
+
+        if (cursor!= null && cursor.moveToFirst());
+        do {
+            tank = cursorToTank(cursor);
+        } while (cursor.moveToNext());
+
+        return tank;
+    }
+
 
 }
 

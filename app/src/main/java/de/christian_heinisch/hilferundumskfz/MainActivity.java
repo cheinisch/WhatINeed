@@ -300,13 +300,27 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public void DialogChangeTanken(){
+    public void DialogChangeTanken(long id){
 
         Bundle args = new Bundle();
+        args.putLong("id", id);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         // Create and show the dialog.
         DialogChangeTankFragment newFragment = new DialogChangeTankFragment();
+        newFragment.setArguments(args);
+        newFragment.show(ft, "dialog");
+
+    }
+
+    public void DialogEditTanken(long id){
+
+        Bundle args = new Bundle();
+        args.putLong("id", id);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        // Create and show the dialog.
+        DialogEditTankFragment newFragment = new DialogEditTankFragment();
         newFragment.setArguments(args);
         newFragment.show(ft, "dialog");
 

@@ -103,10 +103,9 @@ public class TankDetail extends Fragment {
 
         for(int j = 0; j < arrayOfTank.size(); j++)
         {
-            obj = new Tank(j, arrayOfTank.get(j).getEuro(), arrayOfTank.get(j).getLiter(), arrayOfTank.get(j).getKilometer(), jahr, arrayOfTank.get(j).getMonat(), arrayOfTank.get(j).getTag());
+            obj = new Tank(arrayOfTank.get(j).getId(), arrayOfTank.get(j).getEuro(), arrayOfTank.get(j).getLiter(), arrayOfTank.get(j).getKilometer(), jahr, arrayOfTank.get(j).getMonat(), arrayOfTank.get(j).getTag());
 
             results.add(j, obj);
-            count = count + 1;
             bezahlt = bezahlt + arrayOfTank.get(j).getEuro();
             getankt = getankt + arrayOfTank.get(j).getLiter();
         }

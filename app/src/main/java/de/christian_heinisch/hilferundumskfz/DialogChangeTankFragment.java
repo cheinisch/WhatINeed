@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 
 /**
  * Created by chris on 11.07.2017.
@@ -15,6 +16,9 @@ import android.view.View;
 public class DialogChangeTankFragment extends DialogFragment {
 
     View rootview;
+    private Button Delete;
+    private Button Edit;
+    private long id;
 
     public DialogChangeTankFragment(){
 
@@ -22,10 +26,34 @@ public class DialogChangeTankFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        id = this.getArguments().getLong("id");
+
         // Inflate the layout for this fragment
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
         rootview = inflater.inflate(R.layout.dialog_change, null);
+
+        // Set Buttons
+        Delete = (Button) rootview.findViewById(R.id.buttonTankChangeDelete);
+        Edit = (Button) rootview.findViewById(R.id.buttonTankChangeEdit);
+
+        // Setze Buttonfunktionen
+
+        Delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        Edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).DialogEditTanken(id);
+            }
+        });
+
 
         return new AlertDialog.Builder(getActivity())
                 .setView(rootview)

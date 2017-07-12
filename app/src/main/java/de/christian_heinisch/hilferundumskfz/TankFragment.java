@@ -51,6 +51,14 @@ public class TankFragment extends Fragment {
 
         datasource = new TankDataSource(getActivity());
 
+        /*datasource.open();
+        datasource.createTank(45,72.2,100.0,"2017-07-3");
+        datasource.createTank(45,72.2,100.0,"2017-07-4");
+        datasource.createTank(45,72.2,100.0,"2017-07-5");
+        datasource.createTank(45,72.2,100.0,"2017-07-6");
+        //datasource.createTank(45,62.2,100.0,"2017-06-18");
+        datasource.close();*/
+
 
         return rootview;
     }
@@ -97,7 +105,7 @@ public class TankFragment extends Fragment {
                 }
 
                 String startMonat =jahr+"-"+newmonat+"-01";
-                String endMonat =jahr+"-"+newmonat+"-"+31;
+                String endMonat =jahr+"-"+newmonat+"-31";
 
 
                 arrayOftank = datasource.getTankforMonth(startMonat, endMonat);
