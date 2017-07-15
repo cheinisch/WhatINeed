@@ -1,0 +1,372 @@
+{
+  "DATA": [
+    {
+      "Vergehen": "Zu schnell innerhalb geschlossener Ortschaft",
+      "Typ":"innerhalb",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "bis 10 km/h",
+          "Punkte":"",
+          "Geldstrafe":"15 €",
+          "Fahrverbot":" ",
+          "min":1,
+          "max":10
+        },
+        {
+          "Ordnungswidrigkeit": "11 bis 15 km/h",
+          "Punkte":"",
+          "Geldstrafe":"25 €",
+          "Fahrverbot":" ",
+          "min":11,
+          "max":15
+        },
+        {
+          "Ordnungswidrigkeit": "16 bis 20 km/h",
+          "Punkte":"",
+          "Geldstrafe":"35 €",
+          "Fahrverbot":" ",
+          "min":16,
+          "max":20
+        },
+        {
+          "Ordnungswidrigkeit": "21 bis 25 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"80 €",
+          "Fahrverbot":" ",
+          "min":21,
+          "max":25
+        },
+        {
+          "Ordnungswidrigkeit": "26 bis 30 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"100 €",
+          "Fahrverbot":" ",
+          "min":26,
+          "max":30
+        },
+        {
+          "Ordnungswidrigkeit": "31 bis 40 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"160 €",
+          "Fahrverbot":"1 Monat",
+          "min":31,
+          "max":40
+        },
+        {
+          "Ordnungswidrigkeit": "41 bis 50 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"200 €",
+          "Fahrverbot":"1 Monat",
+          "min":41,
+          "max":50
+        },
+        {
+          "Ordnungswidrigkeit": "51 bis 60 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"280 €",
+          "Fahrverbot":"2 Monate",
+          "min":51,
+          "max":60
+        },
+        {
+          "Ordnungswidrigkeit": "61 bis 70 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"480 €",
+          "Fahrverbot":"3 Monate",
+          "min":61,
+          "max":70
+        },
+        {
+          "Ordnungswidrigkeit": "über 70 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"680 €",
+          "Fahrverbot":"3 Monate",
+          "min":71,
+          "max":1000
+        }
+      ]
+    },
+    {
+      "Vergehen": "Zu schnell außerhalb geschlossener Ortschaft",
+      "Typ":"ausserhalb",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "bis 10 km/h",
+          "Punkte":"",
+          "Geldstrafe":"10 €",
+          "Fahrverbot":" ",
+          "min":1,
+          "max":10
+        },
+        {
+          "Ordnungswidrigkeit": "11 bis 15 km/h",
+          "Punkte":"",
+          "Geldstrafe":"20 €",
+          "Fahrverbot":" ",
+          "min":11,
+          "max":15
+        },
+        {
+          "Ordnungswidrigkeit": "16 bis 20 km/h",
+          "Punkte":"",
+          "Geldstrafe":"30 €",
+          "Fahrverbot":" ",
+          "min":16,
+          "max":20
+        },
+        {
+          "Ordnungswidrigkeit": "21 bis 25 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"70 €",
+          "Fahrverbot":" ",
+          "min":21,
+          "max":25
+        },
+        {
+          "Ordnungswidrigkeit": "26 bis 30 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"80 €",
+          "Fahrverbot":" ",
+          "min":26,
+          "max":30
+        },
+        {
+          "Ordnungswidrigkeit": "31 bis 40 km/h",
+          "Punkte":"1",
+          "Geldstrafe":"120 €",
+          "Fahrverbot":" ",
+          "min":31,
+          "max":40
+        },
+        {
+          "Ordnungswidrigkeit": "41 bis 50 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"160 €",
+          "Fahrverbot":"1 Monat",
+          "min":41,
+          "max":50
+        },
+        {
+          "Ordnungswidrigkeit": "51 bis 60 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"240 €",
+          "Fahrverbot":"1 Monat",
+          "min":51,
+          "max":60
+        },
+        {
+          "Ordnungswidrigkeit": "61 bis 70 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"440 €",
+          "Fahrverbot":"2 Monate",
+          "min":61,
+          "max":70
+        },
+        {
+          "Ordnungswidrigkeit": "über 70 km/h",
+          "Punkte":"2",
+          "Geldstrafe":"600 €",
+          "Fahrverbot":"3 Monate",
+          "min":71,
+          "max":1001
+        }
+      ]
+    },
+    {
+      "Vergehen": "Alkohol am Steuer",
+      "Typ":"sonstige",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Tatbestand",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot"
+        },
+        {
+          "Ordnungswidrigkeit": "Verstoß gegen die 0,5 Promillegrenze beim ersten Mal",
+          "Punkte":"2",
+          "Geldstrafe":"500 €",
+          "Fahrverbot":"1 Monat"
+        },
+        {
+          "Ordnungswidrigkeit": "Verstoß gegen die 0,5 Promillegrenze beim zweiten Mal",
+          "Punkte":"2",
+          "Geldstrafe":"1.000 €",
+          "Fahrverbot":"3 Monate"
+        },
+        {
+          "Ordnungswidrigkeit": "Verstoß gegen die 0,5 Promillegrenze ab dem dritten Mal",
+          "Punkte":"2",
+          "Geldstrafe":"1.500 €",
+          "Fahrverbot":"3 Monate"
+        },
+        {
+          "Ordnungswidrigkeit": "Straßenverkehrsgefährdung unter Alkoholeinfluss",
+          "Punkte":"3",
+          "Geldstrafe":" ",
+          "Fahrverbot":"Entziehung der\nFahrerlaubnis,\nFreiheitsstrafe\noder\nGeldstrafe"
+        }
+      ]
+    },
+    {
+      "Vergehen": "Drogen am Steuer",
+      "Typ":"sonstige",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Tatbestand",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot"
+        },
+        {
+          "Ordnungswidrigkeit": "Verstoß gegen das Drogengesetz im Straßenverkehr beim ersten Mal",
+          "Punkte":"2",
+          "Geldstrafe":"500 €",
+          "Fahrverbot":"1 Monat"
+        },
+        {
+          "Ordnungswidrigkeit": "Verstoß gegen das Drogengesetz im Straßenverkehr beim zweiten Mal",
+          "Punkte":"2",
+          "Geldstrafe":"1.000 €",
+          "Fahrverbot":"3 Monate"
+        },
+        {
+          "Ordnungswidrigkeit": "Verstoß gegen das Drogengesetz im Straßenverkehr beim dritten Mal",
+          "Punkte":"2",
+          "Geldstrafe":"1.500 €",
+          "Fahrverbot":"3 Monate"
+        },
+        {
+          "Ordnungswidrigkeit": "Gefährdung des Straßenverkehr\nGefährdung unter Drogeneinfluss",
+          "Punkte":"3",
+          "Geldstrafe":" ",
+          "Fahrverbot":"Entziehung der\nFahrerlaubnis,\nFreiheitsstrafe\noder\nGeldstrafe"
+        }
+      ]
+    },
+    {
+      "Vergehen": "Abstandsverstöße",
+      "Typ":"sonstige",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Tatbestand",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot"
+        },
+        {
+          "Ordnungswidrigkeit": "Ohne zwingenden Grund stark gebremst mit Gefährdung",
+          "Punkte":"",
+          "Geldstrafe":"20 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Ohne zwingenden Grund stark gebremst mit Sachbeschädigung",
+          "Punkte":"",
+          "Geldstrafe":"30 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Sicherheitsabstand unterschritten bei einem Tempo bis 80 km/h",
+          "Punkte":"",
+          "Geldstrafe":"25 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Tempo bis 80 km/h mit Gefährdung",
+          "Punkte":"",
+          "Geldstrafe":"30 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Sicherheitsabstand unterschritten bei einem Tempo bis 80 km/h mit Sachbeschädigung",
+          "Punkte":"",
+          "Geldstrafe":"35 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Sicherheitsabstand unterschritten bei mehr als Tempo 80 und der Abstand in Metern nicht weniger als 1/4 des Tacho",
+          "Punkte":"",
+          "Geldstrafe":"35 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Sicherheitsabstand unterschritten bei mehr als Tempo 80 und der Abstand betrug weniger als 5/10 des Wertes »halber Tacho«",
+          "Punkte":"1",
+          "Geldstrafe":"75 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 4/10",
+          "Punkte":"1",
+          "Geldstrafe":"100 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 3/10 (Fahrverbot bei mehr als 100 km/h)",
+          "Punkte":"2",
+          "Geldstrafe":"160 €",
+          "Fahrverbot":"1 Monat"
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 2/10 (Fahrverbot bei mehr als 100 km/h)",
+          "Punkte":"2",
+          "Geldstrafe":"240 €",
+          "Fahrverbot":"2 Monate"
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 1/10 (Fahrverbot bei mehr als 100 km/h)",
+          "Punkte":"2",
+          "Geldstrafe":"320 €",
+          "Fahrverbot":"3 Monate "
+        },
+        {
+          "Ordnungswidrigkeit": "Bei mehr als Tempo 130 war der Abstand weniger als 5/10 des Wertes »halber Tacho«",
+          "Punkte":"1",
+          "Geldstrafe":"100 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 4/10",
+          "Punkte":"1",
+          "Geldstrafe":"180 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 3/10",
+          "Punkte":"2",
+          "Geldstrafe":"160 €",
+          "Fahrverbot":"1 Monat"
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 2/10",
+          "Punkte":"2",
+          "Geldstrafe":"240 €",
+          "Fahrverbot":"2 Monate"
+        },
+        {
+          "Ordnungswidrigkeit": "weniger als 1/10",
+          "Punkte":"2",
+          "Geldstrafe":"240 €",
+          "Fahrverbot":"3 Monate"
+        }
+      ]
+    }
+  ]
+}

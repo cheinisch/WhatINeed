@@ -1,0 +1,64 @@
+{
+  "DATA": [
+    {
+      "Vergehen": "Zu schnell innerhalb geschlossener Ortschaft",
+      "Typ":"innerhalb",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "20 bis 49 km/h",
+          "Punkte":"",
+          "Geldstrafe":"30 €",
+          "Fahrverbot":" ",
+          "min":20,
+          "max":49
+        },
+        {
+          "Ordnungswidrigkeit": "ab 50 km/h",
+          "Punkte":"",
+          "Geldstrafe":"bis zu 2180 €",
+          "Fahrverbot":" ",
+          "min":50,
+          "max":1000
+        }
+      ]
+    },
+    {
+      "Vergehen": "Zu schnell außerhalb geschlossener Ortschaft",
+      "Typ":"ausserhalb",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "20 bis 49 km/h",
+          "Punkte":"",
+          "Geldstrafe":"30 €",
+          "Fahrverbot":" ",
+          "min":20,
+          "max":49
+        },
+        {
+          "Ordnungswidrigkeit": "ab 50 km/h",
+          "Punkte":"",
+          "Geldstrafe":"bis zu 2180 €",
+          "Fahrverbot":" ",
+          "min":50,
+          "max":999
+        }
+      ]
+    }
+  ]
+}

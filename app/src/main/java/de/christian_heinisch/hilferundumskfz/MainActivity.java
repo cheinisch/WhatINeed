@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity
 
         firstStart();
 
+        setCountry();
+
         // Was brauche ich Fragment wird aufgerufen
         iNeed();
     }
@@ -342,6 +344,10 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("Version", newVersion);
         editor.commit();
+
+    }
+
+    private void setCountry(){
 
     }
 

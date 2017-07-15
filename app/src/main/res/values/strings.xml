@@ -21,7 +21,7 @@
 
     <!-- Punkteliste -->
     <string name="punkte_titel">Bußgeld</string>
-    <string name="punkte_content">Eine Übersicht der aktuellen Bußgelder und Punkte für zu schnelles fahren in Deutschland.</string>
+    <string name="punkte_content">Eine Übersicht der aktuellen Bußgelder und Punkte für zu schnelles fahren oder andere Ordnungswidrigkeiten in Deutschland.</string>
 
     <!-- Punktzahl -->
     <string name="bussgeld_titel">Bußgeldrechner</string>
@@ -76,7 +76,20 @@
     <string name="delete_text">Damit werden alle Betankungseinträge aus der Datenbank gelöscht!\n\nDieser Schritt kann NICHT rückgängig gemacht werden!</string>
 
     <!-- Einstellungen -->
+
     <string name="einstellungen_titel">Einstellungen</string>
+    <string name="einstellungen_country_titel">Wähle das Land aus</string>
+
+        <string-array name="country_entries">
+            <item>Deutschland</item>
+            <item>Österreich</item>
+        </string-array>
+
+        <string-array name="country_values">
+            <item>de</item>
+            <item>at</item>
+            <item>ch</item>
+        </string-array>
     <string name="einstellungen_delete_titel">Sollen alle Daten der APP gelöscht werden</string>
     <string name="einstellungen_delete">Daten löschen</string>
     <string name="einstellungen_backup_titel">Datensicherung</string>

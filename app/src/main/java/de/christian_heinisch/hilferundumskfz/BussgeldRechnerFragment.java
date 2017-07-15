@@ -3,7 +3,9 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -151,6 +154,7 @@ public class BussgeldRechnerFragment extends Fragment {
 
         try {
             JSONObject json = new JSONObject(loadJSONFromAsset());
+            String locale = Locale.getDefault().getLanguage();
             JSONArray jArray = json.getJSONArray("DATA");
             for (int i = 0; i < jArray.length(); i++) {
                 List<String> listenelement = new ArrayList<String>();
@@ -191,7 +195,22 @@ public class BussgeldRechnerFragment extends Fragment {
     public String loadJSONFromAsset() {
         String json = null;
 
-        String json_file = "vergehen-de.json";
+        // Systemsprache (für Spätere Übersetzungen)
+        String locale = Locale.getDefault().getLanguage();
+        if(locale.equalsIgnoreCase("de")){
+
+        }else{
+            locale = "de";
+        }
+
+
+        // Part für das gewählte LAND
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        String country = prefs.getString("Country", "de");
+
+
+        String json_file = "vergehen-"+country+"-"+locale+".json";
         try {
 
             InputStream is = getActivity().getAssets().open(json_file);
