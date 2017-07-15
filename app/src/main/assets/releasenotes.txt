@@ -1,6 +1,6 @@
 Version 1.0.7
 1. Layout Warnsymbolübersich modifiziert
-2. Spritkostenübersicht (in der Pro Version)
+2. Spritkostenübersicht eingefügt
 
 Version 1.0.6
 1. Neue Warnsymbole eingefügt

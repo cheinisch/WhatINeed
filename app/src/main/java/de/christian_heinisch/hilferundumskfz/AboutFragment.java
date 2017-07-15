@@ -2,6 +2,7 @@ package de.christian_heinisch.hilferundumskfz;
 
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.regex.Pattern;
 
 
@@ -21,6 +24,7 @@ import java.util.regex.Pattern;
 public class AboutFragment extends Fragment {
 
     View rootview;
+    private TextView releaseText;
 
 
     public AboutFragment() {
@@ -56,6 +60,12 @@ public class AboutFragment extends Fragment {
         spec.setIndicator(getString(R.string.about_quellen_titel));
         host.addTab(spec);
 
+        //Tab 4
+        spec = host.newTabSpec(getString(R.string.about_releasenotes_titel));
+        spec.setContent(R.id.tab4);
+        spec.setIndicator(getString(R.string.about_releasenotes_titel));
+        host.addTab(spec);
+
         // Setzte Werte für About TAB
         getData();
 
@@ -74,12 +84,39 @@ public class AboutFragment extends Fragment {
 
         TextView version = (TextView) rootview.findViewById(R.id.textVersion);
         version.setText("Version " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ") "+BuildConfig.FLAVOR);
+
+        // Text Für Releasenotes zuweisen
+
+        releaseText = (TextView) rootview.findViewById(R.id.textViewTabReleasenotes);
+        String Text = "";
+        // LESE Releasenotes ein
+        try {
+            Text = readFromAssets(getActivity(),"releasenotes.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        releaseText.setText(Text);
     }
 
     private void setAsLink(TextView view, String url){
         Pattern pattern = Pattern.compile(url);
         Linkify.addLinks(view, pattern, "http://");
         view.setText(Html.fromHtml("<a href='http://"+url+"'>http://"+url+"</a>"));
+    }
+
+    public static String readFromAssets(Context context, String filename) throws IOException {
+        try {
+            InputStream is = context.getAssets().open(filename);
+            int size = is.available();
+            byte buffer[] = new byte[size];
+            is.read(buffer);
+            is.close();
+            return new String(buffer);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "" ;
+        }
     }
 
 }

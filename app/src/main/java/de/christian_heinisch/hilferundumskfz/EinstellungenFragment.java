@@ -7,8 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import de.christian_heinisch.hilferundumskfz.database.TankDataSource;
+import android.widget.TextView;
 
 
 /**
@@ -18,7 +17,9 @@ public class EinstellungenFragment extends Fragment {
 
     View rootview;
     Button delete_table;
-    private TankDataSource datasource;
+    private Button save_table;
+    private Button restore_table;
+    private TextView headline_backup;
 
 
     public EinstellungenFragment() {
@@ -31,23 +32,38 @@ public class EinstellungenFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        datasource = new TankDataSource(getActivity());
-
         rootview = inflater.inflate(R.layout.fragment_einstellungen, container, false);
 
         delete_table = (Button) rootview.findViewById(R.id.btnSettingDelete);
+        save_table = (Button) rootview.findViewById(R.id.btnSettingSave);
+        restore_table = (Button) rootview.findViewById(R.id.btnSettingRestore);
+        headline_backup = (TextView) rootview.findViewById(R.id.textViewSettingsDatensicherung);
 
 
         delete_table.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                datasource.open();
-                //datasource.deleteDatabase();
-                datasource.close();
+                ((MainActivity) getActivity()).DialogDeleteHint();
             }
         });
 
+        hideelements();
+
         return rootview;
+    }
+
+
+    private void hideelements(){
+
+
+
+        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite") ||BuildConfig.FLAVOR.equalsIgnoreCase("pro")) {
+            // Setzte Backup Items auf Unsichtbar, wenn es die Lite oder Pro Version ist.
+            save_table.setVisibility(rootview.GONE);
+            restore_table.setVisibility(rootview.GONE);
+            headline_backup.setVisibility(rootview.GONE);
+        }
+
     }
 
 }

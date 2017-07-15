@@ -51,14 +51,14 @@ public class TankFragment extends Fragment {
 
         datasource = new TankDataSource(getActivity());
 
-        datasource.open();
+        //datasource.open();
         /*datasource.createTank(45,72.2,100.0,"2017-07-01");
         datasource.createTank(45,72.2,100.0,"2017-07-03");
         datasource.createTank(45,72.2,100.0,"2017-07-04");
         datasource.createTank(45,72.2,100.0,"2017-07-05");
         datasource.createTank(45,72.2,100.0,"2017-07-06");
         datasource.createTank(45,62.2,100.0,"2017-06-18");*/
-        datasource.close();
+        //datasource.close();
 
 
         return rootview;

@@ -64,6 +64,15 @@ public class TankDataSource {
         Log.d(LOG_TAG, "Eintrag gelöscht! ID: " + id);
     }
 
+    public void deleteDatabase(){
+        Log.d(LOG_TAG, "DATENBANK WIRD GELÖSCHT");
+
+        String sql = "DELETE FROM tank_list";
+        database.execSQL(sql);
+
+        Log.d(LOG_TAG, "DATENBANK WURDE GELÖSCHT");
+    }
+
     public void updateTank(long id, double liter, double euro, double kilometer, String datum) {
         ContentValues values = new ContentValues();
         values.put(WhatINeedDbHelper.COLUMN_TANK_DATE, datum);

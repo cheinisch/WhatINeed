@@ -72,17 +72,6 @@ public class MainActivity extends AppCompatActivity
             navigationView.getMenu().getItem(4).setVisible(false);
         }
 
-        // Prüfe ob Entwicklungsvrsion Vorliegt, wenn nicht, blende Tankmenü und Einstellungen aus
-
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("dev") || BuildConfig.FLAVOR.equalsIgnoreCase("pro")  )
-        {
-            navigationView.getMenu().getItem(5).setVisible(true);
-            navigationView.getMenu().getItem(6).setVisible(true);
-        }else{
-            navigationView.getMenu().getItem(5).setVisible(false);
-            navigationView.getMenu().getItem(6).setVisible(false);
-        }
-
         // Prüfen auf Version und ggf. Releaenotes Anzeigen
 
         firstStart();
@@ -287,6 +276,18 @@ public class MainActivity extends AppCompatActivity
     /*
     Dialoge
      */
+
+    public void DialogDeleteHint(){
+
+        Bundle args = new Bundle();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        // Create and show the dialog.
+        DialogDeleteHintFragment newFragment = new DialogDeleteHintFragment();
+        newFragment.setArguments(args);
+        newFragment.show(ft, "dialog");
+
+    }
 
     public void DialogAddTanken(){
 

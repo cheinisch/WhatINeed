@@ -65,8 +65,15 @@
     <string name="about_datenschutz_titel">Datenschutz</string>
     <string name="about_datenschutz">Wir übermitteln keine personenbezogene Daten an Dritte\n\nFür Werbeeinblendungen nutzen wir den Werbepartner AdMob Google Inc. Auf die Erhebung personenbezogener Daten von AdMob Google Inc. haben wir keinerlei Einfluss. Hier gilt die Datenschutzerklärung von Google.</string>
 
+    <!-- TAB RELEASENOTES -->
+    <string name="about_releasenotes_titel">Releasenotes</string>
+
     <!-- Releasenotes -->
     <string name="release_title">Neu in dieser Version</string>
+
+    <!-- Releasenotes -->
+    <string name="delete_title">ACHTUNG</string>
+    <string name="delete_text">Damit werden alle Betankungseinträge aus der Datenbank gelöscht!\n\nDieser Schritt kann NICHT rückgängig gemacht werden!</string>
 
     <!-- Einstellungen -->
     <string name="einstellungen_titel">Einstellungen</string>

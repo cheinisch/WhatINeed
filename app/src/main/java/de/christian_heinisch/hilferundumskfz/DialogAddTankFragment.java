@@ -62,6 +62,8 @@ public class DialogAddTankFragment extends DialogFragment {
         tvEuro = (EditText) rootview.findViewById(R.id.editTextTankDialogEuro);
         tvLiter = (EditText) rootview.findViewById(R.id.editTextTankDialogLiter);
 
+        setCurrentDate();
+
         // perform click event on edit text
 
         textViewDate.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +144,34 @@ public class DialogAddTankFragment extends DialogFragment {
                     }
                 })
                 .create();
+    }
+
+    private void setCurrentDate() {
+
+        Calendar c = Calendar.getInstance();
+        int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
+        int monthOfYear = c.get(Calendar.MONTH);
+        int year = c.get(Calendar.YEAR);
+
+        String day;
+        String month;
+        if(dayOfMonth < 10)
+        {
+            day = "0" + dayOfMonth;
+        }else{
+            day = String.valueOf(dayOfMonth);
+        }
+
+        if((monthOfYear +1) < 10)
+        {
+            month = "0" + (monthOfYear + 1);
+        }else{
+            month = String.valueOf((monthOfYear + 1));
+        }
+
+        textViewDate.setText(year + "-" + month + "-" + day);
+
+
     }
 
 }

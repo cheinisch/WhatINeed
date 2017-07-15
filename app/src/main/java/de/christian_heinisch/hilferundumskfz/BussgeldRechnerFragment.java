@@ -46,7 +46,6 @@ public class BussgeldRechnerFragment extends Fragment {
     CheckBox toleranz;
     int differenz;
     RadioGroup auswahl;
-    RadioButton radioButton;
 
 
     public BussgeldRechnerFragment() {
@@ -196,7 +195,7 @@ public class BussgeldRechnerFragment extends Fragment {
         String json_file = "punkte.json";
         try {
 
-            InputStream is = getContext().getAssets().open(json_file);
+            InputStream is = getActivity().getAssets().open(json_file);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

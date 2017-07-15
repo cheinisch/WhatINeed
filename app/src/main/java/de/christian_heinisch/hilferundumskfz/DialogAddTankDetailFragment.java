@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,7 +35,7 @@ public class DialogAddTankDetailFragment extends DialogFragment {
     double liter;
     String datum;
     EditText tvEuro;
-    EditText tvDate;
+    TextView textViewDate;
     EditText tvKilometer;
     EditText tvLiter;
     DatePickerDialog datePickerDialog;
@@ -55,13 +56,13 @@ public class DialogAddTankDetailFragment extends DialogFragment {
 
         dataSource = new TankDataSource(getActivity());
 
-        tvDate = (EditText) rootview.findViewById(R.id.editTextDate);
+        textViewDate = (TextView) rootview.findViewById(R.id.editTextDate);
         tvKilometer = (EditText) rootview.findViewById(R.id.editTextTankDialogKilometer);
         tvEuro = (EditText) rootview.findViewById(R.id.editTextTankDialogEuro);
         tvLiter = (EditText) rootview.findViewById(R.id.editTextTankDialogLiter);
 
         // perform click event on edit text
-        tvDate.setOnClickListener(new View.OnClickListener() {
+        textViewDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -99,7 +100,7 @@ public class DialogAddTankDetailFragment extends DialogFragment {
                                     month = String.valueOf((monthOfYear + 1));
                                 }
 
-                                tvDate.setText(year + "-" + month + "-" + day);
+                                textViewDate.setText(year + "-" + month + "-" + day);
 
                             }
                         }, mYear, mMonth, mDay);
@@ -122,7 +123,7 @@ public class DialogAddTankDetailFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         // do something
 
-                        datum = getDateforDB(tvDate.getText().toString());
+                        datum =textViewDate.getText().toString();
                         kilometer = Double.parseDouble(tvKilometer.getText().toString());
                         euro = Double.parseDouble(tvEuro.getText().toString());
                         liter = Double.parseDouble(tvLiter.getText().toString());
@@ -136,45 +137,32 @@ public class DialogAddTankDetailFragment extends DialogFragment {
                 .create();
     }
 
-    public long convertTime(String newdate) throws ParseException {
+    private void setCurrentDate() {
 
+        Calendar c = Calendar.getInstance();
+        int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
+        int monthOfYear = c.get(Calendar.MONTH);
+        int year = c.get(Calendar.YEAR);
 
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-        Date date = (Date)formatter.parse(newdate);
-
-        long returnDate = date.getTime();
-
-        System.out.println("NEUES DATUM: " + returnDate);
-
-        return returnDate;
-    }
-
-    private String getDateforDB(String oldDate){
-
-        String newDate;
-
-        String[] tempString = oldDate.split("-");
-
-        int tempTag;
-        int tempMonat;
-
-        tempMonat = Integer.parseInt(tempString[1]);
-
-        if(tempMonat < 10){
-            tempString[1] = "0" + tempString[1];
+        String day;
+        String month;
+        if(dayOfMonth < 10)
+        {
+            day = "0" + dayOfMonth;
+        }else{
+            day = String.valueOf(dayOfMonth);
         }
 
-        tempTag = Integer.parseInt(tempString[2]);
-
-
-        if(tempTag < 10){
-            tempString[2] = "0" + tempString[2];
+        if((monthOfYear +1) < 10)
+        {
+            month = "0" + (monthOfYear + 1);
+        }else{
+            month = String.valueOf((monthOfYear + 1));
         }
 
-        newDate = tempString[0] + "-" + tempString[1] + "-" + tempString[2];
+        textViewDate.setText(year + "-" + month + "-" + day);
 
-        return newDate;
+
     }
 
 }
