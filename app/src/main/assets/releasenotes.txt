@@ -1,5 +1,9 @@
+Version 2.0
+1. Bussgelder für Österreich eingefügt
+2. Abfrage für AT/DE beim ersten Start eingeführt
+
 Version 1.0.7
-1. Layout Warnsymbolübersich modifiziert
+1. Layout Warnsymbolübersicht modifiziert
 2. Spritkostenübersicht eingefügt
 
 Version 1.0.6
