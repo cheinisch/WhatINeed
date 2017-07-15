@@ -61,7 +61,7 @@
         app:borderWidth="0dp"
         app:elevation="8dp"
         app:fabSize="normal"
-        app:layout_anchor="@+id/layoutforFab"
+        app:layout_anchor="@id/layoutforFab"
         app:layout_anchorGravity="bottom|right"
         app:srcCompat="@color/colorAccent" />
 </android.support.design.widget.CoordinatorLayout>

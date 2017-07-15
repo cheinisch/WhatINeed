@@ -120,7 +120,7 @@ public class TankFragment extends Fragment {
 
                 }
 
-                if(euro > 1) {
+                if(euro > 0.5) {
 
                     euro = round(euro, 2);
 

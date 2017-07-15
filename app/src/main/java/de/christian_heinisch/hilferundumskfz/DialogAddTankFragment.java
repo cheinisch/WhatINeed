@@ -91,7 +91,24 @@ public class DialogAddTankFragment extends DialogFragment {
                                                   int monthOfYear, int dayOfMonth) {
 
                                 // set day of month , month and year value in the edit text
-                                textViewDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+
+                                String day;
+                                String month;
+                                if(dayOfMonth < 10)
+                                {
+                                    day = "0" + dayOfMonth;
+                                }else{
+                                    day = String.valueOf(dayOfMonth);
+                                }
+
+                                if((monthOfYear +1) < 10)
+                                {
+                                    month = "0" + (monthOfYear + 1);
+                                }else{
+                                    month = String.valueOf((monthOfYear + 1));
+                                }
+
+                                textViewDate.setText(year + "-" + month + "-" + day);
 
                             }
                         }, mYear, mMonth, mDay);

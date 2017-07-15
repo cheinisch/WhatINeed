@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
+import de.christian_heinisch.hilferundumskfz.database.TankDataSource;
+
 /**
  * Created by chris on 11.07.2017.
  */
@@ -16,9 +18,11 @@ import android.widget.Button;
 public class DialogChangeTankFragment extends DialogFragment {
 
     View rootview;
+    AlertDialog alertDialog;
     private Button Delete;
     private Button Edit;
     private long id;
+    private int counter;
 
     public DialogChangeTankFragment(){
 
@@ -28,6 +32,7 @@ public class DialogChangeTankFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         id = this.getArguments().getLong("id");
+        counter = this.getArguments().getInt("count",1);
 
         // Inflate the layout for this fragment
 
@@ -38,24 +43,7 @@ public class DialogChangeTankFragment extends DialogFragment {
         Delete = (Button) rootview.findViewById(R.id.buttonTankChangeDelete);
         Edit = (Button) rootview.findViewById(R.id.buttonTankChangeEdit);
 
-        // Setze Buttonfunktionen
-
-        Delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        Edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity)getActivity()).DialogEditTanken(id);
-            }
-        });
-
-
-        return new AlertDialog.Builder(getActivity())
+        alertDialog = new AlertDialog.Builder(getActivity())
                 .setView(rootview)
                 .setTitle(R.string.tanken_dialog_change_titel)
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -71,6 +59,47 @@ public class DialogChangeTankFragment extends DialogFragment {
                     }
                 })*/
                 .create();
+
+
+        // Setze Buttonfunktionen
+
+        Delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delete(id, counter);
+
+                alertDialog.dismiss();
+            }
+        });
+
+        Edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ((MainActivity)getActivity()).DialogEditTanken(id);
+                alertDialog.dismiss();
+            }
+        });
+
+
+
+
+        return alertDialog;
+    }
+
+    public void delete(long id, int counter){
+
+        TankDataSource dataSource = new TankDataSource(getActivity());
+        dataSource.open();
+        dataSource.deleteTank(id);
+        dataSource.close();
+
+        if(counter == 1){
+            ((MainActivity)getActivity()).tanken();
+        }else{
+            ((MainActivity)getActivity()).tanken();
+        }
+
     }
 
 }

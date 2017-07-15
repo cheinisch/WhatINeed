@@ -83,8 +83,23 @@ public class DialogAddTankDetailFragment extends DialogFragment {
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
-                                tvDate.setText(year + "-"
-                                        + (monthOfYear + 1) + "-" + dayOfMonth);
+                                String day;
+                                String month;
+                                if(dayOfMonth < 10)
+                                {
+                                    day = "0" + dayOfMonth;
+                                }else{
+                                    day = String.valueOf(dayOfMonth);
+                                }
+
+                                if((monthOfYear +1) < 10)
+                                {
+                                    month = "0" + (monthOfYear + 1);
+                                }else{
+                                    month = String.valueOf((monthOfYear + 1));
+                                }
+
+                                tvDate.setText(year + "-" + month + "-" + day);
 
                             }
                         }, mYear, mMonth, mDay);

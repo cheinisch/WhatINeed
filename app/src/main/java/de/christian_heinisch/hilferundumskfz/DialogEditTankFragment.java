@@ -90,7 +90,23 @@ public class DialogEditTankFragment extends DialogFragment {
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
-                                textViewDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                                String day;
+                                String month;
+                                if(dayOfMonth < 10)
+                                {
+                                    day = "0" + dayOfMonth;
+                                }else{
+                                    day = String.valueOf(dayOfMonth);
+                                }
+
+                                if((monthOfYear +1) < 10)
+                                {
+                                    month = "0" + (monthOfYear + 1);
+                                }else{
+                                    month = String.valueOf((monthOfYear + 1));
+                                }
+
+                                textViewDate.setText(year + "-" + month + "-" + day);
 
                             }
                         }, mYear, mMonth, mDay);
@@ -112,7 +128,7 @@ public class DialogEditTankFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         // do something
 
-                        datum = getDateforDB(textViewDate.getText().toString());
+                        datum = textViewDate.getText().toString();
                         kilometer = Double.parseDouble(tvKilometer.getText().toString());
                         euro = Double.parseDouble(tvEuro.getText().toString());
                         liter = Double.parseDouble(tvLiter.getText().toString());
@@ -137,7 +153,24 @@ public class DialogEditTankFragment extends DialogFragment {
         double kilometer = tank.getKilometer();
         double liter = tank.getLiter();
         double euro = tank.getEuro();
-        String newdatum = tank.getJahr()+"-"+tank.getMonat()+"-"+tank.getTag();
+
+        String day;
+        String month;
+        if(tank.getTag() < 10)
+        {
+            day = "0" + tank.getTag();
+        }else{
+            day = String.valueOf(tank.getTag());
+        }
+
+        if(tank.getMonat() < 10)
+        {
+            month = "0" + tank.getMonat();
+        }else{
+            month = String.valueOf(tank.getMonat());
+        }
+
+        String newdatum = tank.getJahr()+"-"+month+"-"+day;
 
         textViewDate.setText(newdatum);
         tvKilometer.setText(String.valueOf(kilometer));
@@ -158,33 +191,6 @@ public class DialogEditTankFragment extends DialogFragment {
         System.out.println("NEUES DATUM: " + returnDate);
 
         return returnDate;
-    }
-
-    private String getDateforDB(String oldDate){
-
-        String newDate;
-
-        String[] tempString = oldDate.split("-");
-
-        int tempTag;
-        int tempMonat;
-
-        tempMonat = Integer.parseInt(tempString[1]);
-
-        if(tempMonat < 10){
-            tempString[1] = "0" + tempString[1];
-        }
-
-        tempTag = Integer.parseInt(tempString[2]);
-
-
-        if(tempTag < 10){
-            tempString[2] = "0" + tempString[2];
-        }
-
-        newDate = tempString[0] + "-" + tempString[1] + "-" + tempString[2];
-
-        return newDate;
     }
 
 }

@@ -56,9 +56,10 @@ public class TankDataSource {
     }
 
     public void deleteTank(long id) {
-        database.delete(TABLE_TANK_LIST,
-                WhatINeedDbHelper.COLUMN_ID + "=" + id,
-                null);
+        Log.d(LOG_TAG, "Eintrag wird gelöscht! ID: " + id);
+
+        String sql = "DELETE FROM tank_list WHERE _id = "+id;
+        database.execSQL(sql);
 
         Log.d(LOG_TAG, "Eintrag gelöscht! ID: " + id);
     }
