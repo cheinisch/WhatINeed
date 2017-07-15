@@ -93,10 +93,10 @@ public class BussgeldFragment extends Fragment {
     public String loadJSONFromAsset() {
         String json = null;
 
-        String json_file = "punkte.json";
+        String json_file = "vergehen-de.json";
         try {
 
-            InputStream is = getContext().getAssets().open(json_file);
+            InputStream is = getActivity().getAssets().open(json_file);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
