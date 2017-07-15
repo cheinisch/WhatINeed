@@ -64,7 +64,7 @@ public class BussgeldFragment extends Fragment {
 
         try {
             JSONObject json = new JSONObject(loadJSONFromAsset());
-            JSONArray jArray = json.getJSONArray("DATA");
+            JSONArray jArray = json.getJSONArray("de");
             for (int i = 0; i < jArray.length(); i++) {
                 List<String> listenelement = new ArrayList<String>();
                 JSONObject json_data = jArray.getJSONObject(i);
