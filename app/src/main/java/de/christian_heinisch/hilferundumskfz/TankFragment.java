@@ -51,13 +51,14 @@ public class TankFragment extends Fragment {
 
         datasource = new TankDataSource(getActivity());
 
-        /*datasource.open();
-        datasource.createTank(45,72.2,100.0,"2017-07-3");
-        datasource.createTank(45,72.2,100.0,"2017-07-4");
-        datasource.createTank(45,72.2,100.0,"2017-07-5");
-        datasource.createTank(45,72.2,100.0,"2017-07-6");
-        datasource.createTank(45,62.2,100.0,"2017-06-18");
-        datasource.close();*/
+        datasource.open();
+        /*datasource.createTank(45,72.2,100.0,"2017-07-01");
+        datasource.createTank(45,72.2,100.0,"2017-07-03");
+        datasource.createTank(45,72.2,100.0,"2017-07-04");
+        datasource.createTank(45,72.2,100.0,"2017-07-05");
+        datasource.createTank(45,72.2,100.0,"2017-07-06");
+        datasource.createTank(45,62.2,100.0,"2017-06-18");*/
+        datasource.close();
 
 
         return rootview;
@@ -82,10 +83,11 @@ public class TankFragment extends Fragment {
         int startJahr = 2016;
         int endJahr = 2017;
         int count = 0;
+        double gesamt = 0;
 
         ArrayList results = new ArrayList<Tank>();
         datasource.open();
-
+        ArrayList<Tank> arrayOftank = null;
 
         for(int jahr = startJahr; jahr <= endJahr; jahr++){
 
@@ -95,29 +97,30 @@ public class TankFragment extends Fragment {
                 double liter = 0;
                 double spritpreis = 0;
 
-                int newmonat;
-                newmonat = monat + 1;
+                String newmonat;
+                int tempmonat = monat + 1;
+                if(tempmonat<10){
+                    newmonat = "0"+tempmonat;
+                }else{
+                    newmonat = ""+tempmonat;
+                }
 
-                String startMonat =jahr+"-"+newmonat+"-1";
-                String endMonat =jahr+"-"+newmonat+"-31";
-
-                System.out.println("EURO::: " + euro);
+                String startMonat =jahr+"-"+newmonat+"-01";
+                String endMonat =jahr+"-"+newmonat+"-"+31;
 
 
-                ArrayList<Tank> arrayOftank = null;
                 arrayOftank = datasource.getTankforMonth(startMonat, endMonat);
 
-                //System.out.println("Arraylänge: " + arrayOftank.size());
 
                 for(int i = 0; i < arrayOftank.size(); i++)
                 {
-                        euro = euro + arrayOftank.get(i).getEuro();
-                        liter = liter + arrayOftank.get(i).getLiter();
+                    euro = euro + arrayOftank.get(i).getEuro();
+                    liter = liter + arrayOftank.get(i).getLiter();
+
+
                 }
 
-                //System.out.println("Euro: " + euro);
-
-                if(euro != 0.0) {
+                if(euro > 1) {
 
                     euro = round(euro, 2);
 
@@ -128,10 +131,7 @@ public class TankFragment extends Fragment {
                     Tank obj = new Tank(count, euro, liter, spritpreis, jahr, monat, 0);
                     //results.add(count, obj);
                     results.add(count, obj);
-
-
                 }
-
             }
 
         }
