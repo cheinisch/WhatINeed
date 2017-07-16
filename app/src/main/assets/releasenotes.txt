@@ -1,3 +1,6 @@
+Version 2.1
+1. Bußgelder für zu schnelles Fahren in der Schweiz eingefügt
+
 Version 2.0
 1. Bussgelder für Österreich eingefügt
 UNTER EINSTELLUNGEN KANN DAS LAND GEWÄHLT WERDEN

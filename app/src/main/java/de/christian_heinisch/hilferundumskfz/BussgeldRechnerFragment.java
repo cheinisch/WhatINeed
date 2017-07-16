@@ -51,6 +51,7 @@ public class BussgeldRechnerFragment extends Fragment {
     RadioGroup auswahl;
     private RadioButton autobahn;
     String country;
+    private TextView Differenz;
 
 
     public BussgeldRechnerFragment() {
@@ -71,6 +72,7 @@ public class BussgeldRechnerFragment extends Fragment {
         Punkte = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Punkte);
         Geldstrafe = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Bussgeld);
         Fahrverbot = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Fahrverbot);
+        Differenz = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_differenz);
         toleranz = (CheckBox) rootview.findViewById(R.id.checkBox_Bussgeldrechner);
         auswahl = (RadioGroup) rootview.findViewById(R.id.radioGroup_Bussgeldrechner);
 
@@ -243,8 +245,9 @@ public class BussgeldRechnerFragment extends Fragment {
                             Fahrverbot.setText(innerData.getString("Fahrverbot"));
                             Punkte.setText(innerData.getString("Punkte"));
                             Geldstrafe.setText(innerData.getString("Geldstrafe"));
+                            Differenz.setText(differenz + " km/h");
                             break;
-                        }else if(differenz == 0){
+                        }else if(differenz <= 0){
                             Fahrverbot.setText("");
                             Punkte.setText("");
                             Geldstrafe.setText("");

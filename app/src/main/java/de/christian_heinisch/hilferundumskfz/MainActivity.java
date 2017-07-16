@@ -63,20 +63,11 @@ public class MainActivity extends AppCompatActivity
             adAd();
         }
 
-        // Entferne Menüpunkte, die in div. Versionen nicht zur Verfügung stehen
-
-        // ist die Flavor Version "lite"
-        if(BuildConfig.FLAVOR.equalsIgnoreCase("lite")) {
-            // Setzte das Navigationsitem mit der ID 3 auf unsichtbar
-
-            navigationView.getMenu().getItem(4).setVisible(false);
-        }
 
         // Prüfen auf Version und ggf. Releaenotes Anzeigen
 
         firstStart();
 
-        setCountry();
 
         // Was brauche ich Fragment wird aufgerufen
         iNeed();
@@ -344,10 +335,6 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("Version", newVersion);
         editor.commit();
-
-    }
-
-    private void setCountry(){
 
     }
 
