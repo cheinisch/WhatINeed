@@ -9,12 +9,15 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -109,7 +112,7 @@ public class DialogAddTankDetailFragment extends DialogFragment {
         });
 
 
-        return new AlertDialog.Builder(getActivity())
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                 .setView(rootview)
                 .setTitle(R.string.tanken_dialog_titel)
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -122,47 +125,59 @@ public class DialogAddTankDetailFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // do something
-
-                        datum =textViewDate.getText().toString();
-                        kilometer = Double.parseDouble(tvKilometer.getText().toString());
-                        euro = Double.parseDouble(tvEuro.getText().toString());
-                        liter = Double.parseDouble(tvLiter.getText().toString());
-
-                        dataSource.open();
-                        dataSource.createTank(liter, euro, kilometer, datum);
-                        dataSource.close();
-                        ((MainActivity) getActivity()).tanken();
                     }
-                })
-                .create();
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        Button theButton = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        theButton.setOnClickListener(new CustomListener(alertDialog));
+
+        return alertDialog;
     }
 
-    private void setCurrentDate() {
+    class CustomListener implements View.OnClickListener {
+        private final Dialog dialog;
+        public CustomListener(Dialog dialog) {
+            this.dialog = dialog;
+        }
+        @Override
+        public void onClick(View v) {
+            // put your code here
 
-        Calendar c = Calendar.getInstance();
-        int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
-        int monthOfYear = c.get(Calendar.MONTH);
-        int year = c.get(Calendar.YEAR);
+            datum =textViewDate.getText().toString();
 
-        String day;
-        String month;
-        if(dayOfMonth < 10)
-        {
-            day = "0" + dayOfMonth;
-        }else{
-            day = String.valueOf(dayOfMonth);
+            String tempstring = tvKilometer.getText().toString() +" ";
+            String templiter = tvLiter.getText().toString() + " ";
+            String tempeuro = tvEuro.getText().toString() + " ";
+            if(validateEmpty(tempstring) && validateEmpty(tempstring) && validateEmpty(tempstring))
+            {
+                Toast.makeText(getActivity(), getString(R.string.tanken_dialog_error), Toast.LENGTH_SHORT).show();
+            }else{
+                kilometer = Double.parseDouble(tempstring);
+                euro = Double.parseDouble(tempeuro);
+                liter = Double.parseDouble(templiter);
+                dataSource.open();
+                dataSource.createTank(liter, euro, kilometer, datum);
+                dataSource.close();
+                ((MainActivity) getActivity()).tanken();
+                dialog.dismiss();
+            }
         }
 
-        if((monthOfYear +1) < 10)
-        {
-            month = "0" + (monthOfYear + 1);
-        }else{
-            month = String.valueOf((monthOfYear + 1));
+        private boolean validateEmpty(String string) {
+            boolean value = false;
+
+            string = string.replaceAll("\\s","");
+
+            if(!TextUtils.isEmpty(String.valueOf(string)))
+            {
+                value = false;
+            }else{
+                value = true;
+            }
+
+            return value;
         }
-
-        textViewDate.setText(year + "-" + month + "-" + day);
-
-
     }
 
 }

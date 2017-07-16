@@ -112,6 +112,7 @@
     <string name="tanken_dialog_change_titel">Daten ändern</string>
     <string name="tanken_dialog_change_delete">Tankfüllung löschen</string>
     <string name="tanken_dialog_change_edit">Tankfüllung bearbeiten</string>
+    <string name="tanken_dialog_error">Bitte alle Felder ausfüllen</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

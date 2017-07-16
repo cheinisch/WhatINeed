@@ -59,6 +59,36 @@
           "max":999
         }
       ]
+    },
+    {
+      "Vergehen": "Andere vergehen",
+      "Typ":"sonstige",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":" ",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "nichtbilden einer Rettungsgasse",
+          "Punkte":"",
+          "Geldstrafe":"726 €",
+          "Fahrverbot":" ",
+          "min":20,
+          "max":49
+        },
+        {
+          "Ordnungswidrigkeit": "befahren einer Rettungsgasse",
+          "Punkte":"",
+          "Geldstrafe":"bis zu 2180 €",
+          "Fahrverbot":" ",
+          "min":50,
+          "max":999
+        }
+      ]
     }
   ]
 }

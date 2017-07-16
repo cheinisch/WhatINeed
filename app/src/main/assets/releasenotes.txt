@@ -1,3 +1,10 @@
+Version 2.2.1
+1. Fehlerkorrektur Betankung hinzufügen
+2. Layoutkorrekturen
+
+Version 2.2
+1. Bußgeldrechner für alle Versionen freigegeben
+
 Version 2.1
 1. Bußgelder für zu schnelles Fahren in der Schweiz eingefügt
 
