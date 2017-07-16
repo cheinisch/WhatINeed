@@ -1,3 +1,6 @@
+Version 2.3
+1. Backupfunktion für die Pro Version eingefügt
+
 Version 2.2.1
 1. Fehlerkorrektur Betankung hinzufügen
 2. Layoutkorrekturen
