@@ -1,0 +1,26 @@
+{
+  "DATA":[
+    {
+      "Typ": "Einlösung Neufahrzeug",
+      "Dokumente": [
+        {
+          "Titel": "Versicherungsnachweis\nWir bei der Versicherung beantragt"
+        },
+        {
+          "Titel":"Fahrzeugausweis im Original\noder bei einem fabrikneuen Fahrzeug das Formular 13.20 A"
+        }
+      ]
+    },
+    {
+      "Typ": "Einlösung bei Kantonwechsel",
+      "Dokumente": [
+        {
+          "Titel": "Versicherungsnachweis\nWir bei der Versicherung beantragt"
+        },
+        {
+          "Titel":"Fahrzeugausweis im Original"
+        }
+      ]
+    }
+  ]
+}

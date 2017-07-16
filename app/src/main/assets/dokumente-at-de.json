@@ -1,0 +1,112 @@
+{
+  "DATA":[
+    {
+      "Typ": "Zulassung Neufahrzeug",
+      "Dokumente": [
+        {
+          "Titel": "EG-Übereinstimmungsbescheinigung"
+        },
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Versicherungsbestätigung"
+        },
+        {
+          "Titel": "Eintrag der Eigentümerin/des Eigentümers im Typenschein"
+        },
+        {
+          "Titel": "Abfrage beim Zentralen Melderegister durch die Zulassungsstelle (Die Kosten werden an die Antragstellerin/den Antragsteller weiterverrechnet.)"
+        },
+        {
+          "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
+        },
+        {
+          "Titel": "Vollmacht (Bei Fremdantrag)"
+        }
+      ]
+    },
+    {
+      "Typ": "Zulassung Gebrauchtfahrzeug",
+      "Dokumente": [
+        {
+          "Titel": "EG-Übereinstimmungsbescheinigung"
+        },
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Versicherungsbestätigung"
+        },
+        {
+          "Titel": "Abfrage beim Zentralen Melderegister durch die Zulassungsstelle (Die Kosten werden an die Antragstellerin/den Antragsteller weiterverrechnet.)"
+        },
+        {
+          "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
+        },
+        {
+          "Titel": "Vollmacht (Bei Fremdantrag)"
+        },
+        {
+          "Titel":"Persönliche Erklärung der Vorbesitzerin/des Vorbesitzers bei der Zulassungsstelle oder\nKaufvertrag, Rechnung, Verkaufsbestätigung, sofern der Name der Käuferin/des Käufers daraus hervorgeht oder\nEventuell Schenkungsvertrag, gerichtliches Urteil, gerichtlicher Beschluss, Einantwortungsbeschluss, Zustimmungserklärung der/des zur Vertretung des Nachlasses Berufenen, Zuschlag bei Versteigerung, Einbringungsvertrag, Benützungsüberlassungserklärung"
+        },
+        {
+          "Titel":"Gültiges, positives Prüfgutachten für Fahrzeuge, sofern es noch nicht in der Begutachtungsplakettendatenbank gespeichert ist"
+        }
+      ]
+    },
+    {
+      "Typ": "Wiederzulassung eines außer Betrieb gesetzten Fahrzeugs",
+      "Dokumente": [
+        {
+          "Titel": "EG-Übereinstimmungsbescheinigung"
+        },
+        {
+          "Titel": "Personalausweis"
+        },
+        {
+          "Titel": "Versicherungsbestätigung"
+        },
+        {
+          "Titel": "Eintrag der Eigentümerin/des Eigentümers im Typenschein"
+        },
+        {
+          "Titel": "Handelsregisterauszug oder Gewerbeanmeldung bei Nutzung als Firmenfahrzeug"
+        },
+        {
+          "Titel": "Das bei der letzten Zulassung hergestellte Fahrzeug-Genehmigungsdokument"
+        },
+        {
+          "Titel": "Vollmacht (Bei Fremdantrag)"
+        }
+      ]
+    },
+    {
+      "Typ": "Abmelden eines Fahrzeugs (Stilllegung)",
+      "Dokumente": [
+        {
+          "Titel": "Amtlicher Lichtbildausweis der Abmeldenden/des Abmeldenden"
+        },
+        {
+          "Titel":"Zulassungsbescheinigung (beide Teile)"
+        },
+        {
+          "Titel":"Genehmigungsnachweis oder Genehmigungsdokument:\n\nTypenschein oder\nEinzelgenehmigung oder\nNachweis für die Zulassung oder\nGültige Übereinstimmungsbescheinigung oder\nDatenauszug aus der Genehmigungsdatenbank bei Fahrzeugen mit EG-Betriebserlaubnis bzw.\nDas bei der letzten Zulassung hergestellte Fahrzeug-Genehmigungsdokument"
+        },
+        {
+          "Titel":"Vollmacht, wenn die Zulassungsbesitzerin/der Zulassungsbesitzer nicht selbst erscheint"
+        },
+        {
+          "Titel":"Zustimmungserklärung der Nachlassverwalterin/des Nachlassverwalters, wenn das Fahrzeug im Zuge des Ablebens der Zulassungsbesitzerin/des Zulassungsbesitzers abgemeldet wird"
+        },
+        {
+          "Titel":"Einantwortungsurkunde, wenn das Fahrzeug im Zuge des Ablebens der Zulassungsbesitzerin/des Zulassungsbesitzers abgemeldet wird"
+        },
+        {
+          "Titel":"Kennzeichentafeln"
+        }
+      ]
+    }
+  ]
+
+}

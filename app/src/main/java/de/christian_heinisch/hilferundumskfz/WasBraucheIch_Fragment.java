@@ -2,7 +2,9 @@ package de.christian_heinisch.hilferundumskfz;
 
 
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import de.christian_heinisch.hilferundumskfz.adapter.ExpandableListAdapter_Need;
 
@@ -88,8 +91,22 @@ public class WasBraucheIch_Fragment extends Fragment {
 
     public String loadJSONFromAsset() {
         String json = null;
+        // Systemsprache (für Spätere Übersetzungen)
+        String locale = Locale.getDefault().getLanguage();
+        if(locale.equalsIgnoreCase("de")){
 
-        String json_file = "dokumente.json";
+        }else{
+            locale = "de";
+        }
+
+
+        // Part für das gewählte LAND
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        String country = prefs.getString("Country", "de");
+
+
+        String json_file = "dokumente-"+country+"-"+locale+".json";
         try {
 
             InputStream is = getActivity().getAssets().open(json_file);

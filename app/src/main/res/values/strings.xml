@@ -21,7 +21,7 @@
 
     <!-- Punkteliste -->
     <string name="punkte_titel">Bußgeld</string>
-    <string name="punkte_content">Eine Übersicht der aktuellen Bußgelder und Punkte für zu schnelles fahren oder andere Ordnungswidrigkeiten in Deutschland.</string>
+    <string name="punkte_content">Eine Übersicht der aktuellen Bußgelder und Punkte für zu schnelles fahren oder andere Ordnungswidrigkeiten in Deutschland, Österreich und der Schweiz.</string>
 
     <!-- Punktzahl -->
     <string name="bussgeld_titel">Bußgeldrechner</string>

@@ -8,7 +8,7 @@
             android:title="@string/what_i_need_titel" />
         <item
             android:id="@+id/nav_crash"
-            android:icon="@drawable/ic_i_need"
+            android:icon="@drawable/ic_medical"
             android:title="@string/crash_titel" />
         <item
             android:id="@+id/nav_errorcode"
