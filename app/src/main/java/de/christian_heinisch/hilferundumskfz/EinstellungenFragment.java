@@ -52,7 +52,7 @@ public class EinstellungenFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         packagename = getActivity().getPackageName();
-        checkPermission();
+
         rootview = inflater.inflate(R.layout.fragment_einstellungen, container, false);
 
         delete_table = (Button) rootview.findViewById(R.id.btnSettingDelete);
@@ -141,7 +141,8 @@ public class EinstellungenFragment extends Fragment {
 
     //importing database
     private void importDB() {
-        // TODO Auto-generated method stub
+        // Prüfe Zugriffsrechte
+        checkPermission();
 
         try {
             File sd = Environment.getExternalStorageDirectory();
@@ -180,7 +181,9 @@ public class EinstellungenFragment extends Fragment {
     }
     //exporting database
     private void exportDB() {
-        // TODO Auto-generated method stub
+        
+        // Prüfe Zugriffsrechte
+        checkPermission();
 
         File direct = new File(Environment.getExternalStorageDirectory() + "/hilferundumsauto");
 
