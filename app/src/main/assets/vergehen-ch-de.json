@@ -1,0 +1,238 @@
+{
+  "DATA": [
+    {
+      "Vergehen": "Zu schnell innerhalb geschlossener Ortschaft",
+      "Typ":"innerhalb",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "1 - 5 km/h",
+          "Punkte":"",
+          "Geldstrafe":"40 CHF",
+          "Fahrverbot":" ",
+          "min":1,
+          "max":5
+        },
+        {
+          "Ordnungswidrigkeit": "6 bis 10 km/h",
+          "Punkte":"",
+          "Geldstrafe":"120 CHF",
+          "Fahrverbot":" ",
+          "min":6,
+          "max":10
+        },
+        {
+          "Ordnungswidrigkeit": "11 bis 15 km/h",
+          "Punkte":"",
+          "Geldstrafe":"250 CHF",
+          "Fahrverbot":" ",
+          "min":11,
+          "max":15
+        },
+        {
+          "Ordnungswidrigkeit": "16 bis 20 km/h",
+          "Punkte":"",
+          "Geldstrafe":"Bußgeld, Verwarnung",
+          "Fahrverbot":" ",
+          "min":16,
+          "max":20
+        },
+        {
+          "Ordnungswidrigkeit": "21 bis 25 km/h",
+          "Punkte":"",
+          "Geldstrafe":"Bußgeld, mindestens 1 Monat Fahrverbot",
+          "Fahrverbot":" ",
+          "min":21,
+          "max":25
+        },
+        {
+          "Ordnungswidrigkeit": "26 bis 49 km/h",
+          "Punkte":"",
+          "Geldstrafe":"",
+          "Fahrverbot":"Bußgeld, mindestens 3 Monate Fahrverbot, Eintrag ins Strafregister",
+          "min":26,
+          "max":49
+        },
+        {
+          "Ordnungswidrigkeit": "Ab 50 km/h",
+          "Punkte":" ",
+          "Geldstrafe":" ",
+          "Fahrverbot":"Straftat \"Rasen\" liegt vor - Mindestfreiheitsstrafe von 1 Jahr, Führerscheinentzug zwischen 2 Jahren und lebenslang",
+          "min":50,
+          "max":999
+        }
+      ]
+    },
+    {
+      "Vergehen": "Zu schnell außerhalb geschlossener Ortschaft",
+      "Typ":"ausserhalb",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "1 - 5 km/h",
+          "Punkte":"",
+          "Geldstrafe":"40 CHF",
+          "Fahrverbot":" ",
+          "min":1,
+          "max":5
+        },
+        {
+          "Ordnungswidrigkeit": "6 bis 10 km/h",
+          "Punkte":"",
+          "Geldstrafe":"100 CHF",
+          "Fahrverbot":" ",
+          "min":6,
+          "max":10
+        },
+        {
+          "Ordnungswidrigkeit": "11 bis 15 km/h",
+          "Punkte":"",
+          "Geldstrafe":"160 CHF",
+          "Fahrverbot":" ",
+          "min":11,
+          "max":15
+        },
+        {
+          "Ordnungswidrigkeit": "16 bis 20 km/h",
+          "Punkte":"",
+          "Geldstrafe":"240 CHF",
+          "Fahrverbot":" ",
+          "min":16,
+          "max":20
+        },
+        {
+          "Ordnungswidrigkeit": "21 bis 25 km/h",
+          "Punkte":"",
+          "Geldstrafe":"Bußgeld, Verwarnung",
+          "Fahrverbot":" ",
+          "min":21,
+          "max":25
+        },
+        {
+          "Ordnungswidrigkeit": "26 bis 29 km/h",
+          "Punkte":"",
+          "Geldstrafe":"Bußgeld, mindestens 1 Monat Fahrverbot",
+          "Fahrverbot":" ",
+          "min":26,
+          "max":29
+        },
+        {
+          "Ordnungswidrigkeit": "30 bis 59 km/h",
+          "Punkte":"",
+          "Geldstrafe":"",
+          "Fahrverbot":"Bußgeld, mindestens 3 Monate Fahrverbot, Eintrag ins Strafregister",
+          "min":30,
+          "max":59
+        },
+        {
+          "Ordnungswidrigkeit": "Ab 60 km/h",
+          "Punkte":" ",
+          "Geldstrafe":" ",
+          "Fahrverbot":"Straftat \"Rasen\" liegt vor - Mindestfreiheitsstrafe von 1 Jahr, Führerscheinentzug zwischen 2 Jahren und lebenslang",
+          "min":60,
+          "max":999
+        }
+      ]
+    },
+    {
+      "Vergehen": "Zu schnell auf der Autobahn",
+      "Typ":"autobahn",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Geschwindigkeit",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot",
+          "min":1000,
+          "max":1001
+        },
+        {
+          "Ordnungswidrigkeit": "1 - 5 km/h",
+          "Punkte":"",
+          "Geldstrafe":"20 CHF",
+          "Fahrverbot":" ",
+          "min":1,
+          "max":5
+        },
+        {
+          "Ordnungswidrigkeit": "6 bis 10 km/h",
+          "Punkte":"",
+          "Geldstrafe":"60 CHF",
+          "Fahrverbot":" ",
+          "min":6,
+          "max":10
+        },
+        {
+          "Ordnungswidrigkeit": "11 bis 15 km/h",
+          "Punkte":"",
+          "Geldstrafe":"120 CHF",
+          "Fahrverbot":" ",
+          "min":11,
+          "max":15
+        },
+        {
+          "Ordnungswidrigkeit": "16 bis 20 km/h",
+          "Punkte":"",
+          "Geldstrafe":"180 CHF",
+          "Fahrverbot":" ",
+          "min":16,
+          "max":20
+        },
+        {
+          "Ordnungswidrigkeit": "21 bis 25 km/h",
+          "Punkte":"",
+          "Geldstrafe":"260 CHF",
+          "Fahrverbot":" ",
+          "min":21,
+          "max":25
+        },
+        {
+          "Ordnungswidrigkeit": "26 bis 29 km/h",
+          "Punkte":"",
+          "Geldstrafe":"Bußgeld, Verwarnung",
+          "Fahrverbot":" ",
+          "min":26,
+          "max":29
+        },
+        {
+          "Ordnungswidrigkeit": "30 bis 34 km/h",
+          "Punkte":"",
+          "Geldstrafe":"",
+          "Fahrverbot":"Bußgeld, mindestens 1 Monat Fahrverbot",
+          "min":30,
+          "max":34
+        },
+        {
+          "Ordnungswidrigkeit": "35 - 80 km/h",
+          "Punkte":"",
+          "Geldstrafe":"",
+          "Fahrverbot":"Bußgeld, mindestens 3 Monate Fahrverbot",
+          "min":35,
+          "max":79
+        },
+        {
+          "Ordnungswidrigkeit": "Ab 80 km/h",
+          "Punkte":" ",
+          "Geldstrafe":" ",
+          "Fahrverbot":"Straftat \"Rasen\" liegt vor - Mindestfreiheitsstrafe von 1 Jahr, Führerscheinentzug zwischen 2 Jahren und lebenslang",
+          "min":80,
+          "max":999
+        }
+      ]
+    }
+  ]
+}

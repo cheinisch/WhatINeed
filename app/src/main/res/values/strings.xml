@@ -28,11 +28,13 @@
     <string name="bussgeld_ueberschrift">Wie hoch wird die zu erwartende Strafe sein</string>
     <string name="bussgeld_radio_innerhalb">Innerhalb geschlossener Ortschaft</string>
     <string name="bussgeld_radio_ausserhalb">Außerhalb geschlossener Ortschaft</string>
+    <string name="bussgeld_radio_autobahn">Auf der Autobahn</string>
     <string name="bussgeld_check_toleranz">Abzug der Toleranz</string>
     <string name="bussgeld_button_berechnen">alle Daten eingegeben</string>
     <string name="bussgeld_text_geschwindigkeit">eigene Geschwindigkeit</string>
     <string name="bussgeld_text_erlaubte_geschwindigkeit">erlaubte Geschwindigkeit</string>
     <string name="bussgeld_text_berechnet">Folgendes wird dich erwarten</string>
+    <string name="bussgeld_text_differenz">Differenz in Km/h</string>
     <string name="bussgeld_text_bussgeld">Bußgeld</string>
     <string name="bussgeld_text_punkte">Punkte</string>
     <string name="bussgeld_text_fahrverbot">Fahrverbot</string>
@@ -83,6 +85,7 @@
         <string-array name="country_entries">
             <item>Deutschland</item>
             <item>Österreich</item>
+            <item>Schweiz</item>
         </string-array>
 
         <string-array name="country_values">

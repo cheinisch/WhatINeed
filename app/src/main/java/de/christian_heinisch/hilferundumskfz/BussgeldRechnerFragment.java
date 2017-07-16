@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +49,8 @@ public class BussgeldRechnerFragment extends Fragment {
     CheckBox toleranz;
     int differenz;
     RadioGroup auswahl;
+    private RadioButton autobahn;
+    String country;
 
 
     public BussgeldRechnerFragment() {
@@ -70,6 +73,10 @@ public class BussgeldRechnerFragment extends Fragment {
         Fahrverbot = (TextView) rootview.findViewById(R.id.textView_Bussgeldrechner_Fahrverbot);
         toleranz = (CheckBox) rootview.findViewById(R.id.checkBox_Bussgeldrechner);
         auswahl = (RadioGroup) rootview.findViewById(R.id.radioGroup_Bussgeldrechner);
+
+        autobahn = (RadioButton) rootview.findViewById(R.id.radioButton_Bussgeld_autobahn);
+
+        hideautobahn();
 
 
 
@@ -99,28 +106,82 @@ public class BussgeldRechnerFragment extends Fragment {
         return rootview;
     }
 
+    private void hideautobahn() {
+
+        /*
+        Weil in der Schweiz es auch Bussgelder für die Autobahn gibt,
+        wird die Autobahn in Deutschland und Österreich ausgeblendet.
+         */
+
+        /*
+        Hole den String aus den Countrypreferences
+         */
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        country = prefs.getString("Country", "de");
+
+        /*
+        Wenn der String nicht "ch" ist, blende die Autobahn aus
+         */
+        if(!country.equalsIgnoreCase("ch"))
+        {
+            autobahn.setVisibility(View.GONE);
+        }
+
+    }
+
     private void berechnen() {
 
         // Erstelle String für die Auswahl
         String wo = "";
+        int toleranztempo = 0;
+        int toleranzmessung = 0;
 
 
         // hole die Textfelder zum Rechnen
         intEigeneGeschwindigkeit = Integer.parseInt(eigeneGeschwindigkeit.getText().toString());
         intErlaubteGeschwindigkeit = Integer.parseInt(maxGeschwindigkeit.getText().toString());
 
+        // Hole die Toleranzwerte für die Jeweiligen Länder
+        if(country.equalsIgnoreCase("de"))
+        {
+            toleranzmessung = 3;
+            toleranztempo = 100;
+        }else if(country.equalsIgnoreCase("at"))
+        {
+            toleranzmessung = 3;
+            toleranztempo = 80;
+        }else if(country.equalsIgnoreCase("ch"))
+        {
+            /*
+                (Die Schweiz macht es besonders super
+                Quelle: https://www.comparis.ch/autoversicherung/junglenker/bussen)
+                Die unterschiedlichen Toleranztempowerte dienen nur dazu, um zu vermeiden, das doch prozentual gerechnet wird
+                Die Schweiz kennt keine Prozente, sondern nur KM/H Abzug
+             */
+
+            if(intEigeneGeschwindigkeit <= 100) {
+                toleranzmessung = 3;
+                toleranztempo = 200;
+            }else if(intEigeneGeschwindigkeit > 100 && intEigeneGeschwindigkeit <= 150){
+                toleranzmessung = 4;
+                toleranztempo = 200;
+            }else{
+                toleranzmessung = 5;
+                toleranztempo = 999;
+            }
+        }
+
         if(toleranz.isChecked()){
 
-                            if (intEigeneGeschwindigkeit > 100) {
+            if (intEigeneGeschwindigkeit > toleranztempo) {
 
-                                long speed = Math.round(intEigeneGeschwindigkeit / 1.03);
-                                intEigeneGeschwindigkeit = (int) speed;
+                long speed = Math.round((intEigeneGeschwindigkeit / 100 * toleranzmessung) + intEigeneGeschwindigkeit);
+                intEigeneGeschwindigkeit = (int) speed;
 
-                            } else {
-                                intEigeneGeschwindigkeit = intEigeneGeschwindigkeit - 3;
-                            }
+            } else {
+                intEigeneGeschwindigkeit = intEigeneGeschwindigkeit - toleranzmessung;
+            }
 
-            //intEigeneGeschwindigkeit = intEigeneGeschwindigkeit - 3;
         }
 
         if(intEigeneGeschwindigkeit < intErlaubteGeschwindigkeit)
@@ -140,6 +201,12 @@ public class BussgeldRechnerFragment extends Fragment {
             case R.id.radioButton_Bussgeld_ausserhalb:
                 // do operations specific to this selection
                 wo = "ausserhalb";
+
+                break;
+
+            case R.id.radioButton_Bussgeld_autobahn:
+                // do operations specific to this selection
+                wo = "autobahn";
 
                 break;
 
