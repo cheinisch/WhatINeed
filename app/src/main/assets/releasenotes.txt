@@ -1,3 +1,6 @@
+Version 2.X
+1. Weitere Warnsymbole angelegt
+
 Version 2.3
 1. Backupfunktion für die Pro Version eingefügt
 
