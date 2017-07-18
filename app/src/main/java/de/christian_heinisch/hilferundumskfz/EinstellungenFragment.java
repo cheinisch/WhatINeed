@@ -181,7 +181,7 @@ public class EinstellungenFragment extends Fragment {
     }
     //exporting database
     private void exportDB() {
-        
+
         // Prüfe Zugriffsrechte
         checkPermission();
 

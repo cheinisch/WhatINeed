@@ -46,6 +46,14 @@
       "Langtext":"Die Motorkontrollleuchte signalisiert Probleme mit dem Motor. Die Leuchte kann auf verschiedene Art den Fehlertyp anzeigen.\n\nKurzzeitiges Aufblinken:\nEin temporärer Fehler wurde erkannt. Der Fehler bedarf aber keiner weiteren Aufmerksamkeit, da er nicht dauerhaft vorliegt.\n\nDauerhaftes Leuchten:\nEin Fehler ist aufgetreten und sollte demnächst (in einer Werkstatt) behoben werden. Es besteht keine unmittelbare Gefahr für Fahrzeug und Umwelt.\n\nSchnell blinkend:\nEin schwerwiegender Fehler ist aufgetreten. Das Fahrzeug sollte umgehend repariert werden, um Folgefehler zu vermeiden. Geschwindigkeit und Belastung (Beschleunigung) stark reduzieren – am besten Motor abstellen."
     },
     {
+      "Titel":"Gurt Symbol",
+      "Beschreibung":"rot",
+      "Bild_klein":"ic_gurt_klein",
+      "Bild_gross":"ic_gurt_gross",
+      "Langtext":"Der Sicherheitsgurt wurde nicht angelegt. Vor Fahrtantritt muss dieser angelegt sein."
+
+    },
+    {
       "Titel":"Tanksymbol",
       "Beschreibung":"gelbg",
       "Bild_klein":"ic_tank_klein",
@@ -79,7 +87,41 @@
       "Bild_klein":"ic_tempomat_klein",
       "Bild_gross":"ic_tempomat_gross",
       "Langtext":"Der Tempomat ist betätigt. Das Fahrzeug hält jetzt selbstständig die Geschwindigkeit. Je nach Fahrzeug bremst dieses auch selbstständig.\n\nWeitere Details stehen im Handbuch zu Ihrem Fahrzeug."
-
+    },
+    {
+      "Titel":"Nebelschlussleuchte",
+      "Beschreibung":"gelb",
+      "Bild_klein":"ic_nebel_hinten_klein",
+      "Bild_gross":"ic_nebel_hinten_gross",
+      "Langtext":"Die Nebelschlussleuchte ist eingeschaltet. Wenn diese eingeschaltet ist, darf nicht schneller wie 50km/h gefahren werden."
+    },
+    {
+      "Titel":"Fahrlicht",
+      "Beschreibung":"gruen",
+      "Bild_klein":"ic_abblendlicht_klein",
+      "Bild_gross":"ic_abblendlicht_gross",
+      "Langtext":"Das Abblendlicht ist eingeschaltet."
+    },
+    {
+      "Titel":"Nebelscheinwerfer",
+      "Beschreibung":"gruen",
+      "Bild_klein":"ic_nebel_vorne_klein",
+      "Bild_gross":"ic_ic_nebel_vorne_gross",
+      "Langtext":"Die Nebelscheinwerfer vorne sind eingeschaltet."
+    },
+    {
+      "Titel":"Standlicht",
+      "Beschreibung":"gruen",
+      "Bild_klein":"ic_standlicht_klein",
+      "Bild_gross":"ic_standlicht_gross",
+      "Langtext":"Das Standlicht ist eingeschaltet."
+    },
+    {
+      "Titel":"Fernlicht",
+      "Beschreibung":"blau",
+      "Bild_klein":"ic_fernlicht_klein",
+      "Bild_gross":"ic_fernlicht_gross",
+      "Langtext":"Das Fernlicht ist eingeschaltet. Bei Gegenverkehr muss dieses abgeschaltet werden, da der entgegenkommende Fahrer geblendet wird."
     }
   ]
 }
