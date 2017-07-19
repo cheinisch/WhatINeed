@@ -38,7 +38,7 @@
             <Button
                 android:id="@+id/btnSettingDelete"
                 style="@android:style/Widget.DeviceDefault.Button"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="@dimen/padding"
@@ -60,27 +60,27 @@
 
             <Button
                 android:id="@+id/btnSettingSave"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:text="@string/einstellungen_backup"
-                android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="@dimen/padding"
-                android:padding="@dimen/padding"/>
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:padding="@dimen/padding"
+                android:text="@string/einstellungen_backup"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/btnSettingRestore"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:text="@string/einstellungen_restore"
-                android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="@dimen/padding"
-                android:padding="@dimen/padding"/>
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:padding="@dimen/padding"
+                android:text="@string/einstellungen_restore"
+                android:textAlignment="center" />
         </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>

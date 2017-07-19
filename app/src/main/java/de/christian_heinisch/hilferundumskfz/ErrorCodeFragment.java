@@ -96,7 +96,7 @@ public class ErrorCodeFragment extends Fragment {
 
                 // Do Fragment menu item stuff here
                 return true;
-                
+
             case R.id.action_gruen:
 
                 try {
