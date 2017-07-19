@@ -96,6 +96,28 @@ public class ErrorCodeFragment extends Fragment {
 
                 // Do Fragment menu item stuff here
                 return true;
+                
+            case R.id.action_gruen:
+
+                try {
+                    populateUserslist("gruen");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Do Fragment menu item stuff here
+                return true;
+
+            case R.id.action_blau:
+
+                try {
+                    populateUserslist("blau");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Do Fragment menu item stuff here
+                return true;
 
             case R.id.action_alle:
 
