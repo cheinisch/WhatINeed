@@ -12,6 +12,8 @@
     <string name="error_titel">Warnsymbole</string>
     <string name="error_menu_rot">rote Symbole</string>
     <string name="error_menu_gelb">gelbe Symbole</string>
+    <string name="error_menu_gruene">grüne Symbole</string>
+    <string name="error_menu_blaue">blaue Symbole</string>
     <string name="error_menu_alle">alle Symbole</string>
     <string name="error_menu_change_view">ändere Ansicht</string>
 

@@ -96,25 +96,25 @@
       "Langtext":"Der Tempomat ist betätigt. Das Fahrzeug hält jetzt selbstständig die Geschwindigkeit. Je nach Fahrzeug bremst dieses auch selbstständig.\n\nWeitere Details stehen im Handbuch zu Ihrem Fahrzeug."
     },
     {
-      "Titel":"Fahrlicht",
+      "Titel":"Abblendlicht",
       "Beschreibung":"gruen",
       "Bild_klein":"ic_fahrlicht_klein",
       "Bild_gross":"ic_fahrlicht_gross",
-      "Langtext":"Das Abblendlicht ist eingeschaltet."
+      "Langtext":"Das Abblendlicht ist eingeschaltet. Das Abblendlicht leuchtet den vorderen Teil des Fahrzeugs aus und ist so beschaffen, das es den Gegenverkehr nicht blendet."
     },
     {
       "Titel":"Nebelscheinwerfer",
       "Beschreibung":"gruen",
       "Bild_klein":"ic_nebel_vorne_klein",
       "Bild_gross":"ic_nebel_vorne_gross",
-      "Langtext":"Die Nebelscheinwerfer vorne sind eingeschaltet."
+      "Langtext":"Die Nebelscheinwerfer vorne sind eingeschaltet.\n\nDeutschland\nIn Deutschland dürfen Nebelscheinwerfer nur bei Sichtbehinderung durch Regen, Nebel oder Schneefall eingeschaltet werden. Diese dürfen nur mit dem Abblendlicht oder dem Standlich leuchten. Das alleinige Leuchten ist nicht zulässig.\n\nÖsterreich\nIn Österreich dürfen Nebelscheinwerfer, wenn sie im Fahrzeug fest verbaut sind, auch als Tagfahrlichter benutzt werden. Außerdem dürfen sie auch in Kombination mit Stand- und/oder Abblendlicht auch am Tag oder in der Nacht verwendet werden.\n\nSchweiz\nDie Nebellichter dürfen auch nur wie in Deutschland (Sichtbehinderung durch Regen, Nebel oder Schneefall) genutzt werden. Die unerlaubte Benutzung der Nebellichter wird mit einer Ordnungsbusse von 40 CHF gebüsst."
     },
     {
       "Titel":"Standlicht",
       "Beschreibung":"gruen",
       "Bild_klein":"ic_standlicht_klein",
       "Bild_gross":"ic_standlicht_gross",
-      "Langtext":"Das Standlicht ist eingeschaltet."
+      "Langtext":"Das Standlicht oder Parklicht ist eingeschaltet. Dieses darf nur zum Parken genutzt werden, da die Lichtstärke nicht ausreichend ist um damit zu fahren. (Ist eine Ordnungswidrigkeit, die mit 10,- € Bussgeld (in Deutschland) belegt ist)\n\nDas Standlicht soll im Nachts vor Schranken eingeschaltet werden. Beim Parken außerhalb geschlossener Ortschaften muss, bei nicht ausrechender Beleuchtung, auch das Standlicht eingeschaltet werden."
     },
     {
       "Titel":"Fernlicht",

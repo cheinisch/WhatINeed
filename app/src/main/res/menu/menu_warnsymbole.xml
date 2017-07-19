@@ -13,6 +13,16 @@
         android:title="@string/error_menu_rot"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_gruen"
+        android:orderInCategory="100"
+        android:title="@string/error_menu_gruene"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_blau"
+        android:orderInCategory="100"
+        android:title="@string/error_menu_blaue"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_alle"
         android:orderInCategory="100"
         android:title="@string/error_menu_alle"

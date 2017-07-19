@@ -4,7 +4,6 @@ package de.christian_heinisch.hilferundumskfz;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -69,7 +68,7 @@ public class ErrorCodeFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
-        inflater.inflate(R.menu.menu_error, menu);
+        inflater.inflate(R.menu.menu_warnsymbole, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 

@@ -68,7 +68,7 @@ public class ErrorGridFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
-        inflater.inflate(R.menu.menu_error, menu);
+        inflater.inflate(R.menu.menu_warnsymbole, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -90,6 +90,28 @@ public class ErrorGridFragment extends Fragment {
 
                 try {
                     populateUserslist("rot");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Do Fragment menu item stuff here
+                return true;
+
+            case R.id.action_gruen:
+
+                try {
+                    populateUserslist("gruen");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Do Fragment menu item stuff here
+                return true;
+
+            case R.id.action_blau:
+
+                try {
+                    populateUserslist("blau");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
