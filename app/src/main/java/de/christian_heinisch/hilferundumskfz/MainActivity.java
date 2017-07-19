@@ -109,8 +109,11 @@ public class MainActivity extends AppCompatActivity
             errorcodeGrid();
 
         }else if(id == R.id.nav_tanken){
-            tanken();
-
+            if(BuildConfig.FLAVOR.equalsIgnoreCase("dev")){
+                tanken_neu();
+            }else {
+                tanken();
+            }
         }else if(id == R.id.nav_einstellungen){
             einstellungen();
 
@@ -214,6 +217,18 @@ public class MainActivity extends AppCompatActivity
         titelleiste(getString(R.string.tanken_titel));
 
         Fragment f = new TankFragment();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_main, f);
+        ft.addToBackStack(null);
+        ft.commit();
+
+    }
+
+    public void tanken_neu(){
+        titelleiste(getString(R.string.tanken_titel));
+
+        Fragment f = new TankNeuFragment();
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_main, f);
