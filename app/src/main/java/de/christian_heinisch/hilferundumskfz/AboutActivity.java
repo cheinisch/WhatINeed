@@ -1,6 +1,8 @@
 package de.christian_heinisch.hilferundumskfz;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
@@ -60,6 +62,18 @@ public class AboutActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabMail);
+        fab.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(Intent.ACTION_VIEW);
+               Uri data = Uri.parse("mailto:app@hilfe-rund-ums-auto.de?subject=APP Hinweis");
+               intent.setData(data);
+               startActivity(intent);
+           }
+
+        });
 
     }
 
