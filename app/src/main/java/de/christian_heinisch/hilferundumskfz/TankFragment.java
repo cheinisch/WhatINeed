@@ -128,7 +128,7 @@ public class TankFragment extends Fragment {
 
                     spritpreis = round(spritpreis, 2);
 
-                    Tank obj = new Tank(count, euro, liter, spritpreis, jahr, monat, 0);
+                    Tank obj = new Tank(count, euro, round(liter,2), spritpreis, jahr, monat, 0);
                     //results.add(count, obj);
                     results.add(count, obj);
                 }
