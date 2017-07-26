@@ -84,17 +84,17 @@
     <string name="einstellungen_titel">Einstellungen</string>
     <string name="einstellungen_country_titel">Wähle das Land aus</string>
 
-        <string-array name="country_entries">
-            <item>Deutschland</item>
-            <item>Österreich</item>
-            <item>Schweiz</item>
-        </string-array>
+    <string-array name="country_entries">
+        <item>Deutschland</item>
+        <item>Österreich</item>
+        <item>Schweiz</item>
+    </string-array>
 
-        <string-array name="country_values">
-            <item>de</item>
-            <item>at</item>
-            <item>ch</item>
-        </string-array>
+    <string-array name="country_values">
+        <item>de</item>
+        <item>at</item>
+        <item>ch</item>
+    </string-array>
     <string name="einstellungen_delete_titel">Sollen alle Daten der APP gelöscht werden</string>
     <string name="einstellungen_delete">Daten löschen</string>
     <string name="einstellungen_backup_titel">Datensicherung für die Betankungen</string>
@@ -120,6 +120,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 
 </resources>

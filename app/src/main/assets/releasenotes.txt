@@ -1,3 +1,6 @@
+Version 2.4
+1. Über die App überarbeitet
+
 Version 2.3.1
 1. Weitere Warnsymbole erstellt,
 2. Einstellungsseite modifiziert

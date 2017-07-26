@@ -3,6 +3,7 @@ package de.christian_heinisch.hilferundumskfz;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -253,14 +254,8 @@ public class MainActivity extends AppCompatActivity
 
     public void about() {
 
-        titelleiste(getString(R.string.about_titel));
-
-        Fragment f = new AboutFragment();
-        android.app.FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.content_main, f);
-        ft.addToBackStack(null);
-        ft.commit();
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
     private void firstStart(){
