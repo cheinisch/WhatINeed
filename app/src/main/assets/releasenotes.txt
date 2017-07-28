@@ -1,3 +1,6 @@
+Version 2.4.1
+Fehler in der App behoben
+
 Version 2.4
 1. Über die App überarbeitet
 2. Rundungsfehler bei der Spritkostenübersicht behoben
