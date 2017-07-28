@@ -1,7 +1,6 @@
 package de.christian_heinisch.hilferundumskfz;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.NavUtils;
@@ -43,7 +42,7 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_new);
         setSupportActionBar(toolbar);
 
         // Show the Up button in the action bar.
@@ -67,9 +66,11 @@ public class AboutActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent intent = new Intent(Intent.ACTION_VIEW);
+               /*Intent intent = new Intent(Intent.ACTION_VIEW);
                Uri data = Uri.parse("mailto:app@hilfe-rund-ums-auto.de?subject=APP Hinweis");
                intent.setData(data);
+               startActivity(intent);*/
+               Intent intent = new Intent(getApplicationContext(), MessageActivity.class);
                startActivity(intent);
            }
 

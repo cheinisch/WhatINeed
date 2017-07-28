@@ -1,5 +1,8 @@
+Version 2.4.2
+1. Nachricht versenden ist jetzt direkt aus der App möglich
+
 Version 2.4.1
-Fehler in der App behoben
+1. Fehler in der App behoben
 
 Version 2.4
 1. Über die App überarbeitet
