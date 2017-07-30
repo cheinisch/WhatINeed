@@ -30,6 +30,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import de.christian_heinisch.hilferundumskfz.database.TankDataSource;
+
 import static android.app.Activity.RESULT_OK;
 
 
@@ -161,6 +163,17 @@ public class EinstellungenFragment extends Fragment {
 
     @Override
     public void onActivityResult(int reqCode, int resCode, Intent data){
+
+        /*
+        Inizialisiere die Datenbank um DB fehler zu umgehen
+         */
+        TankDataSource datasource = new TankDataSource(getActivity());
+        datasource.open();
+        datasource.close();
+
+        /*
+        Beginne mit dem Daten import
+         */
 
         super.onActivityResult(reqCode, resCode, data);
 
