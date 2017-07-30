@@ -3,12 +3,13 @@ package de.christian_heinisch.hilferundumskfz;
 
 import android.Manifest;
 import android.app.Fragment;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.support.annotation.RequiresPermission;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,8 +25,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
-import static org.xmlpull.v1.XmlPullParser.TYPES;
+import static android.app.Activity.RESULT_OK;
 
 
 /**
@@ -118,7 +123,9 @@ public class EinstellungenFragment extends Fragment {
         restore_table.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                importDB();
+                //importDB();
+                checkPermission();
+                openFolder();
             }
         });
 
@@ -138,47 +145,65 @@ public class EinstellungenFragment extends Fragment {
         }
 
     }
+    /*
+    Datenimport
+     */
+    public void openFolder(){
+        /*
+        Startet den Filebrowser
+         */
+        Intent intent = new Intent();
+        intent.setType("*/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Choose File to Upload"), 1);
 
-    //importing database
-    private void importDB() {
-        // Prüfe Zugriffsrechte
-        checkPermission();
+    }
 
-        try {
-            File sd = Environment.getExternalStorageDirectory();
+    @Override
+    public void onActivityResult(int reqCode, int resCode, Intent data){
 
-            File data  = Environment.getDataDirectory();
+        super.onActivityResult(reqCode, resCode, data);
 
-            System.out.println("Test 4");
+        if (reqCode == 1 && resCode == RESULT_OK && data != null) {
+            Uri currFileURI = data.getData();
+            String[] path=currFileURI.getPath().split(":");
+            try {
+                File sd = Environment.getExternalStorageDirectory();
 
-            if (sd.canWrite()) {
+                File newdata  = Environment.getDataDirectory();
 
-                System.out.println("Test 5");
 
-                String  currentDBPath= "//data//" + packagename
-                        + "//databases//" + databasename;
-                String backupDBPath  = "/hilferundumsauto/database.db";
-                File  backupDB= new File(data, currentDBPath);
-                File currentDB  = new File(sd, backupDBPath);
+                if (sd.canWrite()) {
 
-                FileChannel src = new FileInputStream(currentDB).getChannel();
-                FileChannel dst = new FileOutputStream(backupDB).getChannel();
-                dst.transferFrom(src, 0, src.size());
-                src.close();
-                dst.close();
-                Toast.makeText(getActivity(), getString(R.string.einstellungen_restore_message),
-                        Toast.LENGTH_LONG).show();
+                    String  currentDBPath= "//data//" + packagename
+                            + "//databases//" + databasename;
+                    //String backupDBPath  = "/hilferundumsauto/database.db";
+                    String backupDBPath = "/" + path[1];
+                    System.out.println("Pfad: " + backupDBPath);
+                    File  backupDB= new File(newdata, currentDBPath);
+                    File currentDB  = new File(sd, backupDBPath);
 
-            }else{
-                System.out.println("Zugriff auf SD nicht möglich " + Environment.getRootDirectory());
+                    FileChannel src = new FileInputStream(currentDB).getChannel();
+                    FileChannel dst = new FileOutputStream(backupDB).getChannel();
+                    dst.transferFrom(src, 0, src.size());
+                    src.close();
+                    dst.close();
+                    Toast.makeText(getActivity(), getString(R.string.einstellungen_restore_message),
+                            Toast.LENGTH_LONG).show();
+
+                }else{
+                    System.out.println("Zugriff auf SD nicht möglich " + Environment.getRootDirectory());
+                }
+            } catch (Exception e) {
+
+                Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG)
+                        .show();
+                System.out.println("Fehler: " + e.toString());
+
             }
-        } catch (Exception e) {
-
-            Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG)
-                    .show();
-
         }
     }
+
     //exporting database
     private void exportDB() {
 
@@ -202,7 +227,17 @@ public class EinstellungenFragment extends Fragment {
             File sd = Environment.getExternalStorageDirectory();
             File data = Environment.getDataDirectory();
 
-            System.out.println("Test 2");
+            /*
+            * Setze das aktuelle Datum als String
+            */
+
+            Calendar cal = Calendar.getInstance();
+            Date currentLocalTime = cal.getTime();
+
+            DateFormat date = new SimpleDateFormat("dd-MM-yyy_HH-mm-ss");
+
+            String localTime = date.format(currentLocalTime);
+
 
             if (sd.canWrite()) {
 
@@ -210,7 +245,7 @@ public class EinstellungenFragment extends Fragment {
 
                 String  currentDBPath= "//data//" + packagename
                         + "//databases//" + databasename;
-                String backupDBPath  = "/hilferundumsauto/database.db";
+                String backupDBPath  = "/hilferundumsauto/database-"+localTime+".db";
                 File currentDB = new File(data, currentDBPath);
                 File backupDB = new File(sd, backupDBPath);
 
@@ -247,4 +282,6 @@ public class EinstellungenFragment extends Fragment {
         }
     }
 
+    private class RequestMaker {
+    }
 }
