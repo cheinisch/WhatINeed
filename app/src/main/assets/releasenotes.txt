@@ -1,3 +1,6 @@
+Version 2.4.3
+1. Es können mehrere Backups angelegt werden
+
 Version 2.4.2
 1. Nachricht versenden ist jetzt direkt aus der App möglich
 
