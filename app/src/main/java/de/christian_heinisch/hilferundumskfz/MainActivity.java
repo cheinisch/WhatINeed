@@ -101,11 +101,6 @@ public class MainActivity extends AppCompatActivity
         }else if(id == R.id.nav_punkte){
 
             punkte();
-
-        }else if(id == R.id.nav_punkte_summe){
-
-            bussgeldrechner();
-
         }else if (id == R.id.nav_errorcode) {
             errorcodeGrid();
 
@@ -191,7 +186,7 @@ public class MainActivity extends AppCompatActivity
 
         titelleiste(getString(R.string.punkte_titel));
 
-        Fragment f = new BussgeldFragment();
+        Fragment f = new BussgeldTabHost();
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_main, f);

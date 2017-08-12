@@ -19,10 +19,6 @@
             android:icon="@drawable/ic_euro"
             android:title="@string/punkte_titel" />
         <item
-            android:id="@+id/nav_punkte_summe"
-            android:icon="@drawable/ic_euro"
-            android:title="@string/bussgeld_titel" />
-        <item
             android:id="@+id/nav_tanken"
             android:icon="@drawable/ic_tank"
             android:title="@string/tanken_titel" />
