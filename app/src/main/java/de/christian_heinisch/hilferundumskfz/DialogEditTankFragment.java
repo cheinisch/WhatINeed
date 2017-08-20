@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,8 +19,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import de.christian_heinisch.hilferundumskfz.database.Tank;
 import de.christian_heinisch.hilferundumskfz.database.TankDataSource;
+import de.christian_heinisch.hilferundumskfz.database.Tank_new;
 
 /**
  * Created by chris on 11.07.2017.
@@ -144,7 +143,7 @@ public class DialogEditTankFragment extends DialogFragment {
 
     public void getTank(){
 
-        Tank tank;
+        Tank_new tank;
 
         dataSource.open();
         tank = dataSource.getTank(id);

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import de.christian_heinisch.hilferundumskfz.adapter.RVTankDetailAdapter;
 import de.christian_heinisch.hilferundumskfz.database.Tank;
-import de.christian_heinisch.hilferundumskfz.database.TankDataSource;
+import de.christian_heinisch.hilferundumskfz.database.TankDataSource_old;
 
 
 /**
@@ -30,7 +30,7 @@ public class TankDetail extends Fragment {
     TextView Bezahlt;
     TextView Liter;
     private RecyclerView mRecyclerView;
-    private TankDataSource datasource;
+    private TankDataSource_old datasource;
 
     public TankDetail() {
         // Required empty public constructor
@@ -57,7 +57,7 @@ public class TankDetail extends Fragment {
 
         mRecyclerView = (RecyclerView) rootview.findViewById(R.id.rvMoneyDetail);
 
-        datasource = new TankDataSource(getActivity());
+        datasource = new TankDataSource_old(getActivity());
 
         Liter = (TextView) rootview.findViewById(R.id.textViewGesamtGetankt);
         Bezahlt = (TextView) rootview.findViewById(R.id.textViewGesamtBezahlt);

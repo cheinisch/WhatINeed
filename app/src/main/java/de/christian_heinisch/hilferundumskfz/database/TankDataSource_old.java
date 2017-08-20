@@ -12,9 +12,9 @@ import java.util.ArrayList;
  * Created by chris on 01.07.2017.
  */
 
-public class TankDataSource {
+public class TankDataSource_old {
 
-    private static final String LOG_TAG = TankDataSource.class.getSimpleName();
+    private static final String LOG_TAG = TankDataSource_old.class.getSimpleName();
 
     private SQLiteDatabase database;
     private WhatINeedDbHelper dbHelper;
@@ -27,7 +27,7 @@ public class TankDataSource {
             WhatINeedDbHelper.COLUMN_TANK_DATE
     };
 
-    public TankDataSource(Context context) {
+    public TankDataSource_old(Context context) {
         //Log.d(LOG_TAG, "Unsere DataSource erzeugt jetzt den dbHelper.");
         dbHelper = new WhatINeedDbHelper(context);
     }
@@ -83,7 +83,7 @@ public class TankDataSource {
     }
 
 
-    private Tank_new cursorToTank(Cursor cursor) {
+    private Tank cursorToTank(Cursor cursor) {
         int idIndex = cursor.getColumnIndex(WhatINeedDbHelper.COLUMN_ID);
         int idMoney = cursor.getColumnIndex(WhatINeedDbHelper.COLUMN_TANK_MONEY);
         int idDate = cursor.getColumnIndex(WhatINeedDbHelper.COLUMN_TANK_DATE);
@@ -104,14 +104,14 @@ public class TankDataSource {
 
         long id = cursor.getLong(idIndex);
 
-        Tank_new tank = new Tank_new(id, euro, liter, kilometer, jahr ,monat, tag, 0);
+        Tank tank = new Tank(id, euro, liter, kilometer, jahr ,monat, tag);
 
         return tank;
     }
 
 
-    public ArrayList<Tank_new> getTankforMonth(String startdate, String enddate) {
-        ArrayList<Tank_new> listitems = new ArrayList<Tank_new>();
+    public ArrayList<Tank> getTankforMonth(String startdate, String enddate) {
+        ArrayList<Tank> listitems = new ArrayList<Tank>();
 
 
         Cursor cursor;
@@ -120,12 +120,12 @@ public class TankDataSource {
 
 
         cursor.moveToFirst();
-        Tank_new tank;
+        Tank tank;
 
         while (!cursor.isAfterLast()) {
             tank = cursorToTank(cursor);
             System.out.println("TAGE: " + tank.getTag());
-            listitems.add(new Tank_new(tank.getId(), tank.getEuro(), tank.getLiter(), tank.getKilometer(), tank.getJahr(), tank.getMonat(), tank.getTag(),0));
+            listitems.add(new Tank(tank.getId(), tank.getEuro(), tank.getLiter(), tank.getKilometer(), tank.getJahr(), tank.getMonat(), tank.getTag()));
 
             cursor.moveToNext();
         }
@@ -135,12 +135,12 @@ public class TankDataSource {
         return listitems;
     }
 
-    public Tank_new getTank(long id){
+    public Tank getTank(long id){
 
         Cursor cursor = database.query(WhatINeedDbHelper.TABLE_TANK_LIST,
                 columns, WhatINeedDbHelper.COLUMN_ID + "=" + id ,null, null, null, null);
 
-        Tank_new tank;
+        Tank tank;
 
         if (cursor!= null && cursor.moveToFirst());
         do {
