@@ -1,3 +1,10 @@
+Version 2.5.1
+1. Fehlerbehebung
+
+Version 2.5
+1. Tankübersicht modifiziert
+2. Bussgeldübersicht modifiziert
+
 Version 2.4.3
 1. Es können mehrere Backups angelegt werden (Pro)
 

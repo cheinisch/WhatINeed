@@ -62,7 +62,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textViewMoneyOverviewEinnahme"
+                        android:id="@+id/textViewOverviewLiter"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -84,7 +84,7 @@
                         android:text="Bezahlt" />
 
                     <TextView
-                        android:id="@+id/textViewMoneyOverviewGesamt"
+                        android:id="@+id/textViewOverviewEuro"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -104,7 +104,7 @@
                         android:text="Spritpreis" />
 
                     <TextView
-                        android:id="@+id/textViewMoneyOverviewAusgaben"
+                        android:id="@+id/textViewOverviewSpritpreis"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

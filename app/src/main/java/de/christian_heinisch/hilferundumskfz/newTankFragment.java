@@ -12,22 +12,23 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import de.christian_heinisch.hilferundumskfz.adapter.RVTankAdapter;
-import de.christian_heinisch.hilferundumskfz.database.Tank;
-import de.christian_heinisch.hilferundumskfz.database.TankDataSource_old;
+import de.christian_heinisch.hilferundumskfz.adapter.rvTankAdapter;
+import de.christian_heinisch.hilferundumskfz.database.TankDataSource;
+import de.christian_heinisch.hilferundumskfz.database.Tank_new;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TankFragment extends Fragment {
+public class newTankFragment extends Fragment {
 
 
     View rootview;
     RecyclerView mRecyclerView;
-    private TankDataSource_old datasource;
+    private TankDataSource datasource;
 
 
-    public TankFragment() {
+
+    public newTankFragment() {
         // Required empty public constructor
     }
 
@@ -49,7 +50,7 @@ public class TankFragment extends Fragment {
 
         mRecyclerView = (RecyclerView) rootview.findViewById(R.id.my_recycler_view);
 
-        datasource = new TankDataSource_old(getActivity());
+        datasource = new TankDataSource(getActivity());
 
         //datasource.open();
         /*datasource.createTank(45,72.2,100.0,"2017-07-01");
@@ -73,21 +74,21 @@ public class TankFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
-        RVTankAdapter rvAdapter = new RVTankAdapter(getActivity(), getDataSet());
+        rvTankAdapter rvAdapter = new rvTankAdapter(getActivity(), getDataSet());
         mRecyclerView.setAdapter(rvAdapter);
 
     }
 
-    private ArrayList<Tank> getDataSet() {
+    private ArrayList<Tank_new> getDataSet() {
 
         int startJahr = 2016;
         int endJahr = 2017;
         int count = 0;
         double gesamt = 0;
 
-        ArrayList results = new ArrayList<Tank>();
+        ArrayList results = new ArrayList<Tank_new>();
         datasource.open();
-        ArrayList<Tank> arrayOftank = null;
+        ArrayList<Tank_new> arrayOftank = null;
 
         for(int jahr = startJahr; jahr <= endJahr; jahr++){
 
@@ -116,8 +117,10 @@ public class TankFragment extends Fragment {
                 {
                     euro = euro + arrayOftank.get(i).getEuro();
                     liter = liter + arrayOftank.get(i).getLiter();
-
-
+                    Tank_new new_obj = new Tank_new(arrayOftank.get(i).getId(), arrayOftank.get(i).getEuro(), arrayOftank.get(i).getLiter(), arrayOftank.get(i).getKilometer(), jahr, arrayOftank.get(i).getMonat(), arrayOftank.get(i).getTag(), Tank_new.LIST_TYPE);
+                    if(arrayOftank.get(i).getEuro() > 0.5) {
+                        results.add(count, new_obj);
+                    }
                 }
 
                 if(euro > 0.5) {
@@ -128,7 +131,7 @@ public class TankFragment extends Fragment {
 
                     spritpreis = round(spritpreis, 2);
 
-                    Tank obj = new Tank(count, euro, round(liter,2), spritpreis, jahr, monat, 0);
+                    Tank_new obj = new Tank_new(count, euro, liter, spritpreis, jahr, monat, 0, Tank_new.OVERVIEW_TYPE);
                     //results.add(count, obj);
                     results.add(count, obj);
                 }
