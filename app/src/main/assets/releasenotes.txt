@@ -1,3 +1,6 @@
+Version 2.5.2
+1. neue Bußgelder eingefügt
+
 Version 2.5.1
 1. Fehlerbehebung
 

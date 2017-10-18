@@ -48,7 +48,7 @@ public class DialogReleaseNotesFragment extends DialogFragment {
 
         // LESE Releasenotes ein
         try {
-            Text = readFromAssets(getActivity(),"releasenotes.txt");
+            Text = readFromAssets(getActivity(),"releasenotes_short.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }

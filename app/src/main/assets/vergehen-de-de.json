@@ -367,6 +367,60 @@
           "Fahrverbot":"3 Monate"
         }
       ]
+    },
+    {
+      "Vergehen": "sonstige Verstöße",
+      "Typ":"sonstige",
+      "Stufe": [
+        {
+          "Ordnungswidrigkeit": "Tatbestand",
+          "Punkte":"Punkte",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Fahrverbot"
+        },
+        {
+          "Ordnungswidrigkeit": "Handy am Steuer",
+          "Punkte":"",
+          "Geldstrafe":"100 €",
+          "Fahrverbot":"1"
+        },
+        {
+          "Ordnungswidrigkeit": "Elektronische Geräte am Steuer",
+          "Punkte":"",
+          "Geldstrafe":"100 €",
+          "Fahrverbot":"1"
+        },
+        {
+          "Ordnungswidrigkeit": "Nicht bilden einer Rettungsgasse",
+          "Punkte":"2",
+          "Geldstrafe":"200 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Behinderung einer Rettungsgasse",
+          "Punkte":"2",
+          "Geldstrafe":"bis zu 320 €",
+          "Fahrverbot":"1"
+        },
+        {
+          "Ordnungswidrigkeit": "Blaulicht ignorieren",
+          "Punkte":"2",
+          "Geldstrafe":"320 €",
+          "Fahrverbot":"1"
+        },
+        {
+          "Ordnungswidrigkeit": "Gesichtsverhüllung",
+          "Punkte":"",
+          "Geldstrafe":"bis zu 60 €",
+          "Fahrverbot":" "
+        },
+        {
+          "Ordnungswidrigkeit": "Illegale Straßenrennen",
+          "Punkte":"3",
+          "Geldstrafe":"Geld-\nstrafe",
+          "Fahrverbot":"Führer-\nscheinentzug\noder bis zu\nzwei Jahren Haft"
+        }
+      ]
     }
   ]
 }
